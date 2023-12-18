@@ -59,3 +59,5 @@ _this is blue_
 
 U+1F534
 
+$${\color{red}Red}$$
+
