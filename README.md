@@ -21,7 +21,11 @@ IP-адрес:       11000000 10101000 00000001 00000010 (192.168.1.2)
 адрес сети, который определяется маской подсети;
 диапазон адресов устройств в этой сети.
 
-<pre>IP-адрес:       <span style="background-color:Yellow">11000000 10101000 0000000</span><span style="background-color:Salmon">1 00000010</span> (192.168.1.2)
+<pre>IP-адрес:  <span style="background-color:Yellow">11000000 10101000 0000000</span><span style="background-color:Salmon">1 00000010</span> (192.168.1.2)
 Маска подсети:  <span style="background-color:PaleGreen">11111111 11111111 1111111</span>0 00000000 (255.255.254.0)
 Адрес сети:     <span style="background-color:Yellow">11000000 10101000 0000000</span>0 00000000 (192.168.0.0)
 </pre>
+
+<span style="color:blue">some *This is Blue italic.* text</span>
+
+<span style="color:red">some **This is Red Bold.** text</span>
