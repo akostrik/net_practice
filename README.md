@@ -52,4 +52,10 @@ s { color: green }
 em { color: blue }
 
 ~~This is green~~
+
 _this is blue_
+
+<font color='red'>test blue color font</font>
+
+U+1F534
+
