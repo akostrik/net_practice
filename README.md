@@ -26,38 +26,5 @@ IP-адрес:       11000000 10101000 00000001 00000010 (192.168.1.2)
 Адрес сети:     <span style="background-color:Yellow">11000000 10101000 0000000</span>0 00000000 (192.168.0.0)
 </pre>
 
-<span style="color:blue">some *This is Blue italic.* text</span>
-
-<span style="color:red">some **This is Red Bold.** text</span>
-
-
-<style>
-r { color: Red }
-o { color: Orange }
-g { color: Green }
-</style>
-
-# TODOs:
-
-- <r>TODO:</r> Important thing to do
-- <o>TODO:</o> Less important thing to do
-- <g>DONE:</g> Breath deeply and improve karma
-
-// resets
-s { text-decoration:none; } //strike-through
-em { font-style: normal; font-weight: bold; } //italic emphasis
-
-// colors
-s { color: green }
-em { color: blue }
-
-~~This is green~~
-
-_this is blue_
-
-<font color='red'>test blue color font</font>
-
-U+1F534
-
-$${\color{red}Red}$$
+$\textsf{\color{red}Red text}$
 
