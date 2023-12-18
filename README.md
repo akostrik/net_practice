@@ -29,3 +29,16 @@ IP-адрес:       11000000 10101000 00000001 00000010 (192.168.1.2)
 <span style="color:blue">some *This is Blue italic.* text</span>
 
 <span style="color:red">some **This is Red Bold.** text</span>
+
+
+<style>
+r { color: Red }
+o { color: Orange }
+g { color: Green }
+</style>
+
+# TODOs:
+
+- <r>TODO:</r> Important thing to do
+- <o>TODO:</o> Less important thing to do
+- <g>DONE:</g> Breath deeply and improve karma
