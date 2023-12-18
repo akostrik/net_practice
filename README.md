@@ -42,3 +42,14 @@ g { color: Green }
 - <r>TODO:</r> Important thing to do
 - <o>TODO:</o> Less important thing to do
 - <g>DONE:</g> Breath deeply and improve karma
+
+// resets
+s { text-decoration:none; } //strike-through
+em { font-style: normal; font-weight: bold; } //italic emphasis
+
+// colors
+s { color: green }
+em { color: blue }
+
+~~This is green~~
+_this is blue_
