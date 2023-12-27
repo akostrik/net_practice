@@ -117,15 +117,15 @@ identical ip address.
 <img src="https://github.com/akostrik/net_practice/assets/22834202/c7741926-8cf2-4387-abff-9ab43eb73477" width="700" height="550">  
 
 ## Level 4
-11111111.11111111.11111111.11+00000 (`255.255.255.192`) we are free to choose a subnet mask  
+11111111.11111111.11111111.11+00000 (`255.255.255.192`) - we are free to choose a mask  
 
 B1, R1: 
-the same network address as A1.\
+the same network address as A1
 the possible range is:
-85.17.5.0 - 85.17.5.255
-Excluding ...
+01000101.00100000.1110110. (69.32.118.) and
+01000101.00100000.1110110. (), excluding ...
 
-Note that we did not interact with the router Interface R2 and Interface R3, since none of our communications had to reach these sides of the router.
+We did not interact with the router Interface R2 and Interface R3.
 
 <img src="https://github.com/akostrik/net_practice/assets/22834202/e0e2e50c-1bfe-4f2c-ad24-6d9559294bb0" width="700" height="550">  
 
