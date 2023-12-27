@@ -68,8 +68,11 @@ Reserved by the Internet Assigned Numbers Authority (IANA).
 ## Route table 
 **Routing table** is stored in a router / network host, lists the routes to particular network destinations. 
 **Destination** a network address, the end target of the packets of the host.  
-**The route of default (0.0.0.0/0)** a network address, takes effect when no other route is available for an IP destination address. Uses the next hop address to send the packets without a specific destination. Matches any network.  
-**Next hop** a network address, the next router on the packet's way. Every router maintains its routing table with a next hop address.  
+**A route** contains 2 fields: the destination of outbound packets + the next hop of the packets.
+**The destination default = The route of default  =** `0.0.0.0/0` a network address, takes effect when no other route is available for an IP destination. Uses the next hop address to send the packets without a specific destination. Sends the packets to the first network address it encounters. Matches any network.  
+**Next hop** a network address, the next router interface / inernet inerface on the packet's way. Every router maintains its routing table with a next hop address.  
+
+
 
 # Solution
 ## Level 1
@@ -125,6 +128,16 @@ R2, R3: we did not interact with them
 <img src="https://github.com/akostrik/net_practice/assets/22834202/e0e2e50c-1bfe-4f2c-ad24-6d9559294bb0" width="700" height="550">  
 
 ## Level 5
+
+A destination address of 122.3.5.3/24 would send the packets to the network 122.3.5.0.
+
+1. Client A only has 1 route through which it can send its packets. There is no use specifying a numbered destination. The destination default will send the packets to the only path available.
+
+The next hop address must be the IP address of the next router's interface on the packets' way. The next interface is Interface R1, with the IP address of 54.117.30.126. Note that the next interface is not Interface A1, since this is the sender's own interface.
+
+
+
+
 
 |A->R (17.33.126.126)    |B->R (17.33.126.126)                               |A->B (170.242.21.253)                             |
 |:-----------------------|:--------------------------------------------------|:-------------------------------------------------|
