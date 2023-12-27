@@ -95,11 +95,11 @@ A -> R (17.33.126.126)     |B -> R (17.33.126.126)                              
 A: packet accepted         |B: packet accepted                                     |A: packet accepted                                    |
 A: send to A1              |B: dest.n does not match any interface, routing table  |A: dest. does not match any interface, routing table  |
 R: packet accepted         |B: route match default                                 |A: route match default                                |
-R: destination IP reached  |B: send to gateway 170.242.21.254 through interface B1 |A: send to gateway 17.33.126.126 through interface A1 |
+                           |B: send to gateway 170.242.21.254 through interface B1 |A: send to gateway 17.33.126.126 through interface A1 |
                            |R: packet accepted                                     |R: packet accepted                                    |
                            |R: destination IP reached                              |R: send to R2                                         |
                            |                                                       |B: packet accepted                                    |
-                           |                                                       |B: destination IP reached                             |
+R: destination IP reached  |                                                       |B: destination IP reached                             |
                            
 R -> A (17.33.126.125)     |R -> B (170.242.21.253)                                |B -> A (17.33.126.125)                                |
 ---------------------------|-------------------------------------------------------|------------------------------------------------------|
