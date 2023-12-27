@@ -73,30 +73,27 @@ Reserved by the Internet Assigned Numbers Authority (IANA).
 
 # Solution
 ## Level 1
-A1: anything between  
-`104.99.23.0` and   
-`104.99.23.255`, excluding  
-`104.99.23.0` (the first number in the range of hosts = the network, cannot be used by a host),  
-`104.99.23.255` (the broadcast address),  
-`104.99.23.12` (already used).  
+`104.99.23.0` A1 min    
+`104.99.23.255` A1 max  
+`104.99.23.0` != A1, the first number in the range of hosts i sused fot the network, it cannot be used by a host  
+`104.99.23.255` != A1, it is the broadcast address  
+`104.99.23.12` != A1, it is already used    
   
-D1: anything between  
-`211.191.0.0` and  
-`211.191.255.255`, excluding  
-`211.191.0.0`,  
-`211.191.255.255`,  
-`211.191.129.75`.  
+`211.191.0.0` D1 min  
+`211.191.255.255` D2 max
+`211.191.0.0` != D1  
+`211.191.255.255` != D1   
+`211.191.129.75` != D1  
 <img src="https://github.com/akostrik/net_practice/assets/22834202/429cb593-9681-44fd-bed8-f5629d8e2100" width="700" height="400">  
 
 ## Level 2
 B1: `255.255.255.224`, because B and A are on the same private network
   
-A1: anything between   
-`11000000.10101000.00111011.110+00000` (`255.255.255.224`) and  
-`11000000.10101000.00111011.110+11111` (`192.168.118.223`), excluding  
-`11000000.10101000.00111011.110+00000` (`255.255.255.224`),  
-`11000000.10101000.00111011.110+11111` (`192.168.118.223`),  
-`11000000.10101000.00111011.110+11110` (`192.168.118.222`).  
+`11000000.10101000.00111011.110+00000` (`255.255.255.224`) A1 min  
+`11000000.10101000.00111011.110+11111` (`192.168.118.223`) A2 max   
+`11000000.10101000.00111011.110+00000` (`255.255.255.224`) != A2  
+`11000000.10101000.00111011.110+11111` (`192.168.118.223`) != A2  
+`11000000.10101000.00111011.110+11110` (`192.168.118.222`) != A2  
   
 C1, D1: any two address, where 
 - the first 30 bits are identical for D and C
@@ -106,13 +103,14 @@ C1, D1: any two address, where
 
 <img src="https://github.com/akostrik/net_practice/assets/22834202/5a34deda-b8a4-4701-925d-74a5bbe1add3" width="700" height="400">  
 
-## Level 3
-A1, B, C1: anything between $\textsf{\color{red}(проверить)}$     
-`01101000.11000110.01000010.1+0000000` (`104.198.132.128`) and  
-`01101000.11000110.01000010.1+1111111` (`104.198.132.255`), excluding  
-`01101000.11000110.01000010.1+0000000` (`104.198.132.128`),  
-`01101000.11000110.01000010.1+1111111` (`104.198.132.255`),  
-identical ip address.  
+## Level 3     
+`01101000.11000110.01000010.1+0000000` (`104.198.132.128`) A1, B, C1 min $\textsf{\color{red}(проверить)}$  
+`01101000.11000110.01000010.1+1111111` (`104.198.132.255`) A1, B, C1 max  
+`01101000.11000110.01000010.1+0000000` (`104.198.132.128`) != A1, B, C1  
+`01101000.11000110.01000010.1+1111111` (`104.198.132.255`)  != A1, B, C1  
+A1 != B  
+A1 != C1  
+B!= C  
 `11111111.11111111.11111111.1+0000000` (`255.255.255.128`) mask
 <img src="https://github.com/akostrik/net_practice/assets/22834202/c7741926-8cf2-4387-abff-9ab43eb73477" width="700" height="550">  
 
@@ -120,9 +118,9 @@ identical ip address.
 `11111111.11111111.11111111.11+000000` (`255.255.255.192`) we are free to choose a mask  
 `01000101.00100000.01110110.10+000100` (`69.32.118.132`) A1
 
-B1, R1 are between  
-`01000101.00100000.0111011.10+000000` (`69.32.118.128`) and  
-`01000101.00100000.0111011.10+111111` (`69.32.118.191`), excluding ...
+B1, R1 are in the same network that A1, so:
+`01000101.00100000.0111011.10+000000` (`69.32.118.128`) B1, R min  
+`01000101.00100000.0111011.10+111111` (`69.32.118.191`) B1, R max, excluding ...
 
 R2, R3: we did not interact with the router Interface R2 and Interface R3.
 
