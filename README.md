@@ -117,7 +117,7 @@ identical ip address.
 <img src="https://github.com/akostrik/net_practice/assets/22834202/c7741926-8cf2-4387-abff-9ab43eb73477" width="700" height="550">  
 
 ## Level 4
-we are free to choose our own subnet mask. /24
+We are free to choose a subnet mask `255.255.255.128`.
 
 B1, R1: 
 the same network address as A1. With a subnet of /24, the possible range is:
