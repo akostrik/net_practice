@@ -78,10 +78,40 @@ Reserved by the Internet Assigned Numbers Authority (IANA).
 # Solution
 ## Level 1:
 A1: anything in [`104.96.23.0`;`104.96.23.255`] excluding `104.96.23.0` (the first number in the range of hosts = the network, cannot be used by a host), `104.96.23.255` (the last number = the broadcast address), `104.96.23.12` (already used)  
+  
 D1: Anything in [`211.191.0.0`;`211.191.255.255`], excluding `211.191.0.0`, `211.191.255.255`, `211.191.89.75`  
 <img src="https://github.com/akostrik/net_practice/assets/22834202/429cb593-9681-44fd-bed8-f5629d8e2100" width="700" height="400">  
 
 ## Level 2:  
+1. Since Client B is on the same private network as Client A, they should have the exact same subnet mask `255.255.255.224`
+
+2. To understand the subnet mask of 255.255.255.224, let's look at it in binary form, along with the IP 192.168.20.222 of Client B:
+
+MASK: 11111111.11111111.11111111.11100000
+IP:   11000000.10101000.00010100.11011101
+As we can see, the first 27 bits represent the IP address, while only the last 5 bits represent the host address.
+All these 27 bits representing the network must stay the same in the IP addresses of hosts on the same network. To get the answer, we can only change the last 5 bits.
+
+The answer is in the range of:
+BIN:  11000000.10101000.00010100.11000000 - 11000000.10101000.00010100.11011111
+or
+DEC:  192.168.20.192 - 192.168.20.223
+Excluding:
+
+11000000.10101000.00010100.11000000: Represents the network address (notice all 0 in the last 5 bits).
+11000000.10101000.00010100.11011111: Represents the broadcast address (notice all 1 in the last 5 bits).
+11000000.10101000.00010100.11011110: Client B already has that address.
+3. Here we are introduced the slash "/" notation for the subnet mask on Interface D1. A subnet mask of /30 means that the first 30 bits of the IP address represent the network address, and the remaining 2 bits represent the host address:
+
+Mask /30: 11111111.11111111.11111111.11111100
+We can see that this binary number corresponds to the decimal 255.255.255.252, therefore it is identical to the mask found on Interface C1.
+
+The answers can then be any address, as long as they meet the following conditions:
+
+The network address (first 30 bits) must be identical for Client D and Client C.
+The host bits (last 2 bits) cannot be all 1, nor all 0.
+Client D and Client C do not have identical IP addresses.
+
 <img src="https://github.com/akostrik/net_practice/assets/22834202/5a34deda-b8a4-4701-925d-74a5bbe1add3" width="700" height="400">  
 
 ## Level 3:  
