@@ -1,19 +1,23 @@
 _42 School project, level 4_
 
-# 1. Variable-length subnet masking (VLSM)
-TCP/IP addressing  
+# 1. TCP/IP addressing, Variable-length subnet masking (VLSM)
+
 _Узел_ = хост, компьютер, устройство  
-_Маска подсети_ определяет по IP-адресу адрес подсети и адрес узла. Не является частью IP-пакета (в отличие от IP-адреса).  
+
+_Transmission Control Protocol (TCP)_ a communications standard that enables application programs and devices to exchange messages over a network. Is used to send packets across the internet.  
+1) TCP establishes a connection between a source and its destination, which remains active until communication begins
+2) TCP breaks data into smaller packets, while ensuring end-to-end delivery  
+
+_Маска подсети_ определяет по IP-адресу адрес подсети и адрес узла. Не является частью IP-пакета (в отличие от IP-адреса)  
 
 | **IP addresse = network prefix + host identifier:** | **$\textsf{\color{blue}11000000 10101000 0000000}$ $\textsf{\color{green}1 00000010}$** | **192.168.1.2**    |     |
 |:--------------------|:----------------------------------------------------------------------------------------|:-------------------|-----|
 | **Маска подсети:**  | **$\textsf{\color{blue}11111111 11111111 1111111}$ $\textsf{\color{black}0 00000000}$** | **255.255.254.0**  | /23 |
-| **Адрес сети:**     | **$\textsf{\color{blue}11000000 10101000 0000000}$ $\textsf{\color{blue}0 00000000}$**  | **192.168.0.0**    |     |
+| **$\textsf{\color{blue}Адрес сети}$:**     | **$\textsf{\color{blue}11000000 10101000 0000000}$ $\textsf{\color{blue}0 00000000}$**  | **192.168.0.0**    |     |
 
-$\textsf{\color{blue}адрес сети}$  
 $\textsf{\color{green}диапазон адресов устройств в этой сети}$  
 
-_Classless Inter-Domain Routing (CIDR)_ is a method for allocating IP addresses and for IP routing, to slow the growth of routing tables on routers across the Internet, to slow the exhaustion of IPv4 addresses.
+_Classless Inter-Domain Routing (CIDR)_ a method for allocating IP addresses and for IP routing (slows the growth of routing tables on routers across the Internet, slows the exhaustion of IPv4 addresses).
 
 IPv4: network prefix of 8 / 16 / 24 bits   
 IPv6: interface identifier of 64 bits + ... (smaller subnets are never allocated to end users)  
