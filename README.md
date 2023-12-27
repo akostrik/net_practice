@@ -161,6 +161,11 @@ Network A1 + R1 + S:
 `11111111.11111111.11111111.1+0000000` (`255.255.255.128`) mask  
 `01011001.01011100.11110001.1+1100011` (`89.92.241.227`) A1  
 `01011001.01011100.11110001.1+1100100` (`89.92.241.228`) R1  
+`01011001.01011100.11110001.1+0000000` (`89.92.241.128`) the network address of A, the internet must send its packets to A  
+`01011001.01011100.11110001.1+0000000` (`89.92.241.128/25`)  
+`01011001.01011100.11110001.1+0000000` (`89.92.241.227/25`)  
+`01011001.01011100.11110001.1+0000001` (`89.92.241.129`) min host address  
+`01011001.01011100.11110001.1+1111110` (`89.92.241.254`) max host address  
 
 Network R2 + Internet:  
 `11111111.11111111.11111111.1111+0000` (`255.255.255.240`) mask  
@@ -171,17 +176,4 @@ Network R2 + Internet:
 Network Internet:  
 `10100011.10101100.11111010.00000001` (`163.172.250.12`) table I, the next hop of the internet  
 
-The internet must send its packets to A. To do so, the internet's destination must match the network address of A. Let's find the network address of A:
-Client A's mask is 255.255.255.128, which is equivalent to /25. This means that the first 25 bits of its IP address are its network address. We know then that the first 3 bytes (24 bits) of its IP address make part of its network address:
 
-89.92.241.?
-We now only need to find out if the 25th bit is a 1 or a 0.
-If we convert the number 227 to binary, we get 11100011. The first digit, which corresponds to the 25th bit, is a 1. Since only the 25th bit is part of the network address and not the remaining 7 bits, we get 10000000 for the last byte of the network address, which is 128 in decimal.
-
-The full network address is:
-89.92.241.128
-With a range of 89.92.241.129 - 89.92.241.254 for its host addresses.
-
-We can now put this address of 89.92.241.128 in the Internet destination. The /25 following the destination address represents the mask applied to its address.
-
-A destination of 89.92.241.227/25 is equivalent to the destination address 89.92.241.128/25, since the mask of /25 will turn all the bits after the 25th to 0 to get the destination's network address.
