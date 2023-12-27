@@ -17,11 +17,11 @@ $\textsf{\color{green}диапазон адресов устройств в эт
 ## Check client ip 
 * Client ip do not overlap to other  
 * Private ip do not access internet
- + from `10.0.0.0` to `10.255.255.255`
- + from `172.16.0.0` to `172.31.255.255`
- + from `192.168.0.0` to `192.168.255.255`
+    + from `10.0.0.0` to `10.255.255.255`
+    + from `172.16.0.0` to `172.31.255.255`
+    + from `192.168.0.0` to `192.168.255.255`
 * Do not set local ip
- + from `127.0.0.1` to `127.255.255.254`
+    + from `127.0.0.1` to `127.255.255.254`
 ## Calculate available ip range in subnet
 
 * Switch connects clients in same subnet  
