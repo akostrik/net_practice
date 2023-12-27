@@ -83,7 +83,8 @@ D1: anything in [`211.191.0.0`;`211.191.255.255`], excluding `211.191.0.0`, `211
 <img src="https://github.com/akostrik/net_practice/assets/22834202/429cb593-9681-44fd-bed8-f5629d8e2100" width="700" height="400">  
 
 ## Level 2:  
-B1: B and A are on the same private network, the same mask `255.255.255.224`
+B and A are on the same private network  
+B1: `255.255.255.224`
   
 `192.168.20.222`  = `11000000.10101000.00010100.11011101`  
 `255.255.255.224` = `11111111.11111111.11111111.11100000`
