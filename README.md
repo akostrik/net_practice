@@ -129,7 +129,7 @@ R2, R3: we did not interact with them
 |A->R (17.33.126.126)    |B->R (17.33.126.126)                               |A->B (170.242.21.253)                             |
 |:-----------------------|:--------------------------------------------------|:-------------------------------------------------|
 |                        |B: dest. does not match any interface, rout. table |A: dest. does not match any interface, rout. table|
-|A: send to A1           |$B: send to gateway 170.242.21.254 through intrf B1 \textsf{\color{red}?}$ |A: send to gateway 17.33.126.126 through intrf A1 |
+|A: send to A1           |B: send to gateway 170.242.21.254 through intrf B1 $\textsf{\color{red}?}$ |A: send to gateway 17.33.126.126 through intrf A1 |
 |                        |                                                   |R: packet accepted                                |
 |                        |                                                   |R: send to R2                                     |
 |R: packet accepted      |R: packet accepted                                 |B: packet accepted                                |
