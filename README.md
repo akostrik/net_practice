@@ -15,7 +15,7 @@ $\textsf{\color{green}диапазон адресов устройств в эт
 
 # 2. Client IP addresses
 * Client ip do not overlap  
-* Private IP
+* Private IP  
 Cannot be used to access the Internet, remains only in the local network, never leaves the LAN.  
 Reserved by the Internet Assigned Numbers Authority (IANA).  
     + from `10.0.0.0` to `10.255.255.255`     (Class A, for large networks,   8 bits for the network + 24 for hosts)
