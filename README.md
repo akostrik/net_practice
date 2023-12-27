@@ -98,7 +98,6 @@ Reserved by the Internet Assigned Numbers Authority (IANA).
 |                        |                                                   |R: packet accepted                                |
 |                        |                                                   |R: send to R2                                     |
 |R: packet accepted      |R: packet accepted                                 |B: packet accepted                                |
-|R: dest. IP reached     |R: destination IP reached                          |B: destination IP reached                         |
 |**R->A (17.33.126.125)**|**R-> B (170.242.21.253)**                         |**B->A (17.33.126.125)**                          |
 |                        |                                                   |B: dest. does not match any interface, rout. table|
 |                        |                                                   |B: route match default                            |
