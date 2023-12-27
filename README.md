@@ -100,7 +100,9 @@ R: destination IP reached  |B: send to gateway 170.242.21.254 through interface 
                            |R: destination IP reached                              |R: send to R2                                         |
                            |                                                       |B: packet accepted                                    |
                            |                                                       |B: destination IP reached                             |
-**R -> A (17.33.126.125)** |**R -> B (170.242.21.253)**                            |**B -> A (17.33.126.125)**                            |
+                           
+R -> A (17.33.126.125)     |R -> B (170.242.21.253)                                |B -> A (17.33.126.125)                                |
+---------------------------|-------------------------------------------------------|------------------------------------------------------|
 R: packet accepted         |R: packet accepted                                     |B: packet accepted                                    |
 R: send to R1              |R: send to R2                                          |B: dest. does not match any interface, routing table  |
 A: packet accepted         |B: packet accepted                                     |B: route match default                                |
