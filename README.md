@@ -1,14 +1,14 @@
 _42 School project, level 4_
 
-# 1. TCP/IP addressing, Variable-length subnet masking (VLSM)
+**Узел** хост, компьютер, устройство  
 
-_Узел_ = хост, компьютер, устройство  
-
-_Transmission Control Protocol (TCP)_ a communications standard that enables application programs and devices to exchange messages over a network. Is used to send packets across the internet.  
+**Transmission Control Protocol (TCP)** a communications standard that enables application programs and devices to exchange messages over a network. Is used to send packets across the internet.  
 1) TCP establishes a connection between a source and its destination, which remains active until communication begins
 2) TCP breaks data into smaller packets, while ensuring end-to-end delivery  
 
-_Маска подсети_ определяет по IP-адресу адрес подсети и адрес узла. Не является частью IP-пакета (в отличие от IP-адреса)  
+# Variable-length subnet masking (VLSM)
+
+**Маска подсети** определяет по IP-адресу адрес подсети и адрес узла, не является частью IP-пакета (в отличие от IP-адреса)  
 
 | **IP addresse = network prefix + host identifier:** | **$\textsf{\color{blue}11000000 10101000 0000000}$ $\textsf{\color{green}1 00000010}$** | **192.168.1.2**    |
 |:--------------------|:----------------------------------------------------------------------------------------|:-------------------|
@@ -17,7 +17,7 @@ _Маска подсети_ определяет по IP-адресу адрес
 
 $\textsf{\color{green}диапазон адресов устройств в этой сети}$  
 
-_Classless Inter-Domain Routing (CIDR)_ a method for allocating IP addresses and for IP routing (slows the growth of routing tables on routers across the Internet, slows the exhaustion of IPv4 addresses).
+**Classless Inter-Domain Routing (CIDR)** a method for allocating IP addresses and for IP routing (slows the growth of routing tables on routers across the Internet, slows the exhaustion of IPv4 addresses).
 
 IPv4: network prefix of 8 / 16 / 24 bits   
 IPv6: interface identifier of 64 bits + ... (smaller subnets are never allocated to end users)  
@@ -46,7 +46,7 @@ IPv4 CIDR blocks
 | /0      | 0.0.0.0         | 4 294 967 296 | entire IPv4 Internet
 
 
-# 2. Client IP addresses
+# Client IP addresses
 * Client ip do not overlap  
 * Private IP  
 Cannot be used to access the Internet, remains only in the local network, never leaves the LAN.  
@@ -57,10 +57,22 @@ Reserved by the Internet Assigned Numbers Authority (IANA).
 * Local IP
     + from `127.0.0.1` to `127.255.255.254`
 
-# 3. Calculate available IP range in subnet
-* Switch connects clients in same subnet  
-* Router connects subnets
-* Route table is configured from source ip to destination with CIDR (0.0.0.0/0)
+# A switch
+* connects devices together in a single network
+* distributes packets to its local network
+* does not have any interfaces
+* cannot talk directly to a network outside of its own
+
+# A router
+* connects networks together
+* has an interface for each network it connects to
+* separates different networks
+* the range of possible IP addresses on one of its interfaces must not overlap with the range of its other interfaces
+## Route table 
+**Routing table** a table stored in a router / network host, lists the routes to particular network destinations. Every single router maintains its routing table with a next hop address.  
+**Destination** a network address, the end target of the packets of the host.  
+**The route of default (0.0.0.0/0)** the route that takes effect when no other route is available for an IP destination address. Uses the next-hop address to send the packets on their way without giving a specific destination. Matches any network.  
+**Next hop** a network address, the next router on the packet's way.  
 
 # Solution
 ## Level 1:  
