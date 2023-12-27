@@ -112,10 +112,10 @@ C1, D1: any two address, where
 ## Level 3
 A1, B, C1: anything between  
 `104.198.132.0` and   
-`104.198.1321.128`, excluding 
-the network address,  
-the broadcast address,  
-identical ip address
+`104.198.132.128`, excluding  
+`104.198.132.0`,
+`104.198.132.255`,
+identical ip address.
 <img src="https://github.com/akostrik/net_practice/assets/22834202/c7741926-8cf2-4387-abff-9ab43eb73477" width="700" height="550">  
 
 ## Level 4
