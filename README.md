@@ -67,12 +67,11 @@ Reserved by the Internet Assigned Numbers Authority (IANA).
   
 ## Route table 
 **Routing table** is stored in a router / network host, lists the routes to particular network destinations. 
+**A route** = 2 fields = the destination of outbound packets + the next hop of the packets.
 **Destination** a network address, the end target of the packets of the host.  
-**A route** contains 2 fields: the destination of outbound packets + the next hop of the packets.
 **The destination default = The route of default  =** `0.0.0.0/0` a network address, takes effect when no other route is available for an IP destination. Uses the next hop address to send the packets without a specific destination. Sends the packets to the first network address it encounters. Matches any network.  
 **Next hop** a network address, the next router interface / inernet inerface on the packet's way. Every router maintains its routing table with a next hop address.  
-
-
+NB A destination address of 122.3.5.3/24 sends the packets to the network 122.3.5.0.
 
 # Solution
 ## Level 1
@@ -129,18 +128,6 @@ R2, R3: we did not interact with them
 
 ## Level 5
 
-A: only has 1 route through which it can send its packets, the destination default will send the packets to the only path available, no use to specify a destination. 
-
-NB A destination address of 122.3.5.3/24 sends the packets to the network 122.3.5.0.
-
-`11111111.11111111.11+000000.00000000` (`255.255.192.0`)  
-`10101010.11110010.00+010101.11111101` (`170.242.21.253`)   
-`10101010.11110010.00+010101.11111110` (`170.242.21.254`)  
-
-`11111111.11111111.11111111.1+0000000` (`255.255.255.128`)  
-`00010001.00100001.01111110.0+1111101` (`17.33.126.125`)  
-`00010001.00100001.01111110.0+1111110` (`17.33.126.126`)  
-
 |A->R (17.33.126.126)    |B->R (17.33.126.126)                               |A->B (170.242.21.253)                             |
 |:-----------------------|:--------------------------------------------------|:-------------------------------------------------|
 |                        |B: dest. does not match any interface, rout. table |A: dest. does not match any interface, rout. table|
@@ -154,6 +141,16 @@ NB A destination address of 122.3.5.3/24 sends the packets to the network 122.3.
 |                        |                                                   |R: accepted                                       |
 |                        |                                                   |R: send to R1                                     |
 |A: accepted             |B:  accepted                                       |A: accepted                                       | 
+
+A: only has 1 route through which it can send its packets, the destination default will send the packets to the only path available, no use to specify a destination. 
+
+`11111111.11111111.11+000000.00000000` (`255.255.192.0`)  
+`10101010.11110010.00+010101.11111101` (`170.242.21.253`)   
+`10101010.11110010.00+010101.11111110` (`170.242.21.254`)  
+
+`11111111.11111111.11111111.1+0000000` (`255.255.255.128`)  
+`00010001.00100001.01111110.0+1111101` (`17.33.126.125`)  
+`00010001.00100001.01111110.0+1111110` (`17.33.126.126`)  
 
 <img src="https://github.com/akostrik/net_practice/assets/22834202/8abba568-5c19-4f2d-bb51-c5619502fe9b" width="700" height="550">  
 
