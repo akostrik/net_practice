@@ -60,6 +60,6 @@ Reserved by the Internet Assigned Numbers Authority (IANA).
 * Route table is configured from source ip to destination with CIDR (0.0.0.0/0)
 
 
-
-
 ![Screenshot from 2023-12-18 15-41-54](https://github.com/akostrik/net_practice/assets/22834202/429cb593-9681-44fd-bed8-f5629d8e2100)
+
+![Screenshot from 2023-12-27 14-15-21](https://github.com/akostrik/net_practice/assets/22834202/5a34deda-b8a4-4701-925d-74a5bbe1add3)
