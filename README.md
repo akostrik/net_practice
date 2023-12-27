@@ -81,10 +81,10 @@ Reserved by the Internet Assigned Numbers Authority (IANA).
 `104.96.23.0` the first number in the range of hosts represents the network, cannot be used by a host  
 `104.96.23.255` the last number in the range of hosts represents the broadcast address  
 `104.96.23.12` already used  
-2.The solution will be anything in the range of 211.191.0.0 - 211.191.255.255, excluding:  
-`211.191.0.0`
-`211.191.255.255`  
-`211.191.89.75`  
+2.The solution will be anything in the range of 211.191.0.0 - 211.191.255.255, excluding:   
+`211.191.0.0`  
+`211.191.255.255`    
+`211.191.89.75`    
 <img src="https://github.com/akostrik/net_practice/assets/22834202/429cb593-9681-44fd-bed8-f5629d8e2100" width="700" height="400">  
 
 ## Level 2:  
