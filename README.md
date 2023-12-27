@@ -62,8 +62,9 @@ Reserved by the Internet Assigned Numbers Authority (IANA).
 
 # A router
 * connects networks together
-* separates different networks with the use of multiple interfaces (an interface for each network)
+* separates different networks with the use of multiple interfaces (an interface = a network)
 * the range of possible IP addresses on one of its interfaces must not overlap with the range of its other interfaces
+* the internet behaves like a router
   
 ## Route table 
 **Routing table** is stored in a router / network host, lists the routes to particular network destinations. 
@@ -161,9 +162,10 @@ Network A1 + R1 + S:
 `01011001.01011100.11110001.1+1100100` (`89.92.241.228`) R1  
 
 Network R2 + Somewhere on the Net:  
-`11111111.11111111.11111111.11110000` (`255.255.255.240`) mask  
-`10100011.10101100.11111010.00000001` (`163.172.250.1`) R1  
-`10100011.10101100.11111010.00001100` (`163.172.250.12`) R2  
+`11111111.11111111.11111111.1111+0000` (`255.255.255.240`) mask  
+`10100011.10101100.11111010.0000+1100` (`163.172.250.12`) R2  
+`10100011.10101100.11111010.00000001` (`163.172.250.1`) table R   
+`00001010.00000000.00000000.00000000` (`10.0.0.0`) table R    
+`00001010.00000000.+00000000.00000000` (`10.0.0.0/8`) table R  
+`10100011.10101100.11111010.00000001` (`163.172.250.1`) table I  
   
-`00001010.00000000.00000000.00000000` (`10.0.0.0`)  
-`00001010.00000000.00000000.00000000` (`10.0.0.0/8`)  
