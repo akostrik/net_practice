@@ -10,10 +10,10 @@ _42 School project, level 4_
 
 **Маска подсети** определяет по IP-адресу адрес подсети и адрес узла, не является частью IP-пакета (в отличие от IP-адреса)  
 
-| **IP addresse = network prefix + host identifier:** | **$\textsf{\color{blue}11000000 10101000 0000000}$ $\textsf{\color{green}1 00000010}$** | **192.168.1.2**    |
+| **IP addresse = network prefix + host identifier:** | **$\textsf{\color{blue}11000000 10101000 0000000}$ - $\textsf{\color{green}1 00000010}$** | **192.168.1.2**    |
 |:--------------------|:----------------------------------------------------------------------------------------|:-------------------|
-| **Маска подсети:**  | **$\textsf{\color{blue}11111111 11111111 1111111}$ $\textsf{\color{black}0 00000000}$** | **255.255.254.0**  |
-| **$\textsf{\color{blue}Адрес сети}$:**     | **$\textsf{\color{blue}11000000 10101000 0000000}$ $\textsf{\color{blue}0 00000000}$**  | **192.168.0.0**    |
+| **Маска подсети:**  | **$\textsf{\color{blue}11111111 11111111 1111111}$ - $\textsf{\color{black}0 00000000}$** | **255.255.254.0**  |
+| **$\textsf{\color{blue}Адрес сети}$:**     | **$\textsf{\color{blue}11000000 10101000 0000000}$ - $\textsf{\color{blue}0 00000000}$**  | **192.168.0.0**    |
 
 $\textsf{\color{green}диапазон адресов устройств в этой сети}$  
 
@@ -76,23 +76,36 @@ Reserved by the Internet Assigned Numbers Authority (IANA).
 
 # Solution
 ## Level 1
-A1: anything in [`104.99.23.0`;`104.99.23.255`] excluding `104.99.23.0` (the first number in the range of hosts = the network, cannot be used by a host), `104.99.23.255` (the broadcast address), `104.99.23.12` (already used)  
+A1: anything between  
+`104.99.23.0` and   
+`104.99.23.255`, excluding  
+`104.99.23.0` (the first number in the range of hosts = the network, cannot be used by a host),  
+`104.99.23.255` (the broadcast address),  
+`104.99.23.12` (already used).  
   
-D1: anything in [`211.191.0.0`;`211.191.255.255`], excluding `211.191.0.0`, `211.191.255.255`, `211.191.89.75`  
+D1: anything between  
+`211.191.0.0` and  
+`211.191.255.255`, excluding  
+`211.191.0.0`,  
+`211.191.255.255`,  
+`211.191.89.75`.  
 <img src="https://github.com/akostrik/net_practice/assets/22834202/429cb593-9681-44fd-bed8-f5629d8e2100" width="700" height="400">  
 
 ## Level 2
 B1: `255.255.255.224`, because B and A are on the same private network
   
-`11000000.10101000.00111011.11011110` = `192.168.118.222`  
-`11111111.11111111.11111111.11100000` = `255.255.255.224`  
-A1: anything in  
-`11000000.10101000.00111011.11000000` ... `11000000.10101000.00111011.11011111`, excluding  `11000000.10101000.00111011.11000000`,  
-`11000000.10101000.00111011.11011111`,  
-`11000000.10101000.00111011.11011110`.
+A1: anything between   
+`11000000.10101000.00111011.110-00000` and  
+`11000000.10101000.00111011.110-11111`, excluding  
+`11000000.10101000.00111011.110-00000` (`255.255.255.224`)
+`11000000.10101000.00111011.110-11111` (`192.168.118.223`)
+`11000000.10101000.00111011.110-11110` (`192.168.118.222`)
   
-`/30` = `11111111.11111111.11111111.11111100` = `255.255.255.252`  
-C1, D1: any address, where the first 30 bits are identical for D and C + the last 2 bits are not `11`, nor `00`, nor identical.
+`11111111.11111111.11111111.111111-00` = `255.255.255.252` =`/30`  
+C1, D1: any two address, where 
+- the first 30 bits are identical for D and C
+- the last 2 bits are not `11`, nor `00`
+- the two address are nor identical
 
 <img src="https://github.com/akostrik/net_practice/assets/22834202/5a34deda-b8a4-4701-925d-74a5bbe1add3" width="700" height="400">  
 
