@@ -90,8 +90,8 @@ Reserved by the Internet Assigned Numbers Authority (IANA).
 
 ## Level 5:  
 
-|:A -> R (17.33.126.126)    |:B -> R (17.33.126.126)                                |:A -> B (170.242.21.253)                              |
-|---------------------------|-------------------------------------------------------|------------------------------------------------------|
+|A -> R (17.33.126.126)     |B -> R (17.33.126.126)                                 |A -> B (170.242.21.253)                               |
+|:--------------------------|:------------------------------------------------------|:-----------------------------------------------------|
 |A: packet accepted         |B: packet accepted                                     |A: packet accepted                                    |
 |                           |B: dest.n does not match any interface, routing table  |A: dest. does not match any interface, routing table  |
 |                           |B: route match default                                 |A: route match default                                |
