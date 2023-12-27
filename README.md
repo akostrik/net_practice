@@ -91,16 +91,17 @@ If an interface is connected directly / indirectly to the internet, it cannot ha
 * facilitate communication between networks  
 * provides a traffic control point (security, filtering, redirecting)  
 * learns which networks it is attached to  
-* know as Routes - Stored in Routing Table  
+* know as Routes - Stored in Routing Table
+* Hosts in different Networks : A Router is in between
 
 ### Routing Table 
 * all networks a Router knows about  
 * has IP address in the Networks they are attached to   
 * creates the Hierarchy in Network and the entire Internet  
-* **Gateway** - each host’s way out of their local Network  
-* **Routing table** is stored in a router / network host, lists the routes to particular network destinations. 
-* **A route** = 2 fields = the destination of outbound packets + the next hop of the packets.
-* **Destination** a network address, the end target of the packets of the host.  
+* **Gateway** each host’s way out of their local Network  
+* **Routing table** is stored in a router / network host, lists the routes to particular network destinations
+* **A route** = 2 fields = the destination of outbound packets + the next hop of the packets
+* **Destination** a network address, the end target of the packets of the host
 * **The destination default = The route of default  =** `0.0.0.0/0` a network address, takes effect when no other route is available for an IP destination. Uses the next hop address to send the packets without a specific destination. Sends the packets to the first network address it encounters. Matches any network.  
 * **Next hop** a network address, the next router interface / inernet inerface on the packet's way. Every router maintains its routing table with a next hop address.  
 * A destination address of 122.3.5.3/24 sends the packets to the network 122.3.5.0.
