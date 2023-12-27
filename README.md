@@ -51,9 +51,9 @@ IPv4 CIDR blocks
 * Private IP  
 Cannot be used to access the Internet, remains only in the local network, never leaves the LAN.  
 Reserved by the Internet Assigned Numbers Authority (IANA).  
-    + `10.0.0.0` ... `10.255.255.255`     (Class A, for large networks,   8 bits for the network + 24 for hosts)
-    + `172.16.0.0` ... `172.31.255.255`   (Class B, for medium networks, 16 bits for the network + 16 for hosts)
-    + `192.168.0.0` ... `192.168.255.255` (Class C, for smaller networks, 24 bits for the network + 8 for host)
+    + `10.0.0.0` ... `10.255.255.255`     (Class A, for large networks,   8 network + 24 hosts)
+    + `172.16.0.0` ... `172.31.255.255`   (Class B, for medium networks, 16 network + 16 hosts)
+    + `192.168.0.0` ... `192.168.255.255` (Class C, for smaller networks, 24 network + 8 host)
 * Local IP
     + from `127.0.0.1` to `127.255.255.254`
 
