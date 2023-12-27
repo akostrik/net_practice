@@ -115,8 +115,8 @@ A1, B, C1: anything between
 `01101000.11000110.1000010.1-1111111` (`104.198.132.255`), excluding  
 `01101000.11000110.1000010.1-0000000` (`104.198.132.128`),  
 `01101000.11000110.1000010.1-1111111` (`104.198.132.255`),  
-identical ip address.
-11111111.11111111.11111111.1-0000000 is mask.
+identical ip address.  
+`11111111.11111111.11111111.1-0000000` is mask.
 <img src="https://github.com/akostrik/net_practice/assets/22834202/c7741926-8cf2-4387-abff-9ab43eb73477" width="700" height="550">  
 
 ## Level 4
