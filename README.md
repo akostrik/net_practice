@@ -133,8 +133,6 @@ A: only has 1 route through which it can send its packets, the destination defau
 
 A destination address of 122.3.5.3/24 would send the packets to the network 122.3.5.0.
 
-The next hop address must be the IP address of the next router's interface on the packets' way. The next interface is Interface R1, with the IP address `17.33.126.126`. Note that the next interface is not Interface A1, since this is the sender's own interface.
-
 |A->R (17.33.126.126)    |B->R (17.33.126.126)                               |A->B (170.242.21.253)                             |
 |:-----------------------|:--------------------------------------------------|:-------------------------------------------------|
 |                        |B: dest. does not match any interface, rout. table |A: dest. does not match any interface, rout. table|
