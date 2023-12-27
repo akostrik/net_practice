@@ -60,19 +60,20 @@ Reserved by the Internet Assigned Numbers Authority (IANA).
 # A switch
 * connects devices together in a single network
 * distributes packets to its local network
-* does not have any interfaces
+* has no interface
 * cannot talk directly to a network outside of its own
 
 # A router
 * connects networks together
-* has an interface for each network it connects to
 * separates different networks
+* has an interface for each network
 * the range of possible IP addresses on one of its interfaces must not overlap with the range of its other interfaces
+  
 ## Route table 
-**Routing table** a table stored in a router / network host, lists the routes to particular network destinations. Every single router maintains its routing table with a next hop address.  
+**Routing table** is stored in a router / network host, lists the routes to particular network destinations. 
 **Destination** a network address, the end target of the packets of the host.  
-**The route of default (0.0.0.0/0)** the route that takes effect when no other route is available for an IP destination address. Uses the next-hop address to send the packets on their way without giving a specific destination. Matches any network.  
-**Next hop** a network address, the next router on the packet's way.  
+**The route of default (0.0.0.0/0)** a network address, takes effect when no other route is available for an IP destination address. Uses the next hop address to send the packets without a specific destination. Matches any network.  
+**Next hop** a network address, the next router on the packet's way. Every router maintains its routing table with a next hop address.  
 
 # Solution
 ## Level 1:  
