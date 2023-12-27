@@ -128,19 +128,19 @@ R2, R3: we did not interact with them
 
 ## Level 5
 
-|A->R `17.33.126.126`    |B->R `17.33.126.126` $\textsf{\color{red}?}$       |A->B `170.242.21.253`                             |
-|:-----------------------|:--------------------------------------------------|:-------------------------------------------------|
-|                        |B: dest. does not match any interface, rout. table |A: dest. does not match any interface, rout. table|
-|A: send to A1           |B: send to gateway `170.242.21.254` through B1 $\textsf{\color{red}?}$ |A: send to gateway `17.33.126.126` through A1 |
-|                        |                                                   |R: accepted                                       |
-|                        |                                                   |R: send to R2                                     |
-|R: accepted             |R: packet                                          |B: accepted                                       |
-|**R->A `17.33.126.125`**|**R-> B `170.242.21.253`**                         |**B->A `17.33.126.125`**                          |
-|                        |                                                   |B: dest. does not match any interface, rout. table|
-|R: send to R1           |R: send to R2                                      |B: send to gateway `170.242.21.254` through B1    | 
-|                        |                                                   |R: accepted                                       |
-|                        |                                                   |R: send to R1                                     |
-|A: accepted             |B:  accepted                                       |A: accepted                                       | 
+|A->R `17.33.126.126`:    |B->R `17.33.126.126`: $\textsf{\color{red}(?)}$    |A->B `170.242.21.253`:                            |
+|:------------------------|:--------------------------------------------------|:-------------------------------------------------|
+|                         |B: dest. does not match any interface, rout. table |A: dest. does not match any interface, rout. table|
+|A: send to A1            |B: send to gateway `170.242.21.254` through B1     |A: send to gateway `17.33.126.126` through A1 |
+|                         |                                                   |R: accepted                                       |
+|                         |                                                   |R: send to R2                                     |
+|R: accepted              |R: packet                                          |B: accepted                                       |
+|**R->A `17.33.126.125`:**|**R-> B `170.242.21.253`:**                        |**B->A `17.33.126.125`:**                         |
+|                         |                                                   |B: dest. does not match any interface, rout. table|
+|R: send to R1            |R: send to R2                                      |B: send to gateway `170.242.21.254` through B1    | 
+|                         |                                                   |R: accepted                                       |
+|                         |                                                   |R: send to R1                                     |
+|A: accepted              |B:  accepted                                       |A: accepted                                       | 
 
 A: only has 1 route through which it can send its packets, the destination default will send the packets to the only path available, no use to specify a destination. 
 
