@@ -20,7 +20,7 @@ IPv6: interface identifier of 64 bits + ... (smaller subnets are never allocated
 
 | Netmask | Netmask        | Address | Host  
 |---------|----------------|---------|-------
-| /31     | 255.255.255.   |         |       
+| /31     | 255.255.255.   | 2       |       
 | /30     | 255.255.255.252| 4       | 2     
 | /29     | 255.255.255.248| 8       | 6     
 | /28     | 255.255.255.240| 16      | 14    
