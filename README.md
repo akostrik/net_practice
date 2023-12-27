@@ -46,7 +46,6 @@ IPv4 CIDR blocks
 | /0      | 0.0.0.0         | 4 294 967 296 | entire IPv4 Internet
 
 
-
 # 2. Client IP addresses
 * Client ip do not overlap  
 * Private IP  
@@ -63,6 +62,7 @@ Reserved by the Internet Assigned Numbers Authority (IANA).
 * Router connects subnets
 * Route table is configured from source ip to destination with CIDR (0.0.0.0/0)
 
+# Solution
 ## Level 1:  
 <img src="https://github.com/akostrik/net_practice/assets/22834202/429cb593-9681-44fd-bed8-f5629d8e2100" width="700" height="400">  
 
