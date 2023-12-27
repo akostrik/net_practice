@@ -10,9 +10,9 @@ _42 School project, level 4_
 
 **Маска подсети** определяет по IP-адресу адрес подсети и адрес узла, не является частью IP-пакета (в отличие от IP-адреса)  
 
-`11000000.10101000.0000000-1.00000010` (`192.168.1.2`) IP = $\textsf{\color{blue}network prefix}$ + $\textsf{\color{green}диапазон адресов устройств в сети, host identifie}$  
+`11000000.10101000.0000000-1.00000010` (`192.168.1.2`) (`IP` = `network prefix - host identifie`)  
 `11111111.11111111.1111111-0.00000000` (`255.255.254.0`) mask  
-`11000000.10101000.0000000-0.00000000` (`192.168.0.0`) $\textsf{\color{blue}network address}$
+`11000000.10101000.0000000-0.00000000` (`192.168.0.0`) network address
 
 **Classless Inter-Domain Routing (CIDR)** a method for allocating IP addresses and for IP routing (slows the growth of routing tables on routers across the Internet, slows the exhaustion of IPv4 addresses).
 
