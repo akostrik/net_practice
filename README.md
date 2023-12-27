@@ -57,25 +57,53 @@ If an interface is connected directly / indirectly to the internet, it cannot ha
 * Local IP
     + `127.0.0.1` ... `127.255.255.254`
 
-# A switch
+# Network devices
+## Repeaters 
+* regenerate signals  
+* allow communications across greater distances  
+
+## Hub = multi-port Repeaters
+* facilitates scaling communication between additional hosts  
+* everyone receive everyone else’s data  
+
+## Bridge 
+* sit between Hub connected hosts
+* have 2 ports  
+* learn which hosts are on each side
+
+## Switch = combination of Hubs and Bridges
+* its primary purpose is switching (moving data within networks)  
 * connects devices together in a local network
 * distributes packets to its local network
 * has no interface
 * cannot talk directly to a network outside of its own
+* facilitate communication within network  
+* multiple Ports  
+* learn which hosts are on each port  
+* hosts on a Network share the same IP address space
 
-# A router
+## Router
+* its primary purpose is Routing (moving data ...)
 * connects networks together
 * separates different networks with the use of multiple interfaces (an interface = a network)
 * the range of possible IP addresses on one of its interfaces must not overlap with the range of its other interfaces
 * the internet behaves like a router
-  
-## Route table 
-**Routing table** is stored in a router / network host, lists the routes to particular network destinations. 
-**A route** = 2 fields = the destination of outbound packets + the next hop of the packets.
-**Destination** a network address, the end target of the packets of the host.  
-**The destination default = The route of default  =** `0.0.0.0/0` a network address, takes effect when no other route is available for an IP destination. Uses the next hop address to send the packets without a specific destination. Sends the packets to the first network address it encounters. Matches any network.  
-**Next hop** a network address, the next router interface / inernet inerface on the packet's way. Every router maintains its routing table with a next hop address.  
-NB A destination address of 122.3.5.3/24 sends the packets to the network 122.3.5.0.
+* facilitate communication between networks  
+* provides a traffic control point (security, filtering, redirecting)  
+* learns which networks it is attached to  
+* know as Routes - Stored in Routing Table  
+
+### Routing Table 
+* all networks a Router knows about  
+* has IP address in the Networks they are attached to   
+* creates the Hierarchy in Network and the entire Internet  
+* **Gateway** - each host’s way out of their local Network  
+* **Routing table** is stored in a router / network host, lists the routes to particular network destinations. 
+* **A route** = 2 fields = the destination of outbound packets + the next hop of the packets.
+* **Destination** a network address, the end target of the packets of the host.  
+* **The destination default = The route of default  =** `0.0.0.0/0` a network address, takes effect when no other route is available for an IP destination. Uses the next hop address to send the packets without a specific destination. Sends the packets to the first network address it encounters. Matches any network.  
+* **Next hop** a network address, the next router interface / inernet inerface on the packet's way. Every router maintains its routing table with a next hop address.  
+* A destination address of 122.3.5.3/24 sends the packets to the network 122.3.5.0.
 
 # Solution
 ## Level 1
