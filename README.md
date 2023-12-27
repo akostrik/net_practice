@@ -10,7 +10,7 @@ _42 School project, level 4_
 
 **Маска подсети** определяет по IP-адресу адрес подсети и адрес узла, не является частью IP-пакета (в отличие от IP-адреса)  
 
-$\textsf{\color{blue}11000000.10101000.0000000}$ - $\textsf{\color{green}1.00000010}$ (`192.168.1.2`) IP address = $\textsf{\color{blue}network prefix}$ + $\textsf{\color{green}host identifie, диапазон адресов устройств в этой сет}$
+$\textsf{\color{blue}11000000.10101000.0000000}$ - $\textsf{\color{green}1.00000010}$ (`192.168.1.2`) IP address = $\textsf{\color{blue}network prefix}$ + $\textsf{\color{green}host identifie, диапазон адресов устройств в этой сети}$  
 $\textsf{\color{blue}11111111.11111111.1111111}$ - $\textsf{\color{black}0.00000000}$ (`255.255.254.0`) mask  
 $\textsf{\color{blue}11000000.10101000.0000000}$ - $\textsf{\color{blue}0.00000000}$ (`192.168.0.0`) $\textsf{\color{blue}network address}$
 
