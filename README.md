@@ -137,15 +137,15 @@ A destination address of 122.3.5.3/24 would send the packets to the network 122.
 |:-----------------------|:--------------------------------------------------|:-------------------------------------------------|
 |                        |B: dest. does not match any interface, rout. table |A: dest. does not match any interface, rout. table|
 |A: send to A1           |B: send to gateway 170.242.21.254 through intrf B1 $\textsf{\color{red}?}$ |A: send to gateway 17.33.126.126 through intrf A1 |
-|                        |                                                   |R: packet accepted                                |
+|                        |                                                   |R: accepted                                       |
 |                        |                                                   |R: send to R2                                     |
-|R: packet accepted      |R: packet accepted                                 |B: packet accepted                                |
+|R: accepted             |R: packet                                          |B: accepted                                       |
 |**R->A (17.33.126.125)**|**R-> B (170.242.21.253)**                         |**B->A (17.33.126.125)**                          |
 |                        |                                                   |B: dest. does not match any interface, rout. table|
 |R: send to R1           |R: send to R2                                      |B: send to gateway 170.242.21.254 through intrf B1| 
-|                        |                                                   |R: packet accepted                                |
+|                        |                                                   |R: accepted                                       |
 |                        |                                                   |R: send to R1                                     |
-|A: packet accepted      |B: packet accepted                                 |A: packet accepted                                | 
+|A: accepted             |B:  accepted                                       |A: accepted                                       | 
 
 <img src="https://github.com/akostrik/net_practice/assets/22834202/8abba568-5c19-4f2d-bb51-c5619502fe9b" width="700" height="550">  
 
