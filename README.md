@@ -176,4 +176,6 @@ Network R2 + Internet:
 Network Internet:  
 `10100011.10101100.11111010.00000001` (`163.172.250.12`) table I, the next hop of the internet  
 
+<img src="https://github.com/akostrik/net_practice/assets/22834202/429c209c-84af-45b1-8211-724326f91bb5" width="700" height="550">  
+
 
