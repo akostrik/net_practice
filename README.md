@@ -107,20 +107,20 @@ C1, D1: any two address, where
 `01101000.11000110.01000010.1+0000000` (`104.198.132.128`) A1, B, C1 min $\textsf{\color{red}(проверить)}$  
 `01101000.11000110.01000010.1+1111111` (`104.198.132.255`) A1, B, C1 max  
 `01101000.11000110.01000010.1+0000000` (`104.198.132.128`) != A1, B, C1  
-`01101000.11000110.01000010.1+1111111` (`104.198.132.255`)  != A1, B, C1  
+`01101000.11000110.01000010.1+1111111` (`104.198.132.255`) != A1, B, C1  
 A1 != B  
 A1 != C1  
-B!= C  
+B != C  
 `11111111.11111111.11111111.1+0000000` (`255.255.255.128`) mask
 <img src="https://github.com/akostrik/net_practice/assets/22834202/c7741926-8cf2-4387-abff-9ab43eb73477" width="700" height="550">  
 
 ## Level 4
 `01000101.00100000.01110110.10+000100` (`69.32.118.132`) A1
 `11111111.11111111.11111111.11+000000` (`255.255.255.192`) we are free to choose a mask  
-`01000101.00100000.0111011.10+000000` (`69.32.118.128`) B1, R min, because B1, R1 are in the same network that A1   
-`01000101.00100000.0111011.10+111111` (`69.32.118.191`) B1, R max, excluding ...
+`01000101.00100000.01110110.10+000000` (`69.32.118.128`) B1, R min, because B1, R1, A1 are in the same network   
+`01000101.00100000.01110110.10+111111` (`69.32.118.191`) B1, R max, excluding ...
 
-R2, R3: we did not interact with the router Interface R2 and Interface R3.
+R2, R3: we did not interact with them
 
 <img src="https://github.com/akostrik/net_practice/assets/22834202/e0e2e50c-1bfe-4f2c-ad24-6d9559294bb0" width="700" height="550">  
 
