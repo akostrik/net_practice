@@ -89,49 +89,27 @@ Reserved by the Internet Assigned Numbers Authority (IANA).
 <img src="https://github.com/akostrik/net_practice/assets/22834202/e0e2e50c-1bfe-4f2c-ad24-6d9559294bb0" width="700" height="550">  
 
 ## Level 5:  
-******* Goal ID 1 ********  
-forward way : A -> R (17.33.126.126)  
-on A : packet accepted  
-on A: send to A1  
-on R : packet accepted  
-on R: destination IP reached  
-reverse way : R -> A (17.33.126.125)  
-on R : packet accepted  
-on R: send to R1  
-on A : packet accepted  
-on A: destination IP reached  
-******* Goal ID 2 ********  
-forward way : B -> R (17.33.126.126)  
-on B : packet accepted  
-on B: destination does not match any interface. pass through routing table  
-on B : route match default  
-on B: send to gateway 170.242.21.254 through interface B1  
-on R : packet accepted  
-on R: destination IP reached  
-reverse way : R -> B (170.242.21.253)  
-on R : packet accepted  
-on R: send to R2  
-on B : packet accepted  
-on B: destination IP reached  
-******* Goal ID 3 ********  
-forward way : A -> B (170.242.21.253)  
-on A : packet accepted  
-on A: destination does not match any interface. pass through routing table  
-on A : route match default  
-on A: send to gateway 17.33.126.126 through interface A1  
-on R : packet accepted  
-on R: send to R2  
-on B : packet accepted  
-on B: destination IP reached  
-reverse way : B -> A (17.33.126.125)  
-on B : packet accepted  
-on B: destination does not match any interface. pass through routing table  
-on B : route match default  
-on B: send to gateway 170.242.21.254 through interface B1  
-on R : packet accepted  
-on R: send to R1  
-on A : packet accepted  
-on A: destination IP reached  
+
+A -> R (17.33.126.126)     |B -> R (17.33.126.126)                                  |A -> B (170.242.21.253)
+---------------------------|--------------------------------------------------------|---------------
+A: packet accepted         |B: packet accepted                                      |A: packet accepted  
+A: send to A1              |B: dest.n does not match any interface, routing table   |A: destination does not match any interface. pass through routing table  
+R: packet accepted         |B: route match default                                  |A: route match default  
+R: destination IP reached  |B: send to gateway 170.242.21.254 through interface B1  |A: send to gateway 17.33.126.126 through interface A1  
+                           |R: packet accepted                                      |R: packet accepted  
+                           |R: destination IP reached                               |R: send to R2  
+                           |                                                        |B: packet accepted
+                           |                                                        |B: destination IP reached
+**R -> A (17.33.126.125)** |**R -> B (170.242.21.253)**                             |**B -> A (17.33.126.125)**
+R: packet accepted         |R: packet accepted                                      |B: packet accepted
+R: send to R1              |R: send to R2                                           |B: destination does not match any interface. pass through routing table
+A: packet accepted         |B: packet accepted                                      |B: route match default
+A: destination IP reached  |B: destination IP reached                               |B: send to gateway 170.242.21.254 through interface B1  
+                           |                                                        |R: packet accepted  
+                           |                                                        |R: send to R1  
+                           |                                                        |A: packet accepted  
+                           |                                                        |A: destination IP reached  
+
 <img src="https://github.com/akostrik/net_practice/assets/22834202/8abba568-5c19-4f2d-bb51-c5619502fe9b" width="700" height="550">  
 
 
