@@ -77,8 +77,8 @@ Reserved by the Internet Assigned Numbers Authority (IANA).
 
 # Solution
 ## Level 1:
-A1: anything in [104.96.23.0 ; 104.96.23.255] excluding `104.96.23.0` (the first number in the range of hosts = the network, cannot be used by a host), `104.96.23.255` (the last number = the broadcast address), `104.96.23.12` (already used)  
-D1: Anything in [211.191.0.0 ; 211.191.255.255], excluding `211.191.0.0`, `211.191.255.255`, `211.191.89.75`  
+A1: anything in [`104.96.23.0`;`104.96.23.255`] excluding `104.96.23.0` (the first number in the range of hosts = the network, cannot be used by a host), `104.96.23.255` (the last number = the broadcast address), `104.96.23.12` (already used)  
+D1: Anything in [`211.191.0.0`;`211.191.255.255`], excluding `211.191.0.0`, `211.191.255.255`, `211.191.89.75`  
 <img src="https://github.com/akostrik/net_practice/assets/22834202/429cb593-9681-44fd-bed8-f5629d8e2100" width="700" height="400">  
 
 ## Level 2:  
