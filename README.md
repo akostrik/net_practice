@@ -69,4 +69,4 @@ Reserved by the Internet Assigned Numbers Authority (IANA).
 <img src="https://github.com/akostrik/net_practice/assets/22834202/c7741926-8cf2-4387-abff-9ab43eb73477" width="600" height="400">  
 
 ## Level 4:  
-<img src="https://github.com/akostrik/net_practice/assets/22834202/e0e2e50c-1bfe-4f2c-ad24-6d9559294bb0" width="600" height="400">  
+<img src="https://github.com/akostrik/net_practice/assets/22834202/e0e2e50c-1bfe-4f2c-ad24-6d9559294bb0" width="600" height="450">  
