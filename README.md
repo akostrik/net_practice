@@ -129,9 +129,9 @@ R2, R3: we did not interact with them
 
 ## Level 5
 
-A destination address of 122.3.5.3/24 would send the packets to the network 122.3.5.0.
+A: only has 1 route through which it can send its packets, the destination default will send the packets to the only path available, no use to specify a destination. 
 
-A only has 1 route through which it can send its packets. There is no use specifying a numbered destination. The destination default will send the packets to the only path available.
+A destination address of 122.3.5.3/24 would send the packets to the network 122.3.5.0.
 
 The next hop address must be the IP address of the next router's interface on the packets' way. The next interface is Interface R1, with the IP address `17.33.126.126`. Note that the next interface is not Interface A1, since this is the sender's own interface.
 
