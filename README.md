@@ -110,7 +110,7 @@ C1, D1: any two address, where
 <img src="https://github.com/akostrik/net_practice/assets/22834202/5a34deda-b8a4-4701-925d-74a5bbe1add3" width="700" height="400">  
 
 ## Level 3
-A1, B, C1: anything between $\textsf{\color{red}(проверить)}$**   
+A1, B, C1: anything between $\textsf{\color{red}(проверить)}$     
 `01101000.11000110.1000010.1-0000000` (`104.198.132.128`) and  
 `01101000.11000110.1000010.1-1111111` (`104.198.132.255`), excluding  
 `01101000.11000110.1000010.1-0000000` (`104.198.132.128`),  
