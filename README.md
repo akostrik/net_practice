@@ -2,6 +2,8 @@ _42 School project, level 4_
 
 **Узел** хост, компьютер, устройство  
 
+**Host** any device which sends or receive traffic, it can be client or server
+
 **Transmission Control Protocol (TCP)** a communications standard that enables application programs and devices to exchange messages over a network. 
 1) Establishes a connection between a source and its destination, which remains active until communication begins.
 2) Breaks data into smaller packets, while ensuring end-to-end delivery.
