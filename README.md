@@ -79,23 +79,18 @@ Reserved by the Internet Assigned Numbers Authority (IANA).
 ## Level 1:
 A1: anything in [`104.96.23.0`;`104.96.23.255`] excluding `104.96.23.0` (the first number in the range of hosts = the network, cannot be used by a host), `104.96.23.255` (the last number = the broadcast address), `104.96.23.12` (already used)  
   
-D1: Anything in [`211.191.0.0`;`211.191.255.255`], excluding `211.191.0.0`, `211.191.255.255`, `211.191.89.75`  
+D1: anything in [`211.191.0.0`;`211.191.255.255`], excluding `211.191.0.0`, `211.191.255.255`, `211.191.89.75`  
 <img src="https://github.com/akostrik/net_practice/assets/22834202/429cb593-9681-44fd-bed8-f5629d8e2100" width="700" height="400">  
 
 ## Level 2:  
-B1: Client B and Client A are on the same private network, they have the same subnet mask `255.255.255.224`
+B1: B and A are on the same private network, the same mask `255.255.255.224`
 
-A1:  
-`192.168.20.222`  = `11000000.10101000.00010100.11011101`
+A1: anything in [`11000000.10101000.00010100.11000000`;`11000000.10101000.00010100.11011111`] ([`192.168.20.192`;`192.168.20.223`]), excluding `11000000.10101000.00010100.11000000`, `11000000.10101000.00010100.11011111`, `11000000.10101000.00010100.11011110`.
+`192.168.20.222`  = `11000000.10101000.00010100.11011101`  
 `255.255.255.224` = `11111111.11111111.11111111.11100000`
  
-The answer is in [`11000000.10101000.00010100.11000000`;`11000000.10101000.00010100.11011111`] ([`192.168.20.192`;`192.168.20.223`]), excluding `11000000.10101000.00010100.11000000`, `11000000.10101000.00010100.11011111`, `11000000.10101000.00010100.11011110`.
-
-C1, D1 : 
+C1, D1 : any address, where the first 30 bits are identical for D and C + the last 2 bits cannot be 11, nor 00.
 `/30` = `11111111.11111111.11111111.11111100` = `255.255.255.252`, therefore it is identical to the mask found on Interface C1.
-The answers can then be any address, as long as:
-- The first 30 bits must be identical for Client D and Client C.
-- The host bits (last 2 bits) cannot be all 1, nor all 0.
 
 <img src="https://github.com/akostrik/net_practice/assets/22834202/5a34deda-b8a4-4701-925d-74a5bbe1add3" width="700" height="400">  
 
