@@ -2,22 +2,22 @@ _42 School project, level 4_
 
 **Узел** хост, компьютер, устройство  
 
-**Transmission Control Protocol (TCP)** a communications standard that enables application programs and devices to exchange messages over a network. Is used to send packets across the internet.  
-1) TCP establishes a connection between a source and its destination, which remains active until communication begins
-2) TCP breaks data into smaller packets, while ensuring end-to-end delivery  
+**Transmission Control Protocol (TCP)** a communications standard that enables application programs and devices to exchange messages over a network. 
+1) Establishes a connection between a source and its destination, which remains active until communication begins.
+2) Breaks data into smaller packets, while ensuring end-to-end delivery.
 
 # Variable-length subnet masking (VLSM)
 
 **Маска подсети** определяет по IP-адресу адрес подсети и адрес узла, не является частью IP-пакета (в отличие от IP-адреса)  
-
-`11000000.10101000.0000000-1.00000010` (`192.168.1.2`) (`IP` = `network prefix - host identifie`)  
-`11111111.11111111.1111111-0.00000000` (`255.255.254.0`) mask  
-`11000000.10101000.0000000-0.00000000` (`192.168.0.0`) network address
+`network prefix + host identifier` = `IP`   
+`11000000.10101000.0000000+1.00000010` (`192.168.1.2`)  
+`11111111.11111111.1111111+0.00000000` (`255.255.254.0`) mask  
+`11000000.10101000.0000000+0.00000000` (`192.168.0.0`) network address
 
 **Classless Inter-Domain Routing (CIDR)** a method for allocating IP addresses and for IP routing (slows the growth of routing tables on routers across the Internet, slows the exhaustion of IPv4 addresses).
 
-IPv4: network prefix of 8 / 16 / 24 bits   
-IPv6: interface identifier of 64 bits + ... (smaller subnets are never allocated to end users)  
+IPv4: network prefix  8 / 16 / 24 bits   
+IPv6: interface identifier 64 bits
 
 IPv4 CIDR blocks  
 | Netmask | Netmask         | Address       | Host  
@@ -39,7 +39,7 @@ IPv4 CIDR blocks
 | /18     | 255.255.192.0   | 16 384        | 16 382 
 | /17     | 255.255.128.0   | 32 768        | 32 766  
 | /16     | 255.255.0.0     | 65 536        | 65 534 
-| /8      | 255.0.0.0       | 16 777 216    | 
+| /8      | 255.0.0.0       | 16 777 216    | 16 777 214
 | /0      | 0.0.0.0         | 4 294 967 296 | entire IPv4 Internet
 
 
@@ -48,11 +48,11 @@ IPv4 CIDR blocks
 * Private IP  
 Cannot be used to access the Internet, remains only in the local network, never leaves the LAN.  
 Reserved by the Internet Assigned Numbers Authority (IANA).  
-    + `10.0.0.0` ... `10.255.255.255`     (Class A, for large networks,   8 network + 24 hosts)
-    + `172.16.0.0` ... `172.31.255.255`   (Class B, for medium networks, 16 network + 16 hosts)
+    + `10.0.0.0` ... `10.255.255.255`     (Class A, for large networks,   8 network + 24 host)
+    + `172.16.0.0` ... `172.31.255.255`   (Class B, for medium networks, 16 network + 16 host)
     + `192.168.0.0` ... `192.168.255.255` (Class C, for smaller networks, 24 network + 8 host)
 * Local IP
-    + from `127.0.0.1` to `127.255.255.254`
+    + `127.0.0.1` ... `127.255.255.254`
 
 # A switch
 * connects devices together in a local network
@@ -92,40 +92,39 @@ D1: anything between
 B1: `255.255.255.224`, because B and A are on the same private network
   
 A1: anything between   
-`11000000.10101000.00111011.110-00000` and  
-`11000000.10101000.00111011.110-11111`, excluding  
-`11000000.10101000.00111011.110-00000` (`255.255.255.224`)  
-`11000000.10101000.00111011.110-11111` (`192.168.118.223`)  
-`11000000.10101000.00111011.110-11110` (`192.168.118.222`)  
+`11000000.10101000.00111011.110+00000` (`255.255.255.224`) and  
+`11000000.10101000.00111011.110+11111` (`192.168.118.223`), excluding  
+`11000000.10101000.00111011.110+00000` (`255.255.255.224`),  
+`11000000.10101000.00111011.110+11111` (`192.168.118.223`),  
+`11000000.10101000.00111011.110+11110` (`192.168.118.222`).  
   
 C1, D1: any two address, where 
 - the first 30 bits are identical for D and C
 - the last 2 bits are not `11`, nor `00`
 - the two address are nor identical
-`11111111.11111111.11111111.111111-00` = `255.255.255.252` =`/30`  
+`11111111.11111111.11111111.111111+00` = `255.255.255.252` =`/30`  
 
 <img src="https://github.com/akostrik/net_practice/assets/22834202/5a34deda-b8a4-4701-925d-74a5bbe1add3" width="700" height="400">  
 
 ## Level 3
 A1, B, C1: anything between $\textsf{\color{red}(проверить)}$     
-`01101000.11000110.01000010.1-0000000` (`104.198.132.128`) and  
-`01101000.11000110.01000010.1-1111111` (`104.198.132.255`), excluding  
-`01101000.11000110.01000010.1-0000000` (`104.198.132.128`),  
-`01101000.11000110.01000010.1-1111111` (`104.198.132.255`),  
+`01101000.11000110.01000010.1+0000000` (`104.198.132.128`) and  
+`01101000.11000110.01000010.1+1111111` (`104.198.132.255`), excluding  
+`01101000.11000110.01000010.1+0000000` (`104.198.132.128`),  
+`01101000.11000110.01000010.1+1111111` (`104.198.132.255`),  
 identical ip address.  
-`11111111.11111111.11111111.1-0000000` (`255.255.255.128`) is mask.
+`11111111.11111111.11111111.1+0000000` (`255.255.255.128`) mask
 <img src="https://github.com/akostrik/net_practice/assets/22834202/c7741926-8cf2-4387-abff-9ab43eb73477" width="700" height="550">  
 
 ## Level 4
-1. Since none of the masks on Interface B1, Interface A1, and Interface R1 are entered, we are free to choose our own subnet mask. A mask of /24 is ideal as it leaves us with the entire 4th byte for the host address, and does not require binary calculations to find the range of possible host addresses.
+we are free to choose our own subnet mask. /24
 
-The IP address of Interface B1 and Interface R1 must have the same network address as the IP address of Interface A1. With a subnet of /24, the possible range is:
-
+B1, R1: 
+the same network address as A1. With a subnet of /24, the possible range is:
 85.17.5.0 - 85.17.5.255
 Excluding the network address and the broadcast address.
 
 Note that we did not interact with the router Interface R2 and Interface R3, since none of our communications had to reach these sides of the router.
-
 
 <img src="https://github.com/akostrik/net_practice/assets/22834202/e0e2e50c-1bfe-4f2c-ad24-6d9559294bb0" width="700" height="550">  
 
