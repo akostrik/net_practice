@@ -209,16 +209,16 @@ A1 -> Somewhere on the Net (8.8.8.8)
 A: dest. does not match any interface, table 0.0.0.0/0 -> to gateway 89.92.241.228 through A1  
 S: pass to all connections  
 R: accepted  
-R: dest. does not match any interface, table 0.0.0.0/0 -> to gateway 163.172.250.1 through R2  
+R: dest. does not match any interface, table 0.0.0.0/0 -> to gateway 163.172.250.1 through R2 (почему не R1?)   
 I: accepted, destination IP reached  
-A: loop detected (?)  
+A: loop detected (потому что S: pass to all connection ?)  
   
 Somewhere on the Net -> A1 (89.92.241.227)  
 I: dest. does not match any interface, routing table 89.92.241.228/25 -> to gateway 163.172.250.12 through I1  
 R: accepted  
-R: send to R1  
+R: send to R1 (почему не R2?)  
 S: pass to all connections  
-R: loop detected (?)  
+R: loop detected (потому что S: pass to all connections ?)  
 A: accepted  
   
 <img src="https://github.com/akostrik/net_practice/assets/22834202/429c209c-84af-45b1-8211-724326f91bb5" width="720" height="600">  
