@@ -76,13 +76,13 @@ Reserved by the Internet Assigned Numbers Authority (IANA).
 **Next hop** a network address, the next router on the packet's way. Every router maintains its routing table with a next hop address.  
 
 # Solution
-## Level 1:
+## Level 1
 A1: anything in [`104.96.23.0`;`104.96.23.255`] excluding `104.96.23.0` (the first number in the range of hosts = the network, cannot be used by a host), `104.96.23.255` (the last number = the broadcast address), `104.96.23.12` (already used)  
   
 D1: anything in [`211.191.0.0`;`211.191.255.255`], excluding `211.191.0.0`, `211.191.255.255`, `211.191.89.75`  
 <img src="https://github.com/akostrik/net_practice/assets/22834202/429cb593-9681-44fd-bed8-f5629d8e2100" width="700" height="400">  
 
-## Level 2:  
+## Level 2
 B and A are on the same private network  
 B1: `255.255.255.224`
   
@@ -91,17 +91,18 @@ B1: `255.255.255.224`
 A1: anything in [`11000000.10101000.00010100.11000000`;`11000000.10101000.00010100.11011111`] ([`192.168.20.192`;`192.168.20.223`]), excluding `11000000.10101000.00010100.11000000`, `11000000.10101000.00010100.11011111`, `11000000.10101000.00010100.11011110`.
   
 `/30` = `11111111.11111111.11111111.11111100` = `255.255.255.252`  
-C1, D1: any address, where the first 30 bits are identical for D and C + the last 2 bits are not be `11`, nor `00`.
+C1, D1: any address, where the first 30 bits are identical for D and C + the last 2 bits are not `11`, nor `00`, nor identical.
 
 <img src="https://github.com/akostrik/net_practice/assets/22834202/5a34deda-b8a4-4701-925d-74a5bbe1add3" width="700" height="400">  
 
-## Level 3:  
+## Level 3
+A1, B, C1: [`104.198.241.0`;`104.198.241.128`], excluding the network address and the broadcast address
 <img src="https://github.com/akostrik/net_practice/assets/22834202/c7741926-8cf2-4387-abff-9ab43eb73477" width="700" height="550">  
 
-## Level 4:  
+## Level 4
 <img src="https://github.com/akostrik/net_practice/assets/22834202/e0e2e50c-1bfe-4f2c-ad24-6d9559294bb0" width="700" height="550">  
 
-## Level 5:  
+## Level 5
 
 |A->R (17.33.126.126)    |B->R (17.33.126.126)                               |A->B (170.242.21.253)                             |
 |:-----------------------|:--------------------------------------------------|:-------------------------------------------------|
