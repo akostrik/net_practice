@@ -58,15 +58,14 @@ Reserved by the Internet Assigned Numbers Authority (IANA).
     + from `127.0.0.1` to `127.255.255.254`
 
 # A switch
-* connects devices together in a single network
+* connects devices together in a local network
 * distributes packets to its local network
 * has no interface
 * cannot talk directly to a network outside of its own
 
 # A router
 * connects networks together
-* separates different networks
-* has an interface for each network
+* separates different networks with the use of multiple interfaces (an interface for each network)
 * the range of possible IP addresses on one of its interfaces must not overlap with the range of its other interfaces
   
 ## Route table 
@@ -100,6 +99,16 @@ A1, B, C1: [`104.198.241.0`;`104.198.241.128`], excluding the network address an
 <img src="https://github.com/akostrik/net_practice/assets/22834202/c7741926-8cf2-4387-abff-9ab43eb73477" width="700" height="550">  
 
 ## Level 4
+1. Since none of the masks on Interface B1, Interface A1, and Interface R1 are entered, we are free to choose our own subnet mask. A mask of /24 is ideal as it leaves us with the entire 4th byte for the host address, and does not require binary calculations to find the range of possible host addresses.
+
+The IP address of Interface B1 and Interface R1 must have the same network address as the IP address of Interface A1. With a subnet of /24, the possible range is:
+
+85.17.5.0 - 85.17.5.255
+Excluding the network address and the broadcast address.
+
+Note that we did not interact with the router Interface R2 and Interface R3, since none of our communications had to reach these sides of the router.
+
+
 <img src="https://github.com/akostrik/net_practice/assets/22834202/e0e2e50c-1bfe-4f2c-ad24-6d9559294bb0" width="700" height="550">  
 
 ## Level 5
