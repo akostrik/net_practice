@@ -159,13 +159,11 @@ A: only has 1 route through which it can send its packets, the destination defau
 ## Level 6
 Network A1 + R1 + S:  
 `11111111.11111111.11111111.1+0000000` (`255.255.255.128`) mask  
-`01011001.01011100.11110001.1+1100011` (`89.92.241.227`) A1  
-`01011001.01011100.11110001.1+1100100` (`89.92.241.227`) R1  
-`01011001.01011100.11110001.1+0000000` (`89.92.241.128`) the network address of A, the internet sends here  
-`01011001.01011100.11110001.1+0000000` (`89.92.241.128/25`)  
-`01011001.01011100.11110001.1+0000000` (`89.92.241.227/25`)  
+`01011001.01011100.11110001.1+0000000` (`89.92.241.128`) the network address of A, internet sends to `89.92.241.228/25`  
 `01011001.01011100.11110001.1+0000001` (`89.92.241.129`) min host address  
 `01011001.01011100.11110001.1+1111110` (`89.92.241.254`) max host address  
+`01011001.01011100.11110001.1+1100011` (`89.92.241.227`) A1  
+`01011001.01011100.11110001.1+1100100` (`89.92.241.228`) R1  
 
 Network R2 + Internet:  
 `11111111.11111111.11111111.1111+0000` (`255.255.255.240`) mask  
@@ -176,6 +174,29 @@ Network R2 + Internet:
 Network Internet:  
 `10100011.10101100.11111010.00000001` (`163.172.250.12`) table I, the next hop of the internet  
 
+A1 -> Somewhere on the Net (8.8.8.8)  
+A: dest. does not match any interface, routing table  
+A: route match 0.0.0.0/0  
+A: send to gateway 89.92.241.228 through A1  
+S: pass to all connections  
+R: accepted  
+R: dest. does not match any interface, routing table  
+R: route match 0.0.0.0/0  
+R: send to gateway 163.172.250.1 through R2  
+I: packet accepted  
+I: destination IP reached  
+A: loop detected (?)  
+  
+Somewhere on the Net -> A1 (89.92.241.227)  
+I: dest. does not match any interface, routing table  
+I: route match 89.92.241.228/25  
+I: send to gateway 163.172.250.12 through I1  
+R: accepted  
+R: send to R1  
+S: pass to all connections  
+R: loop detected (?)  
+A: accepted  
+  
 <img src="https://github.com/akostrik/net_practice/assets/22834202/429c209c-84af-45b1-8211-724326f91bb5" width="720" height="600">  
 
 
