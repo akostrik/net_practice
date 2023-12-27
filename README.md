@@ -111,6 +111,8 @@ C1, D1: any two address, where
 
 ## Level 3
 A1, B, C1: anything between  
+1101000.11000110.1000000.
+
 `104.198.132.0` and   
 `104.198.132.128`, excluding  
 `104.198.132.0`,
