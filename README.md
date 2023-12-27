@@ -13,23 +13,21 @@ $\textsf{\color{blue}адрес сети}$
 $\textsf{\color{green}диапазон адресов устройств в этой сети}$  
 
 # Configuration
+## Check CIDR or Subnet mask
+## Check client ip 
 - Client ip do not overlap to other  
-- Switch connects clients in same subnet  
-- Router can connect between subnet
-route table is configured from source ip to destination with CIDR (0.0.0.0/0)
 - Private ip do not access internet
 from `10.0.0.0` to `10.255.255.255`
 from `172.16.0.0` to `172.31.255.255`
 from `192.168.0.0` to `192.168.255.255`
 - Do not set local ip
-from `127.0.0.1` to `127.255.255.254`
+from `127.0.0.1` to `127.255.255.254`## Calculate available ip range in subnet
 
-# Step to solve problem
-- Check CIDR or Subnet mask
-- Check client ip 
-- Calculate available ip range in subnet
+- Switch connects clients in same subnet  
+- Router connects subnets
+- Route table is configured from source ip to destination with CIDR (0.0.0.0/0)
 
-# How to pass the evaluation
-Memorize CIDR table
+
+
 
 ![Screenshot from 2023-12-18 15-41-54](https://github.com/akostrik/net_practice/assets/22834202/429cb593-9681-44fd-bed8-f5629d8e2100)
