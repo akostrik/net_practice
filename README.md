@@ -1,11 +1,11 @@
 _42 School project, level 4_
 
-# 1. CIDR or Subnet mask
+# 1. Variable-length subnet masking (VLSM)
 TCP/IP addressing  
 _Узел_ = хост, компьютер, устройство  
 _Маска подсети_ определяет по IP-адресу адрес подсети и адрес узла. Не является частью IP-пакета (в отличие от IP-адреса).  
 
-| **IP-адрес:**       | **$\textsf{\color{blue}11000000 10101000 0000000}$ $\textsf{\color{green}1 00000010}$** | **192.168.1.2**    |     |
+| **IP addresse = network prefix + host identifier:** | **$\textsf{\color{blue}11000000 10101000 0000000}$ $\textsf{\color{green}1 00000010}$** | **192.168.1.2**    |     |
 |:--------------------|:----------------------------------------------------------------------------------------|:-------------------|-----|
 | **Маска подсети:**  | **$\textsf{\color{blue}11111111 11111111 1111111}$ $\textsf{\color{black}0 00000000}$** | **255.255.254.0**  | /23 |
 | **Адрес сети:**     | **$\textsf{\color{blue}11000000 10101000 0000000}$ $\textsf{\color{blue}0 00000000}$**  | **192.168.0.0**    |     |
@@ -13,9 +13,14 @@ _Маска подсети_ определяет по IP-адресу адрес
 $\textsf{\color{blue}адрес сети}$  
 $\textsf{\color{green}диапазон адресов устройств в этой сети}$  
 
-Classless Inter-Domain Routing (CIDR) table
+_Classless Inter-Domain Routing (CIDR)_ is a method for allocating IP addresses and for IP routing, to slow the growth of routing tables on routers across the Internet, to slow the exhaustion of IPv4 addresses.
+
+IPv4: network prefix of 8 / 16 / 24 bits   
+IPv6: interface identifier of 64 bits + ... (smaller subnets are never allocated to end users)  
+
 | Netmask | Netmask        | Address | Host  
 |---------|----------------|---------|-------
+| /31     | 255.255.255.   |         |       
 | /30     | 255.255.255.252| 4       | 2     
 | /29     | 255.255.255.248| 8       | 6     
 | /28     | 255.255.255.240| 16      | 14    
@@ -23,13 +28,13 @@ Classless Inter-Domain Routing (CIDR) table
 | /26     | 255.255.255.192| 64      | 62    
 | /25     | 255.255.255.128| 128     | 126   
 | /24     | 255.255.255.0  | 256     | 254   
-| /23     | 255.255.255.0  | 512     |       
-| /22     | 255.255.255.0  | 1024    |       
-| /21     | 255.255.255.0  | 2048    |       
-| /20     | 255.255.255.0  | 4096    |       
-| /19     | 255.255.255.0  | 8192    |    
+| /23     | 255.255.255.   | 512     | 510      
+| /22     | 255.255.255.   | 1024    | 1022      
+| /21     | 255.255.255.   | 2048    | 2046  
+| /20     | 255.255.255.   | 4096    | 4094  
+| /19     | 255.255.255.   | 8192    | 8190
 | /18     | 255.255.192.0  | 16384   | 16382 
-| /17     | 255.255.192.0  | 32768   |       
+| /17     | 255.255.192.   | 32768   | 32766  
 | /16     | 255.255.0.0    | 65536   | 65534 
 
 
