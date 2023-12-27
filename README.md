@@ -131,7 +131,12 @@ R2, R3: we did not interact with them
 
 A: only has 1 route through which it can send its packets, the destination default will send the packets to the only path available, no use to specify a destination. 
 
-A destination address of 122.3.5.3/24 would send the packets to the network 122.3.5.0.
+NB A destination address of 122.3.5.3/24 sends the packets to the network 122.3.5.0.
+
+`00010001.00100001.01111110.01111101` (`17.33.126.125`)  
+`00010001.00100001.01111110.01111110` (`17.33.126.126`)  
+`10101010.11110010.00010101.11111101` (`170.242.21.253`)  
+`00010001.00100001.01111110.01111101` (`17.33.126.125`)
 
 |A->R (17.33.126.126)    |B->R (17.33.126.126)                               |A->B (170.242.21.253)                             |
 |:-----------------------|:--------------------------------------------------|:-------------------------------------------------|
