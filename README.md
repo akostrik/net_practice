@@ -13,7 +13,7 @@ _Маска подсети_ определяет по IP-адресу адрес
 $\textsf{\color{blue}адрес сети}$  
 $\textsf{\color{green}диапазон адресов устройств в этой сети}$  
 
-CIDR Sheet table
+Classless Inter-Domain Routing (CIDR) table
 | Netmask | Netmask        | Address | Host  
 |---------|----------------|---------|-------
 | /30     | 255.255.255.252| 4       | 2     
