@@ -90,25 +90,25 @@ Reserved by the Internet Assigned Numbers Authority (IANA).
 
 ## Level 5:  
 
-|A->R (17.33.126.126)    |B->R (17.33.126.126)                                 |A->B (170.242.21.253)                               |
-|:-----------------------|:----------------------------------------------------|:---------------------------------------------------|
-|A: packet accepted      |B: packet accepted                                   |A: packet accepted                                  |
-|                        |B: dest. does not match any interface, rout. table   |A: dest. does not match any interface, rout. table  |
-|                        |B: route match default                               |A: route match default                              |
-|A: send to A1           |B: send to gateway 170.242.21.254 through interf. B1 |A: send to gateway 17.33.126.126 through interf. A1 |
-|                        |                                                     |R: packet accepted                                  |
-|                        |                                                     |R: send to R2                                       |
-|R: packet accepted      |R: packet accepted                                   |B: packet accepted                                  |
-|R: dest. IP reached     |R: destination IP reached                            |B: destination IP reached                           |
-|**R->A (17.33.126.125)**|**R-> B (170.242.21.253)**                           |**B->A (17.33.126.125)**                            |
-|R: packet accepted      |R: packet accepted                                   |B: packet accepted                                  |
-|                        |                                                     |B: dest. does not match any interface, rout. table  |
-|                        |                                                     |B: route match default                              |
-|R: send to R1           |R: send to R2                                        |B: send to gateway 170.242.21.254 through interf. B1| 
-|                        |                                                     |R: packet accepted                                  |
-|                        |                                                     |R: send to R1                                       |
-|A: packet accepted      |B: packet accepted                                   |A: packet accepted                                  | 
-|A: dest. IP reached     |B: destination IP reached                            |A: destination IP reached                           |
+|A->R (17.33.126.126)    |B->R (17.33.126.126)                               |A->B (170.242.21.253)                             |
+|:-----------------------|:--------------------------------------------------|:-------------------------------------------------|
+|A: packet accepted      |B: packet accepted                                 |A: packet accepted                                |
+|                        |B: dest. does not match any interface, rout. table |A: dest. does not match any interface, rout. table|
+|                        |B: route match default                             |A: route match default                            |
+|A: send to A1           |B: send to gateway 170.242.21.254 through intrf B1 |A: send to gateway 17.33.126.126 through intrf A1 |
+|                        |                                                   |R: packet accepted                                |
+|                        |                                                   |R: send to R2                                     |
+|R: packet accepted      |R: packet accepted                                 |B: packet accepted                                |
+|R: dest. IP reached     |R: destination IP reached                          |B: destination IP reached                         |
+|**R->A (17.33.126.125)**|**R-> B (170.242.21.253)**                         |**B->A (17.33.126.125)**                          |
+|R: packet accepted      |R: packet accepted                                 |B: packet accepted                                |
+|                        |                                                   |B: dest. does not match any interface, rout. table|
+|                        |                                                   |B: route match default                            |
+|R: send to R1           |R: send to R2                                      |B: send to gateway 170.242.21.254 through intrf B1| 
+|                        |                                                   |R: packet accepted                                |
+|                        |                                                   |R: send to R1                                     |
+|A: packet accepted      |B: packet accepted                                 |A: packet accepted                                | 
+|A: dest. IP reached     |B: destination IP reached                          |A: destination IP reached                         |
 
 <img src="https://github.com/akostrik/net_practice/assets/22834202/8abba568-5c19-4f2d-bb51-c5619502fe9b" width="700" height="550">  
 
