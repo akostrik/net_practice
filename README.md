@@ -23,11 +23,12 @@ from `172.16.0.0` to `172.31.255.255`
 from `192.168.0.0` to `192.168.255.255`
 - Do not set local ip
 from `127.0.0.1` to `127.255.255.254`
+
 # Step to solve problem
-Check CIDR or Subnet mask
-Check specific client ip that is assigned
-calculate available ip range in subnet
-Config route table follow by problem goals
+- Check CIDR or Subnet mask
+- Check client ip 
+- Calculate available ip range in subnet
+
 # How to pass the evaluation
 Memorize CIDR table
 
