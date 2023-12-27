@@ -155,6 +155,7 @@ A: only has 1 route through which it can send its packets, the destination defau
 <img src="https://github.com/akostrik/net_practice/assets/22834202/8abba568-5c19-4f2d-bb51-c5619502fe9b" width="700" height="550">  
 
 ## Level 6
+Network A1 R1 S:  
 `11111111.11111111.11111111.1+0000000` (`255.255.255.128`) mask  
 `01011001.01011100.11110001.1+1100011` (`89.92.241.227`) A1  
 `01011001.01011100.11110001.1+1100100` (`89.92.241.228`) R1  
