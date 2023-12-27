@@ -117,10 +117,10 @@ identical ip address.
 <img src="https://github.com/akostrik/net_practice/assets/22834202/c7741926-8cf2-4387-abff-9ab43eb73477" width="700" height="550">  
 
 ## Level 4
-11111111.11111111.11111111.11+00000 (`255.255.255.192`) - we are free to choose a mask  
+11111111.11111111.11111111.11+000000 (`255.255.255.192`) we are free to choose a mask  
+11111111.11111111.11111111.10+000100 () A1
 
 B1, R1: 
-the same network address as A1
 the possible range is:
 01000101.00100000.1110110. (69.32.118.) and
 01000101.00100000.1110110. (), excluding ...
