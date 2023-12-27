@@ -76,7 +76,15 @@ Reserved by the Internet Assigned Numbers Authority (IANA).
 **Next hop** a network address, the next router on the packet's way. Every router maintains its routing table with a next hop address.  
 
 # Solution
-## Level 1:  
+## Level 1:
+1. The solution is anything in the range of 104.96.23.0 - 104.96.23.255 excluding:
+104.96.23.0: The first number in the range of hosts (0 in this case) represents the network and cannot be used by a host.
+104.96.23.255: The last number in the range of hosts (255 in this case) represents the broadcast address.
+104.96.23.12: This address is already used by the host Client B.
+2.The solution will be anything in the range of 211.191.0.0 - 211.191.255.255, excluding:
+211.191.0.0: Represents the network address.
+211.191.255.255: Represents the broadcast address.
+211.191.89.75: Already taken by host Client C.
 <img src="https://github.com/akostrik/net_practice/assets/22834202/429cb593-9681-44fd-bed8-f5629d8e2100" width="700" height="400">  
 
 ## Level 2:  
