@@ -101,11 +101,11 @@ A1: anything between
 `11000000.10101000.00111011.110-11111` (`192.168.118.223`)  
 `11000000.10101000.00111011.110-11110` (`192.168.118.222`)  
   
-`11111111.11111111.11111111.111111-00` = `255.255.255.252` =`/30`  
 C1, D1: any two address, where 
 - the first 30 bits are identical for D and C
 - the last 2 bits are not `11`, nor `00`
 - the two address are nor identical
+`11111111.11111111.11111111.111111-00` = `255.255.255.252` =`/30`  
 
 <img src="https://github.com/akostrik/net_practice/assets/22834202/5a34deda-b8a4-4701-925d-74a5bbe1add3" width="700" height="400">  
 
