@@ -115,11 +115,9 @@ B!= C
 <img src="https://github.com/akostrik/net_practice/assets/22834202/c7741926-8cf2-4387-abff-9ab43eb73477" width="700" height="550">  
 
 ## Level 4
-`11111111.11111111.11111111.11+000000` (`255.255.255.192`) we are free to choose a mask  
 `01000101.00100000.01110110.10+000100` (`69.32.118.132`) A1
-
-B1, R1 are in the same network that A1, so:  
-`01000101.00100000.0111011.10+000000` (`69.32.118.128`) B1, R min  
+`11111111.11111111.11111111.11+000000` (`255.255.255.192`) we are free to choose a mask  
+`01000101.00100000.0111011.10+000000` (`69.32.118.128`) B1, R min, because B1, R1 are in the same network that A1   
 `01000101.00100000.0111011.10+111111` (`69.32.118.191`) B1, R max, excluding ...
 
 R2, R3: we did not interact with the router Interface R2 and Interface R3.
