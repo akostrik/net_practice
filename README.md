@@ -21,7 +21,7 @@ IPv6: interface identifier of 64 bits + ... (smaller subnets are never allocated
 IPv4 CIDR blocks  
 | Netmask | Netmask         | Address       | Host  
 |---------|:----------------|--------------:|-------:
-| /32     | 255.255.255.255 | 1             |       
+| /32     | 255.255.255.255 | 1             | accessible by explicit routing rules (single-host network) 
 | /31     | 255.255.255.254 | 2             | no available host addresses (unusable)
 | /30     | 255.255.255.252 | 4             | 2     
 | /29     | 255.255.255.248 | 8             | 6     
