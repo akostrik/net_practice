@@ -12,9 +12,9 @@ _Маска подсети_ битовая маска для определен�
 $\textsf{\color{blue}адрес сети}$  
 $\textsf{\color{green}диапазон адресов устройств в этой сети}$  
 
-# 1. Check CIDR or Subnet mask
+# 1. CIDR or Subnet mask
 
-# 2. Check client IP address
+# 2. Client IP addresses
 * Client ip do not overlap  
 * Private IP
 Cannot be used to access the Internet, remains only in the local network, never leaves the LAN.  
@@ -25,8 +25,7 @@ Reserved by the Internet Assigned Numbers Authority (IANA).
 * Local IP
     + from `127.0.0.1` to `127.255.255.254`
 
-# 3. Calculate available ip range in subnet
-
+# 3. Calculate available IP range in subnet
 * Switch connects clients in same subnet  
 * Router connects subnets
 * Route table is configured from source ip to destination with CIDR (0.0.0.0/0)
