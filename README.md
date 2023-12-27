@@ -88,7 +88,7 @@ D1: anything between
 `211.191.255.255`, excluding  
 `211.191.0.0`,  
 `211.191.255.255`,  
-`211.191.89.75`.  
+`211.191.129.75`.  
 <img src="https://github.com/akostrik/net_practice/assets/22834202/429cb593-9681-44fd-bed8-f5629d8e2100" width="700" height="400">  
 
 ## Level 2
