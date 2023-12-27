@@ -110,7 +110,12 @@ C1, D1: any two address, where
 <img src="https://github.com/akostrik/net_practice/assets/22834202/5a34deda-b8a4-4701-925d-74a5bbe1add3" width="700" height="400">  
 
 ## Level 3
-A1, B, C1: [`104.198.241.0`;`104.198.241.128`], excluding the network address and the broadcast address
+A1, B, C1: anything between  
+`104.198.132.0` and   
+`104.198.1321.128`, excluding 
+the network address,  
+the broadcast address,  
+identical ip address
 <img src="https://github.com/akostrik/net_practice/assets/22834202/c7741926-8cf2-4387-abff-9ab43eb73477" width="700" height="550">  
 
 ## Level 4
