@@ -89,28 +89,27 @@ If an interface is connected directly / indirectly to the internet, it cannot ha
 * cannot talk directly to a network outside of its own
 * learn which hosts are on each port  
 * it is a combination of hubs and bridges
-* has multiple ports
+* multiple ports
 * хранит в ассоциативной памяти таблицу коммутации, в которой указывается соответствие узла порту. При включении коммутатора эта таблица пуста, и он работает в режиме обучения. В этом режиме поступающие на какой-либо порт данные передаются на все остальные порты коммутатора. При этом коммутатор анализирует фреймы (кадры) и, определив MAC-адрес хоста-отправителя, заносит его в таблицу на некоторое время. Впоследствии, если на один из портов коммутатора поступит кадр, предназначенный для хоста, MAC-адрес которого уже есть в таблице, то этот кадр будет передан только через порт, указанный в таблице. Если MAC-адрес хоста-получателя не ассоциирован с каким-либо портом коммутатора, то кадр будет отправлен на все порты, за исключением того порта, с которого он был получен. Со временем коммутатор строит таблицу для всех активных MAC-адресов, в результате трафик локализуется.
 
 ## Bridge 
 * 2 OSI level
-* sit between Hub connected hosts
-* has 2 ports  
-* learn which hosts are on each side
+* between Hub connected hosts
+* 2 ports  
 
 ## Router = маршрутизатор 
 * 3 OSI level
 * its primary purpose is routing (moving data ...)
 * connects networks together
 * separates different networks with the use of multiple interfaces (an interface <-> a network)
+* пересылает пакеты между сегментами сети на основе правил и таблиц маршрутизации
 * the range of IP addresses on one interface must not overlap with the range of its other interfaces
 * learns which networks it is attached to  
-* stores routes in its routing table
-* provides a traffic control point (security, filtering, redirecting)  
+* a traffic control point (security, filtering, redirecting)  
 * the internet behaves like a router
 * a destination 122.3.5.3/24 sends the packets to the network 122.3.5.0
-* пересылает пакеты между различными сегментами сети на основе правил и таблиц маршрутизации
 * может связывать разнородные сети различных архитектур
+* stores routes in its routing table
   
 ### Routing Table 
 * lists the routes to particular network destinations
