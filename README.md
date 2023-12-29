@@ -58,14 +58,19 @@ If an interface is connected directly / indirectly to the internet, it cannot ha
     + `127.0.0.1` ... `127.255.255.254`
 
 # Network devices
-## Repeater
+## Repeater = повторитель
 * regenerate signals  
-* allow communications across greater distances  
+* для увеличения расстояния сетевого соединения и его расширения за пределы одного сегмента или для организации двух ветвей, путём повторения электрического сигнала
+* в терминах модели OSI работает на физическом уровне
+* обладает гораздо меньшим временем задержки, чем hub, ввиду того что обладает двумя разъемами для подключения кабеля, ему нет необходимости где-то концентрировать сигнал и распространять на остальные выходы
 
-## Hub = multi-port repeater
+## Hub = multi-port repeater = концентратор (1 уровень OSI)
 * facilitates scaling communication between additional hosts  
-* everyone receive everyone else’s data  
-
+* everyone receive everyone else’s data
+* для объединения компьютеров в сетях Ethernet с применением кабельной инфраструктуры типа витая пара
+* вытеснены сетевыми коммутаторами
+* ретранслирует входящий сигнал с одного из портов в сигнал на все остальные подключённые порты
+  
 ## Bridge 
 * sit between Hub connected hosts
 * has 2 ports  
