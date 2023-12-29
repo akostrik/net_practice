@@ -130,7 +130,7 @@ A1:
 `01101000.01100011.00010111.00000001`=`104.099.023.001` min host address   
 `01101000.01100011.00010111.00001100`=`104.099.023.012` already used    
 `01101000.01100011.00010111.11111110`=`104.099.023.254` max host address  
-`01101000.01100011.00010111.11111111`=`104.099.023.255` the broadcast address, cannot be used by a host  
+`01101000.01100011.00010111.11111111`=`104.099.023.255` the broadcast add., cannot be used by a host  
 
 D1, D2:
 `11010011.10111111.00000000.00000001`=`211.191.000.001` min  
@@ -146,10 +146,8 @@ B1:
   
 C1, D1:  
 `11111111.11111111.11111111.111111_00`=`255.255.255.252`=`/30` mask   
-`********.********.********.******_01` C
-`********.********.********.******_10` D
-- the first 30 bits are identical    
-- the last 2 bits are not `11`, nor `00`  
+`XXXXXXXX.XXXXXXXX.XXXXXXXX.XXXXXX_01` C
+`XXXXXXXX.XXXXXXXX.XXXXXXXX.XXXXXX_10` D
 
 <img src="https://github.com/akostrik/net_practice/assets/22834202/5a34deda-b8a4-4701-925d-74a5bbe1add3" width="700" height="400">  
 
