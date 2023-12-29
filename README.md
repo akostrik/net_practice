@@ -215,22 +215,36 @@ Network R2 + Internet:
 Network Internet:  
 `10100011.10101100.11111010.00000001` (`163.172.250.12`) table I, the next hop of the internet  
 
-A1 -> Somewhere on the Net (8.8.8.8)  
-A: dest. does not match any interface, table 0.0.0.0/0 -> to gateway 89.92.241.228 through A1  
-S: pass to all connections  
-R: accepted  
-R: dest. does not match any interface, table 0.0.0.0/0 -> to gateway 163.172.250.1 through R2 (почему не R1?)   
-I: accepted, destination IP reached  
-A: loop detected (потому что S: pass to all connection ?)  
-  
-Somewhere on the Net -> A1 (89.92.241.227)  
-I: dest. does not match any interface, routing table 89.92.241.228/25 -> to gateway 163.172.250.12 through I1  
-R: accepted  
-R: send to R1 (почему не R2?)  
-S: pass to all connections  
-R: loop detected (потому что S: pass to all connections ?)  
-A: accepted  
+|A1 -> Somewhere on the Net (8.8.8.8)  
+|:----------------------------------------
+|A: dest. does not match any interface, table 0.0.0.0/0 -> to gateway 89.92.241.228 through A1  
+|S: pass to all connections  
+|R: accepted  
+|R: dest. does not match any interface, table 0.0.0.0/0 -> to gateway 163.172.250.1 through R2 (почему не R1?)   
+|I: accepted, destination IP reached  
+|A: loop detected (потому что S: pass to all connection ?)  
+| 
+|**Somewhere on the Net -> A1 (89.92.241.227)**  
+|I: dest. does not match any interface, routing table 89.92.241.228/25 -> to gateway 163.172.250.12 through I1  
+|R: accepted  
+|R: send to R1 (почему не R2?)  
+|S: pass to all connections  
+|R: loop detected (потому что S: pass to all connections ?)  
+|A: accepted  
   
 <img src="https://github.com/akostrik/net_practice/assets/22834202/429c209c-84af-45b1-8211-724326f91bb5" width="720" height="600">  
+
+## Level 7
+A1: we cannot choose our IP address freely since the IP of Interface R11 is already entered. Also, if we give it a mask of /24, the IP address range will overlap with the range of Interface R12, which is already entered. They would both be in the range of 93.198.14.0 - 93.198.14.255.
+
+The range of IP addresses of a network must not overlap those of another network.
+We need addresses for 3 separate networks (A + R1, R1 + R2, R2 + C).
+We split the last byte of the address into several address ranges.
+The mask /26 gives 4 ranges.
+The mask /28 gives 16 ranges, from which we use the following 3 :
+93.198.14.1 - 93.198.14.14    (A + R1)
+93.198.14.65 - 93.198.14.78   (R1 + R2)
+93.198.14.241 - 93.198.14.254 (R2 + C)
+Calculator of the possible ranges of a mask https://www.calculator.net/ip-subnet-calculator.html?cclass=any&csubnet=28&cip=93.198.14.2&ctype=ipv4&printit=0&x=97&y=13
 
 
