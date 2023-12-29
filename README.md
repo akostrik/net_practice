@@ -91,12 +91,12 @@ If an interface is connected directly / indirectly to the internet, it cannot ha
 ## Network host
 * a device connected to a network, which sends or receive traffic, it can be client or server
 * when a host receives a packet:
-    |the routing table tells the destination ...|the packet goes to ...
+    |accordigly to the routing table, the destination is ...|the packet goes to ...
     |:---------------------|--------------------------------------------
-    |is on the local network| the host directly
-    |isn't on the local network| a local router
-    |is unknown, there is a default route| ?
-    |is unknown, there isn’t a default route| ?
+    |on the local network| the host directly
+    |not on the local network| a local router
+    |unknown, there is a default route| ?
+    |unknown, there isn’t a default route| ?
 
 ## Router = маршрутизатор 
 * 3 OSI level
@@ -108,12 +108,12 @@ If an interface is connected directly / indirectly to the internet, it cannot ha
 * here: the internet behaves like a router
 * a traffic control point (security, filtering, redirecting)  
 * when a router receives a packet:
-    |the routing table tells the destination ...|the packet goes to ...
+    |accordigly to the routing table, the destination is ...|the packet goes to ...
     |:---------------------|--------------------------------------------
-    |is on an attached network| the host directly
-    |isn't on an attached network| another router
-    |is unknown, there is a default route| the default route
-    |is unknown, there isn’t a default route| is dropped (the source IP is informed)
+    |on an attached network| the host directly
+    |not an attached network| another router
+    |unknown, there is a default route| the default route
+    |unknown, there isn’t a default route| is dropped (the source IP is informed)
 * stores routes in its routing table
  
 ## Routing Table 
