@@ -90,9 +90,13 @@ If an interface is connected directly / indirectly to the internet, it cannot ha
 
 ## Network host
 * a device connected to a network, which sends or receive traffic, it can be client or server
-* when a host sends a packet:
-    + if accordingly to the routing table the destination is on the local network, then the packet goes directly to the host
-    + if accordingly to the routing table the destination isn't on the local network, then the packet goes to a local router
+* when a host receives a packet:
+    |the routing table tells the destination ...|the packet goes to ...
+    |:---------------------|--------------------------------------------
+    |is on the local network| the host directly
+    |isn't on the local network| a local router
+    |is unknown, there is a default route| ?
+    |is unknown, there isn’t a default route| ?
 
 ## Router = маршрутизатор 
 * 3 OSI level
