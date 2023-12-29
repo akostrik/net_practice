@@ -219,25 +219,25 @@ Network I:
 
 |A1 -> Somewhere on the Net (8.8.8.8):  
 |:----------------------------------------
-|A: dest. does not match any interface, table `0.0.0.0/0` -> to gateway `89.92.241.228` through A1  
+|A: dest. does not match any interface -> table -> to gateway `89.92.241.228` through A1  
 |S: pass to all connections  
 |R: accepted  
-|R: dest. does not match any interface, table `0.0.0.0/0` -> to gateway `163.172.250.1` through R2 (почему не R1?)   
+|R: dest. does not match any interface -> table -> to gateway `163.172.250.1` through R2 (почему не R1?)   
 |I: accepted, destination IP reached  
-|A: loop detected (потому что S: pass to all connection ?)  
+|A: loop detected (потому что S pass to all connection ?)  
 |**Somewhere on the Net -> A1 (89.92.241.227):**  
-|I: dest. does not match any interface, routing table `89.92.241.228/25` -> to gateway `163.172.250.12` through I1  
+|I: dest. does not match any interface -> table `89.92.241.228/25` -> to gateway `163.172.250.12` through I1  
 |R: accepted  
 |R: send to R1 (почему не R2?)  
 |S: pass to all connections  
-|R: loop detected (потому что S: pass to all connections ?)  
+|R: loop detected 
 |A: accepted  
   
 <img src="https://github.com/akostrik/net_practice/assets/22834202/429c209c-84af-45b1-8211-724326f91bb5" width="720" height="600">  
 
 # Level 7 solution
 We need addresses for 3 networks and the ranges of networks must not overlap =>  
-We split the last byte into 64 ranges by /30.  
+We split the last byte into 64 ranges by `/30`.  
 We use the following 3 ranges:   
   
 Network A R1:  
@@ -255,10 +255,10 @@ Network R2 C:
 `01100000.11000110.00001110.000001_01`=`096.198.014.005` min   
 `01100000.11000110.00001110.000001_10`=`096.198.014.006` max   
   
-NB: /24  gives 1 range, doesn't suit here, `96.198.14.1` and `96.198.14.254` would be in [`93.198.14.0`, `93.198.14.255`]   
-NB: /26 gives 4 ranges  
-NB: /28 gives 16 ranges  
-NB: /30 gives 64 ranges  
+NB: `/24` gives 1 range, `096.198.014.001` and `096.198.014.254` both are in [`093.198.014.000`, `093.198.014.255`], doesn't suit     
+NB: `/26` gives 4 ranges  
+NB: `/28` gives 16 ranges  
+NB: `/30` gives 64 ranges  
   
 <img src="https://github.com/akostrik/net_practice/assets/22834202/3a01b40d-9b0a-41a3-8f63-2dcc8b4c499c" width="700" height="450">  
 
@@ -291,7 +291,7 @@ All the receiving networks must be in this range and without overlapping.
 Router R1:  
 `10001100.10111110.01010011.0_0000001`=`140.190.083.001` R11  
 `10001100.10111110.01010011.111111_10`=`140.190.083.254` R13  
-`10001100.10111110.01010011._00000000`=`140.190.083.0/24` I-dest that covers the range of networks of all the hosts (R11, R13) => I sends packets to all the hosts (/25 тоже ?)  
+`10001100.10111110.01010011._00000000`=`140.190.083.000/24` I-dest that covers the range of networks of all the hosts (R11, R13) => I sends packets to all the hosts (/25 тоже ?)  
   
 Network R1 S1: 
 `11111111.11111111.11111111.1_0000000`=`255.255.255.128`=`/25` mask  
