@@ -265,22 +265,16 @@ NB: /30 gives 64 ranges
 
 # Level 8 solution
 
-The Internet use
-`10001101.11101111.11100101.00_000000` (`141.239.229.0/26`)  
-The internet sends the packets to the networks:  
-`10001101.11101111.11100101.00_000001` (`141.239.229.0`) min  
-`10001101.11101111.11100101.00_111110` (`141.239.229.63`) max    
-All receiving networks must be in this range and without overlapping.  
-
-On R23 and R22 we use the mask `255.255.255.240` (`/28`), to split the range of /26 from the destination address, into 4 ranges. We have the following 3 networks:
-Router R1 to Router R2.
-Router R2 to Client C.
-Router R2 to Client D.
-Each of these networks can then be attributed one of the following IP ranges with a mask of /28:
-49.175.13.0 - 49.175.13.15
-49.175.13.16 - 49.175.13.31
-49.175.13.32 - 49.175.13.47
-49.175.13.48 - 49.175.13.63
+`10001101.11101111.11100101.00_000000` (`141.239.229.0/26`) used by Internet  
+`10001101.11101111.11100101.00_000001` (`141.239.229.1`) min of the network where the Internet sends the packets to   
+`10001101.11101111.11100101.00_111110` (`141.239.229.63`) max -||-  
+So, all the receiving networks must be in this range and without overlapping.  
+  
+`11111111.11111111.11111111.1111_0000` (`255.255.255.240`, `/28`) mask R23, R22 splits `/26` into 4 ranges:  
+163.170.250.0 - 163.170.250.15 Network R1 + R2 with `/28` 
+163.170.250.16 - 163.170.250.31 Network R2 + C with `/28` 
+163.170.250.32 - 163.170.250.47 Network R2 + D with `/28` 
+163.170.250.48 - 163.170.250.63 nut used  
 
 Network R2 + Internet:    
 `11111111.11111111.11111111.1111_0000` (`255.255.255.240`, `/28`) mask  
@@ -295,7 +289,6 @@ Network C + D + R2:
 `10001101.11101111.11100101.1100_0011` (`141.239.229.195`) D1  
 `10001101.11101111.11100101.1100_0100` (`141.239.229.196`) C1  
 `10001101.11101111.11100101.1100_1110` (`141.239.229.254`) max    
-`10001101.11101111.11100101.00_000000` (`141.239.229.0/26`) table I
   
 Network R1 + R2:    
 `11111111.11111111.11111111.11_000000` (`255.255.255.192`, `/26`) mask 
