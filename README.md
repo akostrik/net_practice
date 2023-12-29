@@ -291,7 +291,7 @@ All the receiving networks must be in this range and without overlapping.
 Router R1:  
 `10001100.10111110.01010011.0_0000001`=`140.190.083.001` R11  
 `10001100.10111110.01010011.111111_10`=`140.190.083.254` R13  
-`10001100.10111110.01010011._00000000`=`140.190.083.000/24` I-dest that covers the range of networks of all the hosts (R11, R13) => I sends packets to all the hosts (/25 тоже ?)  
+`10001100.10111110.01010011._00000000`=`140.190.083.000/24` I-dest that covers the range of networks of R11, R13 (I sends packets to all the hosts) (/25 тоже ?)  
   
 Network R1 S1:  
 `11111111.11111111.11111111.1_0000000`=`255.255.255.128`=`/25` mask  
