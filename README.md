@@ -2,7 +2,7 @@
 
 **Node** устройство, соединённое с другими устройствами как часть компьютерной сети. Например, компьютер, мобильник, маршрутизатор, коммутатор, концентратор.
 
-**A network host** a computer or other device connected to a computer network, any device which sends or receive traffic, it can be client or server.
+**Network host** a computer or other device connected to a computer network, any device which sends or receive traffic, it can be client or server.
 
 **The Open Systems Interconnection model (OSI)** сетевая модель стека сетевых протоколов OSI/ISO, для вхаиможействия сетевых устройств. Levels:
 1) Physical layer: метод передачи двоичных данных от одного устройства к другому
