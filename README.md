@@ -1,11 +1,5 @@
 # Vocabulary
 
-## Node
-Устройство, соединённое с другими устройствами как часть компьютерной сети. Например, компьютер, мобильник, маршрутизатор, коммутатор, концентратор.
-
-## Network host
-A computer or other device connected to a computer network, any device which sends or receive traffic, it can be client or server.
-
 ## The Open Systems Interconnection model (OSI)
 Сетевая модель стека сетевых протоколов OSI/ISO, для вхаимодействия сетевых устройств. Levels:
 1) Physical layer: метод передачи двоичных данных от одного устройства к другому
@@ -93,6 +87,12 @@ If an interface is connected directly / indirectly to the internet, it cannot ha
 * it is a combination of hubs and bridges
 * хранит в ассоциативной памяти таблицу коммутации, в которой указывается соответствие узла порту. При включении коммутатора таблица пуста, он работает в режиме обучения. В этом режиме поступающие на какой-либо порт данные передаются на все остальные порты коммутатора. При этом коммутатор анализирует фреймы (кадры) и, определив MAC-адрес хоста-отправителя, заносит его в таблицу на некоторое время. Впоследствии, если на один из портов коммутатора поступит кадр, предназначенный для хоста, MAC-адрес которого уже есть в таблице, то этот кадр будет передан только через порт, указанный в таблице. Если MAC-адрес хоста-получателя не ассоциирован с каким-либо портом коммутатора, то кадр будет отправлен на все порты, за исключением того порта, с которого он был получен. Со временем коммутатор строит таблицу для всех активных MAC-адресов, в результате трафик локализуется.
 
+## Network host
+* a computer or a device connected to a network, which sends or receive traffic, it can be client or server
+* when a host sends a packet:
+    + if the routing table tells that the destination is on the local network, then the packet goes directly to the host
+    + if the routing table tells that the destination isn't on the local network, then the packet goes to a local router
+
 ## Router = маршрутизатор 
 * 3 OSI level
 * connects networks together, связывает разнородные сети различных архитектур
@@ -103,9 +103,6 @@ If an interface is connected directly / indirectly to the internet, it cannot ha
 * the internet behaves like a router
 * a traffic control point (security, filtering, redirecting)  
 * stores routes in its routing table
-* when a host sends a packet:
-    + if the routing table tells that the destination is on the local network, then the packet goes directly to the host
-    + if the routing table tells that the destination isn't on the local network, then the packet goes to a local router
 * when a router receives a packet:
     + if the routing table tells that the destination is on an attached network, then the packet goes directly to the host
     + if the routing table tells that the destination isn't on an attached network, then the packet goes to another router
