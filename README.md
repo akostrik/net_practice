@@ -290,5 +290,5 @@ All the receiving networks must be in this range and without overlapping.
 # Level 10 solution
 The internet must be able to send its packets to all the hosts, so its destination must cover the range of networks of all the hosts.  
 `10001100.10111110.01010011.00000001`=`140.190.83.1` R11  
-`10001100.10111110.01010011.11111110`=`140.190.83.254` R13
+`10001100.10111110.01010011.11111110`=`140.190.83.254` R13  
 The mask /24 for the internet's destination covers the range `140.190.83.1` ... `140.190.83.254`  
