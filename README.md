@@ -231,12 +231,14 @@ Network Internet:
 # Level 7 solution
 A1: we cannot choose our IP address freely since the IP R11 is already entered. 
 
-The ranges of networks IP must not overlap, so we need addresses for 3 networks: A + R1, R1 + R2, R2 + C, so we split the last byte of the address into 16 address ranges by the mask /28. We use the following 3 ranges:   
+The ranges of networks IP must not overlap =>  
+We need addresses for 3 networks: A + R1, R1 + R2, R2 + C =>  
+We split the last byte into 16 ranges by using /28 and we use the following 3 ranges:   
 `93.198.14.1` - `93.198.14.14`    (A + R1)  
 `93.198.14.65` - `93.198.14.78`   (R1 + R2)  
 `93.198.14.241` - `93.198.14.254` (R2 + C)  
 NB /26 gives 4 ranges  
-NB /24 doesn't suit here, because both ... and R12 would be in [`93.198.14.0`, `93.198.14.255`]   
+NB /24 doesn't suit here, because both `96.198.14.1` and `96.198.14.254` are in [`93.198.14.0`, `93.198.14.255`]   
   
 Calculator of mask ranges https://www.calculator.net/ip-subnet-calculator.html?cclass=any&csubnet=28&cip=93.198.14.2&ctype=ipv4&printit=0&x=97&y=13
 
