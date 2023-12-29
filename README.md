@@ -71,7 +71,7 @@ If an interface is connected directly / indirectly to the internet, it cannot ha
 * has 2 ports  
 * learn which hosts are on each side
 
-## Switch (сетевой коммутатор)
+## Switch = сетевой коммутатор (2 уровень OSI)
 * its primary purpose is switching (moving data within networks)  
 * it is a combination of hubs and bridges
 * connects devices together in a local network
@@ -81,7 +81,7 @@ If an interface is connected directly / indirectly to the internet, it cannot ha
 * has multiple ports  
 * learn which hosts are on each port  
 
-## Router
+## Router = маршрутизатор (3 уровень OSI)
 * its primary purpose is routing (moving data ...)
 * connects networks together
 * separates different networks with the use of multiple interfaces (an interface <-> a network)
