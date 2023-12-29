@@ -1,7 +1,7 @@
 # Vocabulary
 
-[Convertir adresse IP en Binaire](https://convertir.github.io/outils/convertir-ip-en-binaire-en-ligne.html)  
-[Convert a Binary IP to a Regular IP Address](https://www.browserling.com/tools/bin-to-ip)  
+[Convert regilar IP to binary IP](https://convertir.github.io/outils/convertir-ip-en-binaire-en-ligne.html)  
+[Convert binary IP to regular](https://www.browserling.com/tools/bin-to-ip)  
 [Calculator of mask ranges](https://www.calculator.net/ip-subnet-calculator.html?cclass=any&csubnet=28&cip=93.198.14.2&ctype=ipv4&printit=0&x=97&y=13)
 
 ## The Open Systems Interconnection model (OSI)
