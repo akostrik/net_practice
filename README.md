@@ -1,5 +1,9 @@
 # Vocabulary
 
+[Convertir adresse IP en Binaire](https://convertir.github.io/outils/convertir-ip-en-binaire-en-ligne.html)
+[Convert a Binary IP to a Regular IP Address](https://www.browserling.com/tools/bin-to-ip)
+[Calculator of mask ranges](https://www.calculator.net/ip-subnet-calculator.html?cclass=any&csubnet=28&cip=93.198.14.2&ctype=ipv4&printit=0&x=97&y=13)
+
 ## The Open Systems Interconnection model (OSI)
 Для взаимодействия сетевых устройств, передачи двоичных данных между устройствами.  
 Layers:
@@ -18,8 +22,6 @@ Example:
 `11000000.10101000.0000000+1.00000010`=`192.168.001.002`  
 `11111111.11111111.1111111+0.00000000`=`255.255.254.000` mask  
 `11000000.10101000.0000000+0.00000000`=`192.168.000.000` **network address**  
-
-Calculator of mask ranges https://www.calculator.net/ip-subnet-calculator.html?cclass=any&csubnet=28&cip=93.198.14.2&ctype=ipv4&printit=0&x=97&y=13
 
 ## IPv4 vs IPv6  
 IPv4: network prefix  8 / 16 / 24 bits    
@@ -61,8 +63,6 @@ Reserved:
 * **Local IP**
 Reserved:  
     + `127.000.000.001` ... `127.255.255.254`
-[Convertir adresse IP en Binaire](https://convertir.github.io/outils/convertir-ip-en-binaire-en-ligne.html)
-[Convert a Binary IP to a Regular IP Address](https://www.browserling.com/tools/bin-to-ip)
 
 ## Repeater = повторитель = коаксиальный повторитель
 * 1 OSI level
