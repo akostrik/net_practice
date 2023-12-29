@@ -21,7 +21,9 @@ A computer or other device connected to a computer network, any device which sen
 `network prefix + host identifier` = `IP`   
 `11000000.10101000.0000000+1.00000010` (`192.168.1.2`)  
 `11111111.11111111.1111111+0.00000000` (`255.255.254.0`) mask  
-`11000000.10101000.0000000+0.00000000` (`192.168.0.0`) network address
+`11000000.10101000.0000000+0.00000000` (`192.168.0.0`) network address  
+
+Calculator of mask ranges https://www.calculator.net/ip-subnet-calculator.html?cclass=any&csubnet=28&cip=93.198.14.2&ctype=ipv4&printit=0&x=97&y=13
 
 ## IPv4 vs IPv6  
 IPv4: network prefix  8 / 16 / 24 bits    
@@ -253,7 +255,5 @@ NB /26 gives 4 ranges
 NB /28 gives 16 ranges  
 NB /30 gives 64 ranges  
   
-Calculator of mask ranges https://www.calculator.net/ip-subnet-calculator.html?cclass=any&csubnet=28&cip=93.198.14.2&ctype=ipv4&printit=0&x=97&y=13
-
-<img src="https://github.com/akostrik/net_practice/assets/22834202/3a01b40d-9b0a-41a3-8f63-2dcc8b4c499c" width="700" height="550">  
+<img src="https://github.com/akostrik/net_practice/assets/22834202/3a01b40d-9b0a-41a3-8f63-2dcc8b4c499c" width="700" height="450">  
 
