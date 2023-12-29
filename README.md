@@ -8,14 +8,14 @@ _42 School project, level 4_
 1) Establishes a connection between a source and its destination, which remains active until communication begins.
 2) Breaks data into smaller packets, while ensuring end-to-end delivery.
 
-**The Open Systems Interconnection model (OSI)** сетевая модель стека сетевых протоколов OSI/ISO, для вхаиможействия сетевых устройств. Уровни:
-1) physical layer: метод передачи двоичных данных от одного устройства к другому
-2) data link layer, канальный: взаимодействие сетей на физическом уровне
-3) network layer: определение пути передачи данных
-4) transport layer: надёжная передача данных (протоколы ATP, CUDP, DCCP, FCP, IL, NBF, NCP, SCTP, SPX, SST, TCP, UDP)
-5) session layer: поддержание сеанса связи, позволяя приложениям взаимодействовать длительное время (протоколы H.245, ISO-SP, iSNS, L2F, L2TP, NetBIOS, PAP, PPTP, RPC, RTCP, SMPP, SCP, ZIP, SDP)
-6) presentation layer: преобразование протоколов и кодирование/декодирование данных (протоколы AFP, ICA, LPP, NCP, NDR, XDR, X.25 PAD)
-7) application layer: взаимодействие пользовательских приложений с сетью (протолоклы RDP, HTTP, SMTP, SNMP, POP3, FTP, XMPP, OSCAR, Modbus, SIP, TELNET)
+**The Open Systems Interconnection model (OSI)** сетевая модель стека сетевых протоколов OSI/ISO, для вхаиможействия сетевых устройств. Levels:
+1) Physical layer: метод передачи двоичных данных от одного устройства к другому
+2) Sata link layer, канальный: взаимодействие сетей на физическом уровне
+3) Network layer: определение пути передачи данных
+4) Transport layer: надёжная передача данных (протоколы ATP, CUDP, DCCP, FCP, IL, NBF, NCP, SCTP, SPX, SST, TCP, UDP)
+5) Session layer: поддержание сеанса связи, позволяя приложениям взаимодействовать длительное время (протоколы H.245, ISO-SP, iSNS, L2F, L2TP, NetBIOS, PAP, PPTP, RPC, RTCP, SMPP, SCP, ZIP, SDP)
+6) Presentation layer: преобразование протоколов и кодирование/декодирование данных (протоколы AFP, ICA, LPP, NCP, NDR, XDR, X.25 PAD)
+7) Application layer: взаимодействие пользовательских приложений с сетью (протолоклы RDP, HTTP, SMTP, SNMP, POP3, FTP, XMPP, OSCAR, Modbus, SIP, TELNET)
 
 # Variable-length subnet masking (VLSM)
 
