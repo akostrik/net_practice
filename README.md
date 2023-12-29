@@ -288,24 +288,28 @@ All the receiving networks must be in this range and without overlapping.
 <img src="https://github.com/akostrik/net_practice/assets/22834202/f959e183-552a-4e93-a129-90208de25709" width="700" height="550">  
 
 # Level 10 solution
-`10001100.10111110.01010011.00000001` =`140.190.83.1` R11  
-`10001100.10111110.01010011.11111110` =`140.190.83.254` R13  
-`10001100.10111110.01010011._00000000`=`140.190.83.0/24` I-dest that covers the range of networks of all the hosts (R11, R13) => I sends packets to all the hosts    
+Router R1:  
+`10001100.10111110.01010011.0_0000001` =`140.190.83.1` R11  
+`10001100.10111110.01010011.111111_10` =`140.190.83.254` R13  
+`10001100.10111110.01010011._00000000`=`140.190.83.0/24` I-dest that covers the range of networks of all the hosts (R11, R13) => I sends packets to all the hosts (/25 тоже ?)  
+  
+Network R1 S1: 
+`11111111.11111111.11111111.1_0000000`=`255.255.255.128`=`/25` mask  
+`10001100.10111110.01010011.0_0000001`=`140.190.83.1`  min    
+`10001100.10111110.01010011.0_1111110`=`140.190.83.126` max  
+  
+Network R2 H4:  
+`11111111.11111111.11111111.11_000000`=`255.255.255.192`=`/26` mask  
+`10001100.10111110.01010011.10_000001`=`140.190.83.129` min  
+`10001100.10111110.01010011.10_000011`=`140.190.83.131` H41  
+`10001100.10111110.01010011.10_111110`=`140.190.83.190` max  
+  
+Network R1 R2:  
+`11111111.11111111.11111111.111111_00`=`255.255.255.252`=`/30` mask  
+`10001100.10111110.01010011.111111_01`=`140.190.83.253` min = R21  
+`10001100.10111110.01010011.111111_10`=`140.190.83.254` max = R13  
 
-`10001100.10111110.01010011.0_0000001`=`140.190.83.1` network R1 S1 min    
-`10001100.10111110.01010011.0_1111110`=`140.190.83.126` network R1 S1 max  
+Network R2 C3:  
 
-`11111111.11111111.11111111.11_000000`=`255.255.255.192`=`/26` network R2 H4 mask
-`10001100.10111110.01010011.10_000001`=`140.190.83.129` network R2 H4 min
-`10001100.10111110.01010011.10_000011`=`140.190.83.131` H41
-`10001100.10111110.01010011.10_111110`=`140.190.83.190` network R2 H4 min
-
-Router R1 to Router R2 - Covers the range 
-70.101.30.252
-70.101.30.255 (mask /30).
-
-Router R2 to Client H3 - ??? (mask ???).
-
-We must make sure of 2 things:  
-The IP address is covered by the internet destination.  
-The IP address range of the various networks does not overlap.  
+Every IP is covered by the I-destination.  
+The IP ranges of the networks do not overlap.  
