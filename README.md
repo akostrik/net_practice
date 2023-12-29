@@ -1,10 +1,13 @@
 # Vocabulary
 
-**Node** устройство, соединённое с другими устройствами как часть компьютерной сети. Например, компьютер, мобильник, маршрутизатор, коммутатор, концентратор.
+## Node
+Устройство, соединённое с другими устройствами как часть компьютерной сети. Например, компьютер, мобильник, маршрутизатор, коммутатор, концентратор.
 
-**Network host** a computer or other device connected to a computer network, any device which sends or receive traffic, it can be client or server.
+## Network host
+A computer or other device connected to a computer network, any device which sends or receive traffic, it can be client or server.
 
-**The Open Systems Interconnection model (OSI)** сетевая модель стека сетевых протоколов OSI/ISO, для вхаиможействия сетевых устройств. Levels:
+## The Open Systems Interconnection model (OSI)
+Сетевая модель стека сетевых протоколов OSI/ISO, для вхаиможействия сетевых устройств. Levels:
 1) Physical layer: метод передачи двоичных данных от одного устройства к другому
 2) Sata link layer, канальный: взаимодействие сетей на физическом уровне
 3) Network layer: определение пути передачи данных
@@ -13,21 +16,20 @@
 6) Presentation layer: преобразование протоколов и кодирование/декодирование данных (протоколы AFP, ICA, LPP, NCP, NDR, XDR, X.25 PAD)
 7) Application layer: взаимодействие пользовательских приложений с сетью (протолоклы RDP, HTTP, SMTP, SNMP, POP3, FTP, XMPP, OSCAR, Modbus, SIP, TELNET)
 
-# Variable-length subnet masking (VLSM)
-
-**Маска подсети** определяет по IP-адресу адрес подсети и адрес узла. Не является частью IP-пакета (в отличие от IP-адреса).  
-
+## Variable-length subnet masking (VLSM)
+**Маска подсети** определяет по IP-адресу адрес подсети и адрес узла. Не является частью IP-пакета (в отличие от IP-адреса). Например:  
 `network prefix + host identifier` = `IP`   
 `11000000.10101000.0000000+1.00000010` (`192.168.1.2`)  
 `11111111.11111111.1111111+0.00000000` (`255.255.254.0`) mask  
 `11000000.10101000.0000000+0.00000000` (`192.168.0.0`) network address
 
-**Classless Inter-Domain Routing (CIDR)** a method for allocating IP addresses and for IP routing (slows the growth of routing tables on routers across the Internet, slows the exhaustion of IPv4 addresses).
+## IPv4 vs IPv6  
+IPv4: network prefix  8 / 16 / 24 bits    
+IPv6: interface identifier 64 bits  
 
-IPv4: network prefix  8 / 16 / 24 bits   
-IPv6: interface identifier 64 bits
-
-IPv4 CIDR blocks  
+## Classless Inter-Domain Routing (CIDR)
+A method for allocating IP addresses  
+IPv4 CIDR blocks:  
 | Netmask | Netmask         | Address       | Host  
 |---------|:----------------|--------------:|-------:
 | /32     | 255.255.255.255 | 1             | accessible by explicit routing rules (single-host network) 
@@ -50,8 +52,7 @@ IPv4 CIDR blocks
 | /8      | 255.0.0.0       | 16 777 216    | 16 777 214
 | /0      | 0.0.0.0         | 4 294 967 296 | entire IPv4 Internet
 
-
-# Client IP addresses
+## Client IP addresses
 * Client IP do not overlap  
 * Private IP  
 Cannot be used to access the Internet, remains only in the local network, never leaves the LAN.  
@@ -63,7 +64,6 @@ If an interface is connected directly / indirectly to the internet, it cannot ha
 * Local IP
     + `127.0.0.1` ... `127.255.255.254`
 
-# Network devices
 ## Repeater = повторитель = коаксиальный повторитель
 * 1 OSI level
 * regenerate signals  
@@ -113,8 +113,7 @@ If an interface is connected directly / indirectly to the internet, it cannot ha
 * **Next hop address** the next router / inernet inerface on the packet's way
 * **Gateway** a host’s way out of its local network  
 
-# Solution
-## Level 1
+# Level 1 solution
 `104.99.23.0` A1 min    
 `104.99.23.255` A1 max  
 `104.99.23.0` != A1, the first number in the range of hosts i sused fot the network, it cannot be used by a host  
@@ -128,7 +127,7 @@ If an interface is connected directly / indirectly to the internet, it cannot ha
 `211.191.129.75` != D1  
 <img src="https://github.com/akostrik/net_practice/assets/22834202/429cb593-9681-44fd-bed8-f5629d8e2100" width="700" height="400">  
 
-## Level 2
+# Level 2 solution
 B1: `255.255.255.224`, because B and A are on the same private network
   
 `11000000.10101000.00111011.110+00000` (`255.255.255.224`) A1 min  
@@ -145,7 +144,7 @@ C1, D1: any two address, where
 
 <img src="https://github.com/akostrik/net_practice/assets/22834202/5a34deda-b8a4-4701-925d-74a5bbe1add3" width="700" height="400">  
 
-## Level 3     
+# Level 3 solution
 `01101000.11000110.01000010.1+0000000` (`104.198.132.128`) A1, B, C1 min $\textsf{\color{red}(проверить)}$  
 `01101000.11000110.01000010.1+1111111` (`104.198.132.255`) A1, B, C1 max  
 `01101000.11000110.01000010.1+0000000` (`104.198.132.128`) != A1, B, C1  
@@ -156,7 +155,7 @@ B != C
 `11111111.11111111.11111111.1+0000000` (`255.255.255.128`) mask
 <img src="https://github.com/akostrik/net_practice/assets/22834202/c7741926-8cf2-4387-abff-9ab43eb73477" width="700" height="550">  
 
-## Level 4
+# Level 4 solution
 `01000101.00100000.01110110.10+000100` (`69.32.118.132`) A1  
 `11111111.11111111.11111111.11+000000` (`255.255.255.192`) we are free to choose a mask  
 `01000101.00100000.01110110.10+000000` (`69.32.118.128`) B1, R min, because B1, R1, A1 are in the same network   
@@ -166,7 +165,7 @@ R2, R3: we did not interact with them
 
 <img src="https://github.com/akostrik/net_practice/assets/22834202/e0e2e50c-1bfe-4f2c-ad24-6d9559294bb0" width="700" height="550">  
 
-## Level 5
+# Level 5 solution
 
 |A->R `17.33.126.126`:    |B->R `17.33.126.126`: $\textsf{\color{red}(?)}$    |A->B `170.242.21.253`:                            |
 |:------------------------|:--------------------------------------------------|:-------------------------------------------------|
@@ -181,7 +180,6 @@ R2, R3: we did not interact with them
 |                         |                                                   |R: accepted                                       |
 |                         |                                                   |R: send to R1                                     |
 |A: accepted              |B:  accepted                                       |A: accepted                                       | 
-
 A: only has 1 route through which it can send its packets, the destination default will send the packets to the only path available, no use to specify a destination. 
 
 `11111111.11111111.11+000000.00000000` (`255.255.192.0`)  
@@ -194,7 +192,7 @@ A: only has 1 route through which it can send its packets, the destination defau
 
 <img src="https://github.com/akostrik/net_practice/assets/22834202/8abba568-5c19-4f2d-bb51-c5619502fe9b" width="700" height="550">  
 
-## Level 6
+# Level 6 solution
 Network A1 + R1 + S:  
 `11111111.11111111.11111111.1+0000000` (`255.255.255.128`) mask  
 `01011001.01011100.11110001.1+0000000` (`89.92.241.128`) the network address of A, internet sends to `89.92.241.228/25`  
@@ -230,7 +228,7 @@ Network Internet:
   
 <img src="https://github.com/akostrik/net_practice/assets/22834202/429c209c-84af-45b1-8211-724326f91bb5" width="720" height="600">  
 
-## Level 7
+# Level 7 solution
 A1: we cannot choose our IP address freely since the IP R11 is already entered. 
 
 The range of IP addresses of a network must not overlap those of another network, so we need addresses for 3 networks: A + R1, R1 + R2, R2 + C.  
