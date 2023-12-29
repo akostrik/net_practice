@@ -28,32 +28,31 @@ IPv6: interface identifier 64 bits
 ## Classless Inter-Domain Routing (CIDR)
 A method for allocating IP addresses  
 IPv4 CIDR blocks:  
-| Netmask | Netmask         | Address       | Host  
-|---------|:----------------|--------------:|-------:
-| /32     | 255.255.255.255 | 1             | accessible by explicit routing rules (single-host network) 
-| /31     | 255.255.255.254 | 2             | no available host addresses (unusable)
-| /30     | 255.255.255.252 | 4             | 2     
-| /29     | 255.255.255.248 | 8             | 6     
-| /28     | 255.255.255.240 | 16            | 14    
-| /27     | 255.255.255.224 | 32            | 30    
-| /26     | 255.255.255.192 | 64            | 62    
-| /25     | 255.255.255.128 | 128           | 126   
-| /24     | 255.255.255.0   | 256           | 254   
-| /23     | 255.255.254.0   | 512           | 510      
-| /22     | 255.255.252.0   | 1 024         | 1 022      
-| /21     | 255.255.248.0   | 2 048         | 2 046  
-| /20     | 255.255.240.0   | 4 096         | 4 094  
-| /19     | 255.255.224.0   | 8 192         | 8 190
-| /18     | 255.255.192.0   | 16 384        | 16 382 
-| /17     | 255.255.128.0   | 32 768        | 32 766  
-| /16     | 255.255.0.0     | 65 536        | 65 534 
-| /8      | 255.0.0.0       | 16 777 216    | 16 777 214
-| /0      | 0.0.0.0         | 4 294 967 296 | entire IPv4 Internet
+| Netmask                 | nb address    | nb hosts  
+|:------------------------|--------------:|-------:
+| `/32`=`255.255.255.255` | 1             | accessible by explicit routing rules (single-host network) 
+| `/31`=`255.255.255.254` | 2             | no available host addresses (unusable)
+| `/30`=`255.255.255.252` | 4             | 2     
+| `/29`=`255.255.255.248` | 8             | 6     
+| `/28`=`255.255.255.240` | 16            | 14    
+| `/27`=`255.255.255.224` | 32            | 30    
+| `/26`=`255.255.255.192` | 64            | 62    
+| `/25`=`255.255.255.128` | 128           | 126   
+| `/24`=`255.255.255.0`   | 256           | 254   
+| `/23`=`255.255.254.0`   | 512           | 510      
+| `/22`=`255.255.252.0`   | 1 024         | 1 022      
+| `/21`=`255.255.248.0`   | 2 048         | 2 046  
+| `/20`=`255.255.240.0`   | 4 096         | 4 094  
+| `/19`=`255.255.224.0`   | 8 192         | 8 190
+| `/18`=`255.255.192.0`   | 16 384        | 16 382 
+| `/17`=`255.255.128.0`   | 32 768        | 32 766  
+| `/16`=`255.255.0.0`     | 65 536        | 65 534 
+| `/8` =`255.0.0.0`       | 16 777 216    | 16 777 214
+| `/0` =`0.0.0.0`         | 4 294 967 296 | entire IPv4 Internet
 
 ## Client IP addresses
-* Client IP do not overlap  
-* Private IP  
-Cannot be used to access the Internet, remains only in the local network, never leaves the LAN.  
+Client IP do not overlap  
+* **Private IP** cannot be used to access the Internet, remains only in the local network, never leaves the LAN.  
 Reserved by the Internet Assigned Numbers Authority (IANA).
 If an interface is connected directly / indirectly to the internet, it cannot have an IP address in the private IP.
     + `10.0.0.0` ... `10.255.255.255`     (Class A, for large networks,   8 network + 24 host)
@@ -65,46 +64,46 @@ If an interface is connected directly / indirectly to the internet, it cannot ha
 ## Repeater = повторитель = коаксиальный повторитель
 * 1 OSI level
 * regenerate signals  
-* для увеличения расстояния сетевого соединения, его расширения за пределы одного сегмента, для организации двух ветвей
-* меньшее временя задержки, чем hub, ввиду того что обладает двумя разъемами для подключения кабеля, нет необходимости концентрировать сигнал и распространять на остальные выходы
+* для увеличения расстояния сетевого соединения, организации двух ветвей
+* меньшее задержка, чем с hub, т.к. два разъема для кабеля, нет необходимости концентрировать сигнал и распространять на остальные выходы
 
 ## Hub = multi-port repeater = сетевой концентратор = многопортовый повторитель
 * 1 OSI level
-* everyone receives everyone else’s data, распространяет трафик от одного подключённого устройства ко всем остальным
+* everyone receives everyone else’s data
 * вытеснены сетевыми коммутаторами
  
 ## Bridge 
 * 2 OSI level
-* between Hub connected hosts
-* 2 ports  
+* 2 ports between рub connected hosts
 
 ## Switch = сетевой коммутатор
 * 2 OSI level 
-* connects devices together in a local network
-* moving data within networks, distributes packets to its local network
+* connects devices together in a local network, moving data within networks, distributes packets to its local network
 * передаёт данные только непосредственно получателю
 * no interface
 * multiple ports
 * cannot talk directly to a network outside of its own
 * it is a combination of hubs and bridges
-* хранит в ассоциативной памяти таблицу коммутации, в которой указывается соответствие узла порту. При включении коммутатора таблица пуста, он работает в режиме обучения. В этом режиме поступающие на какой-либо порт данные передаются на все остальные порты коммутатора. При этом коммутатор анализирует фреймы (кадры) и, определив MAC-адрес хоста-отправителя, заносит его в таблицу на некоторое время. Впоследствии, если на один из портов коммутатора поступит кадр, предназначенный для хоста, MAC-адрес которого уже есть в таблице, то этот кадр будет передан только через порт, указанный в таблице. Если MAC-адрес хоста-получателя не ассоциирован с каким-либо портом коммутатора, то кадр будет отправлен на все порты, за исключением того порта, с которого он был получен. Со временем коммутатор строит таблицу для всех активных MAC-адресов, в результате трафик локализуется.
+* Хранит таблицу коммутации, в которой указывается соответствие узла порту.
+     + Режим обучения: при включении коммутатора, таблица пуста, поступающие на какой-либо порт данные передаются на все остальные порты. Коммутатор анализирует фреймы (кадры) и, определив MAC-адрес отправителя, заносит его в таблицу. Так коммутатор строит таблицу активных MAC-адресов.
+     + Если на порт поступит кадр, предназначенный для хоста, MAC-адрес которого уже есть в таблице, то этот кадр будет передан только туда
+     + Если MAC-адрес получателя не ассоциирован с каким-либо портом коммутатора, то кадр будет отправлен на все порты. 
 
 ## Network host
-* a computer or a device connected to a network, which sends or receive traffic, it can be client or server
+* a device connected to a network, which sends or receive traffic, it can be client or server
 * when a host sends a packet:
-    + if the routing table tells that the destination is on the local network, then the packet goes directly to the host
-    + if the routing table tells that the destination isn't on the local network, then the packet goes to a local router
+    + if accordingly to the routing table the destination is on the local network, then the packet goes directly to the host
+    + if accordingly to the routing table the destination isn't on the local network, then the packet goes to a local router
 
 ## Router = маршрутизатор 
 * 3 OSI level
-* connects networks together, связывает разнородные сети различных архитектур
-* separates networks with the use of multiple interfaces (an interface <-> a network)
+* связывает разнородные сети различных архитектур
+* separates networks with the use of interfaces (an interface <-> a network)
 * пересылает пакеты между сегментами сети на основе правил и таблиц маршрутизации
 * the range of possible IP addresses on one interface must not overlap with the range of its other interfaces
 * a destination 122.3.5.3/24 sends the packets to the network 122.3.5.0
-* the internet behaves like a router
+* here: the internet behaves like a router
 * a traffic control point (security, filtering, redirecting)  
-* stores routes in its routing table
 * when a router receives a packet:
     |the routing table tells the destination ...|the packet goes to ...
     |:---------------------|--------------------------------------------
@@ -112,20 +111,17 @@ If an interface is connected directly / indirectly to the internet, it cannot ha
     |isn't on an attached network| another router
     |is unknown, there is a default route| the default route
     |is unknown, there isn’t a default route| is dropped (the source IP is informed)
-  
+* stores routes in its routing table
+ 
 ## Routing Table 
-* every node maintains routing table 
-* it contains information of how to reach systems that are attached to both local and remote networks
-* is generated from local configuration information and from routing protocol messages that is exchanged with neighboring systems
-* lists the routes to particular network destinations
-* contains all networks the router knows about
-* all nodes on an network maintain routing information in routing tables
-* is stored in a router / network host
+* every router / network host stores routing table
+* contains information of how to reach systems that are attached to local and remote networks, lists the routes to particular network destinations, contains all networks the router knows about
+* is generated from local configuration information and from routing protocol messages exchanged with neighboring systems
 * has IP address
-* **A route** = 2 fields = the destination of outbound packets + the next hop
+* **A route** = 2 fields = the destination + the next hop
 * **Destination address** the end target of the packets
 * **Default destination address = default route address =** `0.0.0.0/0` takes effect when no other route is available for an IP destination. Sends the packets to the first network address it encounters (or to the next hop address ?). Matches any network.
-* **Next hop address** the next router / inernet inerface on the packet's way
+* **Next hop address** the next router / inetrnet inerface on the packet's way
 * **Gateway** a host’s way out of its local network  
 
 # Level 1 solution
