@@ -5,8 +5,7 @@
 [Calculator of mask ranges](https://www.calculator.net/ip-subnet-calculator.html?cclass=any&csubnet=28&cip=93.198.14.2&ctype=ipv4&printit=0&x=97&y=13)
 
 ## The Open Systems Interconnection model (OSI)
-Для взаимодействия сетевых устройств, передачи двоичных данных между устройствами.  
-Layers:
+Для взаимодействия сетевых устройств, передачи двоичных данных между устройствами. Layers:
 1) Physical
 2) Data link (канальный): взаимодействие сетей на физическом уровне
 3) Network: определение пути передачи данных
