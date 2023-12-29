@@ -52,13 +52,12 @@ IPv4 CIDR blocks:
 
 ## Client IP addresses
 Client IP do not overlap  
-* **Private IP** cannot be used to access the Internet, remains only in the local network, never leaves the LAN.  
-Reserved by the Internet Assigned Numbers Authority (IANA).
+* **Private IP** cannot be used to access the Internet, remains in the local network, never leaves the LAN.  
 If an interface is connected directly / indirectly to the internet, it cannot have an IP address in the private IP.
     + `10.0.0.0` ... `10.255.255.255`     (Class A, for large networks,   8 network + 24 host)
     + `172.16.0.0` ... `172.31.255.255`   (Class B, for medium networks, 16 network + 16 host)
     + `192.168.0.0` ... `192.168.255.255` (Class C, for smaller networks, 24 network + 8 host)
-* Local IP
+* **Local IP**
     + `127.0.0.1` ... `127.255.255.254`
 
 ## Repeater = повторитель = коаксиальный повторитель
