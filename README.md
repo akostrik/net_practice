@@ -288,7 +288,6 @@ All the receiving networks must be in this range and without overlapping.
 <img src="https://github.com/akostrik/net_practice/assets/22834202/f959e183-552a-4e93-a129-90208de25709" width="700" height="550">  
 
 # Level 10 solution
-The internet must be able to send its packets to all the hosts, so its destination must cover the range of networks of all the hosts.  
 `10001100.10111110.01010011.00000001`=`140.190.83.1` R11  
 `10001100.10111110.01010011.11111110`=`140.190.83.254` R13  
-The mask /24 for the internet's destination covers the range `140.190.83.1` ... `140.190.83.254`  
+`10001100.10111110.01010011._00000000`=`140.190.83.0/24` I-dest that covers the range of networks of all the hosts (R11, R13) => I can send packets to all the hosts    
