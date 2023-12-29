@@ -7,8 +7,15 @@ _42 School project, level 4_
 **Transmission Control Protocol (TCP)** a communications standard that enables application programs and devices to exchange messages over a network. 
 1) Establishes a connection between a source and its destination, which remains active until communication begins.
 2) Breaks data into smaller packets, while ensuring end-to-end delivery.
-3) 
-**The Open Systems Interconnection model (OSI)** сетевая модель стека сетевых протоколов OSI/ISO. Сетевые устройства могут взаимодействовать друг с другом.
+
+**The Open Systems Interconnection model (OSI)** сетевая модель стека сетевых протоколов OSI/ISO, для вхаиможействия сетевых устройств. Уровни:
+1) physical layer: метод передачи двоичных данных от одного устройства к другому
+2) data link layer, канальный: взаимодействие сетей на физическом уровне
+3) network layer: определение пути передачи данных
+4) transport layer: надёжная передача данных (протоколы ATP, CUDP, DCCP, FCP, IL, NBF, NCP, SCTP, SPX, SST, TCP, UDP)
+5) session layer: поддержание сеанса связи, позволяя приложениям взаимодействовать длительное время (протоколы H.245, ISO-SP, iSNS, L2F, L2TP, NetBIOS, PAP, PPTP, RPC, RTCP, SMPP, SCP, ZIP, SDP)
+6) presentation layer: преобразование протоколов и кодирование/декодирование данных (протоколы AFP, ICA, LPP, NCP, NDR, XDR, X.25 PAD)
+7) application layer: взаимодействие пользовательских приложений с сетью (протолоклы RDP, HTTP, SMTP, SNMP, POP3, FTP, XMPP, OSCAR, Modbus, SIP, TELNET)
 
 # Variable-length subnet masking (VLSM)
 
@@ -61,24 +68,19 @@ If an interface is connected directly / indirectly to the internet, it cannot ha
 
 # Network devices
 ## Repeater = повторитель = коаксиальный повторитель
-* 1 уровень OSI (физический)
+* 1 OSI level
 * regenerate signals  
 * для увеличения расстояния сетевого соединения и его расширения за пределы одного сегмента или для организации двух ветвей, путём повторения электрического сигнала
 * обладает гораздо меньшим временем задержки, чем hub, ввиду того что обладает двумя разъемами для подключения кабеля, ему нет необходимости где-то концентрировать сигнал и распространять на остальные выходы
 
 ## Hub = multi-port repeater = сетевой концентратор = многопортовый повторитель для витой пары 
-* 1 уровень OSI (физический)
+* 1 OSI level
 * everyone receive everyone else’s data, распространяет трафик от одного подключённого устройства ко всем остальным
 * для объединения компьютеров в сетях Ethernet с применением кабельной инфраструктуры типа витая пара
 * вытеснены сетевыми коммутаторами
  
-## Bridge 
-* sit between Hub connected hosts
-* has 2 ports  
-* learn which hosts are on each side
-
 ## Switch = сетевой коммутатор
-* 2 уровень OSI (канальный)
+* 2 OSI level 
 * its primary purpose is switching (moving data within networks)  
 * передаёт данные только непосредственно получателю
 * connects devices together in a local network
@@ -90,8 +92,14 @@ If an interface is connected directly / indirectly to the internet, it cannot ha
 * has multiple ports
 * хранит в ассоциативной памяти таблицу коммутации, в которой указывается соответствие узла порту. При включении коммутатора эта таблица пуста, и он работает в режиме обучения. В этом режиме поступающие на какой-либо порт данные передаются на все остальные порты коммутатора. При этом коммутатор анализирует фреймы (кадры) и, определив MAC-адрес хоста-отправителя, заносит его в таблицу на некоторое время. Впоследствии, если на один из портов коммутатора поступит кадр, предназначенный для хоста, MAC-адрес которого уже есть в таблице, то этот кадр будет передан только через порт, указанный в таблице. Если MAC-адрес хоста-получателя не ассоциирован с каким-либо портом коммутатора, то кадр будет отправлен на все порты, за исключением того порта, с которого он был получен. Со временем коммутатор строит таблицу для всех активных MAC-адресов, в результате трафик локализуется.
 
+## Bridge 
+* 2 OSI level
+* sit between Hub connected hosts
+* has 2 ports  
+* learn which hosts are on each side
+
 ## Router = маршрутизатор 
-* 3 уровень OSI (сетевой)
+* 3 OSI level
 * its primary purpose is routing (moving data ...)
 * connects networks together
 * separates different networks with the use of multiple interfaces (an interface <-> a network)
