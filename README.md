@@ -103,10 +103,20 @@ If an interface is connected directly / indirectly to the internet, it cannot ha
 * the internet behaves like a router
 * a traffic control point (security, filtering, redirecting)  
 * stores routes in its routing table
+* when a host sends a packet:
+    + if the routing table tells that the destination is on the local network, then the packet goes directly to the host
+    + if the routing table tells that the destination isn't on the local network, then the packet goes to a local router
+* when a router receives a packet:
+    + if the routing table tells that the destination is on an attached network, then the packet goes directly to the host
+    + if the routing table tells that the destination isn't on an attached network, then the packet goes to another router
   
-### Routing Table 
+## Routing Table 
+* every node maintains routing table 
+* it contains information of how to reach systems that are attached to both local and remote networks
+* is generated from local configuration information and from routing protocol messages that is exchanged with neighboring systems
 * lists the routes to particular network destinations
 * contains all networks the router knows about
+* all nodes on an network maintain routing information in routing tables
 * is stored in a router / network host
 * has IP address
 * **A route** = 2 fields = the destination of outbound packets + the next hop
