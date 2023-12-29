@@ -271,10 +271,10 @@ NB: /30 gives 64 ranges
 So, all the receiving networks must be in this range and without overlapping.  
   
 `11111111.11111111.11111111.1111_0000` (`255.255.255.240`, `/28`) mask R23, R22 splits `/26` into 4 ranges:  
-163.170.250.0 - 163.170.250.15 Network R1 + R2 with `/28` 
-163.170.250.16 - 163.170.250.31 Network R2 + C with `/28` 
-163.170.250.32 - 163.170.250.47 Network R2 + D with `/28` 
-163.170.250.48 - 163.170.250.63 nut used  
+163.170.250.0 - 163.170.250.15 Network R1 + R2 with `/28`   
+163.170.250.16 - 163.170.250.31 Network R2 + C with `/28`  
+163.170.250.32 - 163.170.250.47 Network R2 + D with `/28`  
+163.170.250.48 - 163.170.250.63 nut used   
 
 Network R2 + Internet:    
 `11111111.11111111.11111111.1111_0000` (`255.255.255.240`, `/28`) mask  
