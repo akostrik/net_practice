@@ -264,7 +264,8 @@ I:
 `11111111.11111111.11111111.11_000000`=`255.255.255.192`=`/26` mask  
 `10001101.11101111.11100101.00_000000`=`141.239.229.000/26` I routes these address  
 `10001101.11101111.11100101.00_000001`=`141.239.229.001` I routes these address, min  
-`10001101.11101111.11100101.00_111110`=`141.239.229.063` I routes these address, max  
+`10001101.11101111.11100101.00_111110`=`141.239.229.062` I routes these address, max  
+  
 All the receiving networks must be in this range and without overlapping.  
   
 `11111111.11111111.11111111.1111_0000`=`255.255.255.240`=`/28` mask R23 R22, splits `/26` into 4 ranges:  
