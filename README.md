@@ -7,7 +7,7 @@
 A computer or other device connected to a computer network, any device which sends or receive traffic, it can be client or server.
 
 ## The Open Systems Interconnection model (OSI)
-Сетевая модель стека сетевых протоколов OSI/ISO, для вхаиможействия сетевых устройств. Levels:
+Сетевая модель стека сетевых протоколов OSI/ISO, для вхаимодействия сетевых устройств. Levels:
 1) Physical layer: метод передачи двоичных данных от одного устройства к другому
 2) Sata link layer, канальный: взаимодействие сетей на физическом уровне
 3) Network layer: определение пути передачи данных
@@ -231,14 +231,12 @@ Network Internet:
 # Level 7 solution
 A1: we cannot choose our IP address freely since the IP R11 is already entered. 
 
-The range of IP addresses of a network must not overlap those of another network, so we need addresses for 3 networks: A + R1, R1 + R2, R2 + C.  
-We split the last byte of the address into several address ranges.
-* /24 => both ... and R12 are in [`93.198.14.0`, `93.198.14.255`], doesn't suit here  
-* /26 => gives 4 ranges  
-* /28 => gives 16 ranges, from which we use the following 3 :  
+The ranges of networks IP must not overlap, so we need addresses for 3 networks: A + R1, R1 + R2, R2 + C, so we split the last byte of the address into 16 address ranges by the mask /28. We use the following 3 ranges:   
 `93.198.14.1` - `93.198.14.14`    (A + R1)  
 `93.198.14.65` - `93.198.14.78`   (R1 + R2)  
 `93.198.14.241` - `93.198.14.254` (R2 + C)  
+NB /26 gives 4 ranges  
+NB /24 doesn't suit here, because both ... and R12 would be in [`93.198.14.0`, `93.198.14.255`]   
   
 Calculator of mask ranges https://www.calculator.net/ip-subnet-calculator.html?cclass=any&csubnet=28&cip=93.198.14.2&ctype=ipv4&printit=0&x=97&y=13
 
