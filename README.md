@@ -26,7 +26,6 @@ IPv4: network prefix  8 / 16 / 24 bits
 IPv6: interface identifier 64 bits  
 
 ## Classless Inter-Domain Routing (CIDR)
-A method for allocating IP addresses  
 IPv4 CIDR blocks:  
 | Netmask                 | nb address    | nb hosts  
 |:------------------------|--------------:|-------:
