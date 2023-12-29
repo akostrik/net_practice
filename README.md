@@ -229,9 +229,9 @@ Network Internet:
 <img src="https://github.com/akostrik/net_practice/assets/22834202/429c209c-84af-45b1-8211-724326f91bb5" width="720" height="600">  
 
 # Level 7 solution
-The ranges of networks IP must not overlap =>  
-We need addresses for 3 networks: A + R1, R1 + R2, R2 + C =>  
-We split the last byte into 64 ranges by /30, we use the following 3 ranges:   
+We need addresses for 3 networks and the ranges of networks must not overlap =>  
+We split the last byte into 64 ranges by /30.  
+We use the following 3 ranges:   
   
 Network A + R1:  
 `11111111.11111111.11111111.111111+00` (`255.255.255.252`) mask  
