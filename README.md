@@ -1,7 +1,7 @@
 # Vocabulary
 
 ## The Open Systems Interconnection model (OSI)
-Сетевая модель стека сетевых протоколов OSI/ISO, взаимодействие сетевых устройств, передача двоичных данных от одного устройства к другому.  
+Для взаимодействия сетевых устройств, передачи двоичных данных между устройствами.  
 Layers:
 1) Physical
 2) Data link (канальный): взаимодействие сетей на физическом уровне
@@ -12,12 +12,12 @@ Layers:
 7) Application: взаимодействие пользовательских приложений с сетью (протолоклы RDP, HTTP, SMTP, SNMP, POP3, FTP, XMPP, OSCAR, Modbus, SIP, TELNET)
 
 ## Variable-length subnet masking (VLSM)
-**Маска подсети** определяет по IP-адресу адрес подсети и адрес узла.  
-Не является частью IP-пакета (в отличие от IP-адреса). Например:  
-`network prefix     + host identifier`   
-`11000000.10101000.0000000+1.00000010`=`192.168.1.2`  
-`11111111.11111111.1111111+0.00000000`=`255.255.254.0` mask  
-`11000000.10101000.0000000+0.00000000`=`192.168.0.0` **network address**  
+**Маска подсети** defines the network prefix and the host identifier.  
+Не является частью IP-пакета (в отличие от IP-адреса).  
+Example:  
+`11000000.10101000.0000000+1.00000010`=`192.168.001.002`  
+`11111111.11111111.1111111+0.00000000`=`255.255.254.000` mask  
+`11000000.10101000.0000000+0.00000000`=`192.168.000.000` **network address**  
 
 Calculator of mask ranges https://www.calculator.net/ip-subnet-calculator.html?cclass=any&csubnet=28&cip=93.198.14.2&ctype=ipv4&printit=0&x=97&y=13
 
@@ -47,22 +47,25 @@ IPv4 CIDR blocks:
 | `/17`=`255.255.128.000` | 32 768        | 32 766  
 | `/16`=`255.255.000.000` | 65 536        | 65 534 
 | `/08`=`255.000.000.000` | 16 777 216    | 16 777 214
-| `/00`=`000.000.000.000`  | 4 294 967 296 | entire IPv4 Internet
+| `/00`=`000.000.000.000` | 4 294 967 296 | entire IPv4 Internet
 
 ## Client IP addresses
-Client IP do not overlap  
+The IP ranges of the networks do not overlap.
+Every IP should be covered by the Internet destination. 
 * **Private IP** cannot be used to access the Internet, remains in the local network, never leaves the LAN.  
-If an interface is connected directly / indirectly to the internet, it cannot have an IP address in the private IP.
-    + `100.000.000.000` ... `010.255.255.255`     (Class A, for large networks,   8 network + 24 host)
-    + `172.016.000.000` ... `172.031.255.255`   (Class B, for medium networks, 16 network + 16 host)
-    + `192.168.000.000` ... `192.168.255.255` (Class C, for smaller networks, 24 network + 8 host)
+If an interface is connected directly / indirectly to the internet, it cannot have an private IP.
+Reserved:  
+    + `100.000.000.000` ... `010.255.255.255` (Class A, for large networks,   08 network + 24 host)
+    + `172.016.000.000` ... `172.031.255.255` (Class B, for medium networks,  16 network + 16 host)
+    + `192.168.000.000` ... `192.168.255.255` (Class C, for smaller networks, 24 network + 08 host)
 * **Local IP**
+Reserved:  
     + `127.000.000.001` ... `127.255.255.254`
 
 ## Repeater = повторитель = коаксиальный повторитель
 * 1 OSI level
 * regenerate signals  
-* для увеличения расстояния сетевого соединения, организации двух ветвей
+* для увеличения расстояния сетевого соединения или организации двух ветвей
 * меньшее задержка, чем с hub, т.к. два разъема для кабеля, нет необходимости концентрировать сигнал и распространять на остальные выходы
 
 ## Hub = multi-port repeater = сетевой концентратор = многопортовый повторитель
@@ -70,22 +73,17 @@ If an interface is connected directly / indirectly to the internet, it cannot ha
 * everyone receives everyone else’s data
 * вытеснены сетевыми коммутаторами
  
-## Bridge 
-* 2 OSI level
-* 2 ports between рub connected hosts
-
 ## Switch = сетевой коммутатор
 * 2 OSI level 
-* connects devices together in a local network, moving data within networks, distributes packets to its local network
+* connects devices together in the local network, moving data within the network, distributes packets to its local network
 * передаёт данные только непосредственно получателю
 * no interface
 * multiple ports
 * cannot talk directly to a network outside of its own
-* it is a combination of hubs and bridges
 * Хранит таблицу коммутации, в которой указывается соответствие узла порту.
-     + Режим обучения: при включении коммутатора, таблица пуста, поступающие на какой-либо порт данные передаются на все остальные порты. Коммутатор анализирует фреймы (кадры) и, определив MAC-адрес отправителя, заносит его в таблицу. Так коммутатор строит таблицу активных MAC-адресов.
-     + Если на порт поступит кадр, предназначенный для хоста, MAC-адрес которого уже есть в таблице, то этот кадр будет передан только туда
-     + Если MAC-адрес получателя не ассоциирован с каким-либо портом коммутатора, то кадр будет отправлен на все порты. 
+     + Режим обучения: при включении коммутатора таблица пуста, поступающие на какой-либо порт данные передаются на все остальные порты. Коммутатор заносит MAC-адрес отправителей в таблицу.
+     + Если поступит кадр, предназначенный для хоста уже ассоциированного с MAC-адресом получателя в таблице, то кадр будет передан только туда
+     + Если MAC-адрес получателя не ассоциирован, то кадр будет передан на все порты
 
 ## Network host
 * a device connected to a network, which sends or receive traffic, it can be client or server
@@ -99,7 +97,7 @@ If an interface is connected directly / indirectly to the internet, it cannot ha
 
 ## Router = маршрутизатор 
 * 3 OSI level
-* связывает разнородные сети различных архитектур
+* связывает сети различных архитектур
 * separates networks with the use of interfaces (an interface <-> a network)
 * пересылает пакеты между сегментами сети на основе правил и таблиц маршрутизации
 * the range of possible IP addresses on one interface must not overlap with the range of its other interfaces
@@ -117,12 +115,12 @@ If an interface is connected directly / indirectly to the internet, it cannot ha
  
 ## Routing Table 
 * every router / network host stores routing table
-* contains information of how to reach systems that are attached to local and remote networks, lists the routes to particular network destinations, contains all networks the router knows about
-* is generated from local configuration information and from routing protocol messages exchanged with neighboring systems
+* info: how to reach systems that are attached to local and remote networks, the routes to particular network destinations
+* is generated from local configuration information and from routing protocol messages exchanged
 * has IP address
 * **A route** = 2 fields = the destination + the next hop
 * **Destination address** the end target of the packets
-* **Default destination address = default route address =** `0.0.0.0/0` takes effect when no other route is available for an IP destination. Sends the packets to the first network address it encounters (or to the next hop address ?). Matches any network.
+* **Default destination address** = `0.0.0.0/0` takes effect when no other route is available for the IP destination. The packet is sent to the first network address it encounters (to the next hop address ?). Matches any network.
 * **Next hop address** the next router / inetrnet inerface on the packet's way
 * **Gateway** a host’s way out of its local network  
 
