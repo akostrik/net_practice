@@ -309,7 +309,7 @@ Network R2 H4:
 Free IP, that can be used for R2 C3:    
 `10001100.10111110.01010011.11000000`=**`140.190.083.192`**  
 `10001100.10111110.01010011.11111011`=**`140.190.083.251`**    
-any mask that will let us take 2 IP addresses from that range to put in R22 and R31   
+`11111111.11111111.11111111.111_00000`=`255.255.255.224`=`/27` any mask that will let us take 2 IP    
   
 Network R1 R2:  
 `11111111.11111111.11111111.111111_00`=`255.255.255.252`=`/30` mask  
