@@ -234,16 +234,17 @@ Network Internet:
 <img src="https://github.com/akostrik/net_practice/assets/22834202/429c209c-84af-45b1-8211-724326f91bb5" width="720" height="600">  
 
 ## Level 7
-A1: we cannot choose our IP address freely since the IP of Interface R11 is already entered. Also, if we give it a mask of /24, the IP address range will overlap with the range of Interface R12, which is already entered. They would both be in the range of 93.198.14.0 - 93.198.14.255.
+A1: we cannot choose our IP address freely since the IP R11 is already entered. 
 
-The range of IP addresses of a network must not overlap those of another network.
-We need addresses for 3 separate networks (A + R1, R1 + R2, R2 + C).
+The range of IP addresses of a network must not overlap those of another network, so we need addresses for 3 networks: A + R1, R1 + R2, R2 + C.  
 We split the last byte of the address into several address ranges.
-The mask /26 gives 4 ranges.
-The mask /28 gives 16 ranges, from which we use the following 3 :
-93.198.14.1 - 93.198.14.14    (A + R1)
-93.198.14.65 - 93.198.14.78   (R1 + R2)
-93.198.14.241 - 93.198.14.254 (R2 + C)
-Calculator of the possible ranges of a mask https://www.calculator.net/ip-subnet-calculator.html?cclass=any&csubnet=28&cip=93.198.14.2&ctype=ipv4&printit=0&x=97&y=13
+* /24 => the IP address range will overlap with the range of R12, they would both be in [`93.198.14.0`, `93.198.14.255`], doesn't suit here  
+* /26 => gives 4 ranges  
+* /28 => gives 16 ranges, from which we use the following 3 :  
+`93.198.14.1` - `93.198.14.14`    (A + R1)  
+`93.198.14.65` - `93.198.14.78`   (R1 + R2)  
+`93.198.14.241` - `93.198.14.254` (R2 + C)  
+  
+Calculator of mask ranges https://www.calculator.net/ip-subnet-calculator.html?cclass=any&csubnet=28&cip=93.198.14.2&ctype=ipv4&printit=0&x=97&y=13
 
 
