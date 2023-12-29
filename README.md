@@ -291,3 +291,21 @@ All the receiving networks must be in this range and without overlapping.
 `10001100.10111110.01010011.00000001`=`140.190.83.1` R11  
 `10001100.10111110.01010011.11111110`=`140.190.83.254` R13  
 `10001100.10111110.01010011._00000000`=`140.190.83.0/24` I-dest that covers the range of networks of all the hosts (R11, R13) => I can send packets to all the hosts    
+
+`10001100.10111110.01010011.0_0000001`=`140.190.83.1` network R1 S1 min    
+`10001100.10111110.01010011.0_1111110`=`140.190.83.126` network R1 S1 max  
+
+`11111111.11111111.11111111.11_000000`=`255.255.255.192`=`/26' network R2 H4 mask
+`10001100.10111110.01010011.10_000001`= `140.190.83.129` network R2 H4 min
+`10001100.10111110.01010011.10_111110`= `140.190.83.190` network R2 H4 min
+`10001100.10111110.01010011.10000011`=`140.190.83.131` H41
+
+Router R1 to Router R2 - Covers the range 
+70.101.30.252
+70.101.30.255 (mask /30).
+
+Router R2 to Client H3 - ??? (mask ???).
+
+We must make sure of 2 things:  
+The IP address is covered by the internet destination.  
+The IP address range of the various networks does not overlap.  
