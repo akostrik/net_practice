@@ -215,7 +215,7 @@ Network R2 + Internet:
 Network Internet:  
 `10100011.10101100.11111010.00000001` (`163.172.250.12`) table I, the next hop of the internet  
 
-|A1 -> Somewhere on the Net (8.8.8.8)  
+|A1 -> Somewhere on the Net (8.8.8.8):  
 |:----------------------------------------
 |A: dest. does not match any interface, table 0.0.0.0/0 -> to gateway 89.92.241.228 through A1  
 |S: pass to all connections  
@@ -223,8 +223,7 @@ Network Internet:
 |R: dest. does not match any interface, table 0.0.0.0/0 -> to gateway 163.172.250.1 through R2 (почему не R1?)   
 |I: accepted, destination IP reached  
 |A: loop detected (потому что S: pass to all connection ?)  
-| 
-|**Somewhere on the Net -> A1 (89.92.241.227)**  
+|**Somewhere on the Net -> A1 (89.92.241.227):**  
 |I: dest. does not match any interface, routing table 89.92.241.228/25 -> to gateway 163.172.250.12 through I1  
 |R: accepted  
 |R: send to R1 (почему не R2?)  
