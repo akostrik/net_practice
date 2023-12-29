@@ -7,6 +7,8 @@ _42 School project, level 4_
 **Transmission Control Protocol (TCP)** a communications standard that enables application programs and devices to exchange messages over a network. 
 1) Establishes a connection between a source and its destination, which remains active until communication begins.
 2) Breaks data into smaller packets, while ensuring end-to-end delivery.
+3) 
+**The Open Systems Interconnection model (OSI)** сетевая модель стека сетевых протоколов OSI/ISO. Сетевые устройства могут взаимодействовать друг с другом.
 
 # Variable-length subnet masking (VLSM)
 
@@ -66,30 +68,30 @@ If an interface is connected directly / indirectly to the internet, it cannot ha
 
 ## Hub = multi-port repeater = сетевой концентратор = многопортовый повторитель для витой пары 
 * 1 уровень OSI (физический)
-* facilitates scaling communication between additional hosts  
-* everyone receive everyone else’s data
+* everyone receive everyone else’s data, распространяет трафик от одного подключённого устройства ко всем остальным
 * для объединения компьютеров в сетях Ethernet с применением кабельной инфраструктуры типа витая пара
 * вытеснены сетевыми коммутаторами
-* ретранслирует входящий сигнал с одного из портов в сигнал на все остальные подключённые порты
-  
+ 
 ## Bridge 
 * sit between Hub connected hosts
 * has 2 ports  
 * learn which hosts are on each side
 
 ## Switch = сетевой коммутатор
-* 2 уровень OSI (канальный уровень)
+* 2 уровень OSI (канальный)
 * its primary purpose is switching (moving data within networks)  
-* it is a combination of hubs and bridges
+* передаёт данные только непосредственно получателю
 * connects devices together in a local network
 * distributes packets to its local network
 * has no interface
 * cannot talk directly to a network outside of its own
-* has multiple ports  
 * learn which hosts are on each port  
+* it is a combination of hubs and bridges
+* has multiple ports
+* хранит в ассоциативной памяти таблицу коммутации, в которой указывается соответствие узла порту. При включении коммутатора эта таблица пуста, и он работает в режиме обучения. В этом режиме поступающие на какой-либо порт данные передаются на все остальные порты коммутатора. При этом коммутатор анализирует фреймы (кадры) и, определив MAC-адрес хоста-отправителя, заносит его в таблицу на некоторое время. Впоследствии, если на один из портов коммутатора поступит кадр, предназначенный для хоста, MAC-адрес которого уже есть в таблице, то этот кадр будет передан только через порт, указанный в таблице. Если MAC-адрес хоста-получателя не ассоциирован с каким-либо портом коммутатора, то кадр будет отправлен на все порты, за исключением того порта, с которого он был получен. Со временем коммутатор строит таблицу для всех активных MAC-адресов, в результате трафик локализуется.
 
 ## Router = маршрутизатор 
-* 3 уровень OSI
+* 3 уровень OSI (сетевой)
 * its primary purpose is routing (moving data ...)
 * connects networks together
 * separates different networks with the use of multiple interfaces (an interface <-> a network)
@@ -99,7 +101,9 @@ If an interface is connected directly / indirectly to the internet, it cannot ha
 * provides a traffic control point (security, filtering, redirecting)  
 * the internet behaves like a router
 * a destination 122.3.5.3/24 sends the packets to the network 122.3.5.0
-
+* пересылает пакеты между различными сегментами сети на основе правил и таблиц маршрутизации
+* может связывать разнородные сети различных архитектур
+  
 ### Routing Table 
 * lists the routes to particular network destinations
 * contains all networks the router knows about
