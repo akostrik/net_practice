@@ -289,3 +289,7 @@ All the receiving networks must be in this range and without overlapping.
 
 # Level 10 solution
 The internet must be able to send its packets to all the hosts, so its destination must cover the range of networks of all the hosts.
+`10001100.10111110.01010011.00000001`=`140.190.83.1` R11
+`10001100.10111110.01010011.11111110`=`140.190.83.254`R13
+
+Interface R11 and Interface R13 already have an IP address entered. This IP address only differs in its last byte. Interface R11 has for last byte 1, and Interface R13 has for last byte 254. To cover this wide range to IP addresses, we take a mask of /24 for the internet's destination. This destination will cover a range of 70.101.30.0 - 70.101.30.255.
