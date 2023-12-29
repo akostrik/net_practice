@@ -140,13 +140,13 @@ If an interface is connected directly / indirectly to the internet, it cannot ha
 # Level 2 solution
 B1:  
 `11111111.11111111.11111111.111+00000` (`255.255.255.224`, `/27`) mask, because B and A are on the same private network      
-`11000000.10101000.00111011.110+00001` (``) A1 min  
+`11000000.10101000.00111011.110+00001` (``) A1 min   
 `11000000.10101000.00111011.110+11110` (``) A2 max   
   
 C1, D1:  
-`11111111.11111111.11111111.111111+00` (255.255.255.252`, `/30`) mask  
-- the first 30 bits are identical for D and C
-- the last 2 bits are not `11`, nor `00`
+`11111111.11111111.11111111.111111+00` (255.255.255.252`, `/30`) mask   
+- the first 30 bits are identical for D and C  
+- the last 2 bits are not `11`, nor `00`  
 
 <img src="https://github.com/akostrik/net_practice/assets/22834202/5a34deda-b8a4-4701-925d-74a5bbe1add3" width="700" height="400">  
 
