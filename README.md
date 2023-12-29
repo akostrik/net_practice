@@ -58,13 +58,14 @@ If an interface is connected directly / indirectly to the internet, it cannot ha
     + `127.0.0.1` ... `127.255.255.254`
 
 # Network devices
-## Repeater = повторитель
+## Repeater = повторитель = коаксиальный повторитель
 * regenerate signals  
 * для увеличения расстояния сетевого соединения и его расширения за пределы одного сегмента или для организации двух ветвей, путём повторения электрического сигнала
 * в терминах модели OSI работает на физическом уровне
 * обладает гораздо меньшим временем задержки, чем hub, ввиду того что обладает двумя разъемами для подключения кабеля, ему нет необходимости где-то концентрировать сигнал и распространять на остальные выходы
 
-## Hub = multi-port repeater = концентратор (1 уровень OSI)
+## Hub = multi-port repeater = сетевой концентратор = многопортовый повторитель для витой пары 
+* 1 уровень OSI
 * facilitates scaling communication between additional hosts  
 * everyone receive everyone else’s data
 * для объединения компьютеров в сетях Ethernet с применением кабельной инфраструктуры типа витая пара
@@ -76,7 +77,8 @@ If an interface is connected directly / indirectly to the internet, it cannot ha
 * has 2 ports  
 * learn which hosts are on each side
 
-## Switch = сетевой коммутатор (2 уровень OSI)
+## Switch = сетевой коммутатор
+* 2 уровень OSI
 * its primary purpose is switching (moving data within networks)  
 * it is a combination of hubs and bridges
 * connects devices together in a local network
@@ -86,7 +88,8 @@ If an interface is connected directly / indirectly to the internet, it cannot ha
 * has multiple ports  
 * learn which hosts are on each port  
 
-## Router = маршрутизатор (3 уровень OSI)
+## Router = маршрутизатор 
+* 3 уровень OSI
 * its primary purpose is routing (moving data ...)
 * connects networks together
 * separates different networks with the use of multiple interfaces (an interface <-> a network)
