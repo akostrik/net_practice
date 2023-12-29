@@ -58,53 +58,50 @@ If an interface is connected directly / indirectly to the internet, it cannot ha
     + `127.0.0.1` ... `127.255.255.254`
 
 # Network devices
-## Repeaters 
+## Repeater
 * regenerate signals  
 * allow communications across greater distances  
 
-## Hub = multi-port Repeaters
+## Hub = multi-port repeater
 * facilitates scaling communication between additional hosts  
 * everyone receive everyone else’s data  
 
 ## Bridge 
 * sit between Hub connected hosts
-* have 2 ports  
+* has 2 ports  
 * learn which hosts are on each side
 
-## Switch = combination of Hubs and Bridges
+## Switch (сетевой коммутатор)
 * its primary purpose is switching (moving data within networks)  
+* it is a combination of hubs and bridges
 * connects devices together in a local network
 * distributes packets to its local network
 * has no interface
 * cannot talk directly to a network outside of its own
-* facilitate communication within network  
-* multiple Ports  
+* has multiple ports  
 * learn which hosts are on each port  
-* hosts on a Network share the same IP address space
 
 ## Router
-* its primary purpose is Routing (moving data ...)
+* its primary purpose is routing (moving data ...)
 * connects networks together
-* separates different networks with the use of multiple interfaces (an interface = a network)
-* the range of possible IP addresses on one of its interfaces must not overlap with the range of its other interfaces
-* the internet behaves like a router
-* facilitate communication between networks  
-* provides a traffic control point (security, filtering, redirecting)  
+* separates different networks with the use of multiple interfaces (an interface <-> a network)
+* the range of IP addresses on one interface must not overlap with the range of its other interfaces
 * learns which networks it is attached to  
-* know as Routes - Stored in Routing Table
-* Hosts in different Networks : A Router is in between
+* stores routes in its routing table
+* provides a traffic control point (security, filtering, redirecting)  
+* the internet behaves like a router
+* a destination 122.3.5.3/24 sends the packets to the network 122.3.5.0
 
 ### Routing Table 
-* all networks a Router knows about  
-* has IP address in the Networks they are attached to   
-* creates the Hierarchy in Network and the entire Internet  
-* **Gateway** each host’s way out of their local Network  
-* **Routing table** is stored in a router / network host, lists the routes to particular network destinations
-* **A route** = 2 fields = the destination of outbound packets + the next hop of the packets
-* **Destination** a network address, the end target of the packets of the host
-* **The destination default = The route of default  =** `0.0.0.0/0` a network address, takes effect when no other route is available for an IP destination. Uses the next hop address to send the packets without a specific destination. Sends the packets to the first network address it encounters. Matches any network.  
-* **Next hop** a network address, the next router interface / inernet inerface on the packet's way. Every router maintains its routing table with a next hop address.  
-* A destination address of 122.3.5.3/24 sends the packets to the network 122.3.5.0.
+* lists the routes to particular network destinations
+* contains all networks the router knows about
+* is stored in a router / network host
+* has IP address
+* **A route** = 2 fields = the destination of outbound packets + the next hop
+* **Destination address** the end target of the packets
+* **Default destination address = default route address =** `0.0.0.0/0` takes effect when no other route is available for an IP destination. Sends the packets to the first network address it encounters (or to the next hop address ?). Matches any network.
+* **Next hop address** the next router / inernet inerface on the packet's way
+* **Gateway** a host’s way out of its local network  
 
 # Solution
 ## Level 1
