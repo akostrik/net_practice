@@ -85,9 +85,8 @@ If an interface is connected directly / indirectly to the internet, it cannot ha
 
 ## Switch = сетевой коммутатор
 * 2 OSI level 
-* its primary purpose is switching (moving data within networks)  
 * connects devices together in a local network
-* distributes packets to its local network
+* moving data within networks, distributes packets to its local network
 * передаёт данные только непосредственно получателю
 * no interface
 * multiple ports
@@ -97,16 +96,13 @@ If an interface is connected directly / indirectly to the internet, it cannot ha
 
 ## Router = маршрутизатор 
 * 3 OSI level
-* its primary purpose is routing (moving data ...)
-* connects networks together
-* separates different networks with the use of multiple interfaces (an interface <-> a network)
+* connects networks together, связывает разнородные сети различных архитектур
+* separates networks with the use of multiple interfaces (an interface <-> a network)
 * пересылает пакеты между сегментами сети на основе правил и таблиц маршрутизации
-* the range of IP addresses on one interface must not overlap with the range of its other interfaces
-* learns which networks it is attached to  
-* a traffic control point (security, filtering, redirecting)  
-* the internet behaves like a router
+* the range of possible IP addresses on one interface must not overlap with the range of its other interfaces
 * a destination 122.3.5.3/24 sends the packets to the network 122.3.5.0
-* может связывать разнородные сети различных архитектур
+* the internet behaves like a router
+* a traffic control point (security, filtering, redirecting)  
 * stores routes in its routing table
   
 ### Routing Table 
