@@ -238,7 +238,7 @@ A1: we cannot choose our IP address freely since the IP R11 is already entered.
 
 The range of IP addresses of a network must not overlap those of another network, so we need addresses for 3 networks: A + R1, R1 + R2, R2 + C.  
 We split the last byte of the address into several address ranges.
-* /24 => the IP address range will overlap with the range of R12, they would both be in [`93.198.14.0`, `93.198.14.255`], doesn't suit here  
+* /24 => both ... and R12 are in [`93.198.14.0`, `93.198.14.255`], doesn't suit here  
 * /26 => gives 4 ranges  
 * /28 => gives 16 ranges, from which we use the following 3 :  
 `93.198.14.1` - `93.198.14.14`    (A + R1)  
