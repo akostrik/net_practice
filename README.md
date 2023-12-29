@@ -76,7 +76,6 @@ If an interface is connected directly / indirectly to the internet, it cannot ha
 ## Hub = multi-port repeater = сетевой концентратор = многопортовый повторитель для витой пары 
 * 1 OSI level
 * everyone receives everyone else’s data, распространяет трафик от одного подключённого устройства ко всем остальным
-* для объединения компьютеров в сетях Ethernet с применением кабельной инфраструктуры типа витая пара
 * вытеснены сетевыми коммутаторами
  
 ## Switch = сетевой коммутатор
