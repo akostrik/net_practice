@@ -28,7 +28,7 @@ IPv6: interface identifier 64 bits
 
 ## Classless Inter-Domain Routing (CIDR)
 IPv4 CIDR blocks:  
-| Netmask                 | nb address    | nb hosts  
+| netmask                 | nb address    | nb hosts  
 |:------------------------|--------------:|-------:
 | `/32`=`255.255.255.255` | 1             | accessible by explicit routing rules (single-host network) 
 | `/31`=`255.255.255.254` | 2             | no available host addresses (unusable)
