@@ -286,3 +286,6 @@ All the receiving networks must be in this range and without overlapping.
 # Level 9 solution
 
 <img src="https://github.com/akostrik/net_practice/assets/22834202/f959e183-552a-4e93-a129-90208de25709" width="700" height="550">  
+
+# Level 10 solution
+The internet must be able to send its packets to all the hosts, so its destination must cover the range of networks of all the hosts.
