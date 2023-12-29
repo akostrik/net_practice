@@ -61,6 +61,8 @@ Reserved:
 * **Local IP**
 Reserved:  
     + `127.000.000.001` ... `127.255.255.254`
+[Convertir adresse IP en Binaire](https://convertir.github.io/outils/convertir-ip-en-binaire-en-ligne.html)
+[Convert a Binary IP to a Regular IP Address](https://www.browserling.com/tools/bin-to-ip)
 
 ## Repeater = повторитель = коаксиальный повторитель
 * 1 OSI level
