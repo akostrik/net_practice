@@ -229,11 +229,10 @@ Network Internet:
 <img src="https://github.com/akostrik/net_practice/assets/22834202/429c209c-84af-45b1-8211-724326f91bb5" width="720" height="600">  
 
 # Level 7 solution
-A1: we cannot choose our IP address freely since the IP R11 is already entered. 
-
 The ranges of networks IP must not overlap =>  
 We need addresses for 3 networks: A + R1, R1 + R2, R2 + C =>  
-We split the last byte into 4 ranges by using /30, we use the following 3 ranges:   
+We split the last byte into 64 ranges by /30, we use the following 3 ranges:   
+  
 Network A + R1:  
 `11111111.11111111.11111111.111111+00` (`255.255.255.252`) mask  
 `01100000.11000110.00001110.000000+01` (`96.198.14.1`) min  
@@ -249,8 +248,10 @@ Network R2 + C:
 `01100000.11000110.00001110.000001+01` (`96.198.14.5`) min   
 `01100000.11000110.00001110.000001+10` (`96.198.14.6`) max   
   
+NB /24  gives 1 range, doesn't suit here, `96.198.14.1` and `96.198.14.254` would be in [`93.198.14.0`, `93.198.14.255`]   
 NB /26 gives 4 ranges  
-NB /24 doesn't suit here, because both `96.198.14.1` and `96.198.14.254` are in [`93.198.14.0`, `93.198.14.255`]   
+NB /28 gives 16 ranges  
+NB /30 gives 64 ranges  
   
 Calculator of mask ranges https://www.calculator.net/ip-subnet-calculator.html?cclass=any&csubnet=28&cip=93.198.14.2&ctype=ipv4&printit=0&x=97&y=13
 
