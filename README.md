@@ -281,8 +281,8 @@ All the receiving networks must be in this range and without overlapping.
 `10100011.10101010.11111010.0011_0001` = `163.170.250.49` network R1 R2 min ...   
 `10100011.10101010.11111010.0011_1110` = `163.170.250.62` network R1 R2 max  
 
-<img src="https://github.com/akostrik/net_practice/assets/22834202/ffa495de-52d7-4d2c-b362-a0cb2973a4a4" width="700" height="700">  
+<img src="https://github.com/akostrik/net_practice/assets/22834202/ffa495de-52d7-4d2c-b362-a0cb2973a4a4" width="700" height="600">  
 
 # Level 9 solution
 
-<img src="https://github.com/akostrik/net_practice/assets/22834202/f959e183-552a-4e93-a129-90208de25709" width="700" height="600">  
+<img src="https://github.com/akostrik/net_practice/assets/22834202/f959e183-552a-4e93-a129-90208de25709" width="700" height="550">  
