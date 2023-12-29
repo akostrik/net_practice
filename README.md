@@ -1,6 +1,6 @@
 # Vocabulary
 
-[Convert regilar IP to binary IP](https://convertir.github.io/outils/convertir-ip-en-binaire-en-ligne.html)  
+[Convert regular IP to binary IP](https://convertir.github.io/outils/convertir-ip-en-binaire-en-ligne.html)  
 [Convert binary IP to regular](https://www.browserling.com/tools/bin-to-ip)  
 [Calculator of mask ranges](https://www.calculator.net/ip-subnet-calculator.html?cclass=any&csubnet=28&cip=93.198.14.2&ctype=ipv4&printit=0&x=97&y=13)
 
