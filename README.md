@@ -1,14 +1,15 @@
 # Vocabulary
 
 ## The Open Systems Interconnection model (OSI)
-Сетевая модель стека сетевых протоколов OSI/ISO, для вхаимодействия сетевых устройств. Levels:
-1) Physical layer: метод передачи двоичных данных от одного устройства к другому
-2) Sata link layer, канальный: взаимодействие сетей на физическом уровне
-3) Network layer: определение пути передачи данных
-4) Transport layer: надёжная передача данных (протоколы ATP, CUDP, DCCP, FCP, IL, NBF, NCP, SCTP, SPX, SST, TCP, UDP)
-5) Session layer: поддержание сеанса связи, позволяя приложениям взаимодействовать длительное время (протоколы H.245, ISO-SP, iSNS, L2F, L2TP, NetBIOS, PAP, PPTP, RPC, RTCP, SMPP, SCP, ZIP, SDP)
-6) Presentation layer: преобразование протоколов и кодирование/декодирование данных (протоколы AFP, ICA, LPP, NCP, NDR, XDR, X.25 PAD)
-7) Application layer: взаимодействие пользовательских приложений с сетью (протолоклы RDP, HTTP, SMTP, SNMP, POP3, FTP, XMPP, OSCAR, Modbus, SIP, TELNET)
+Сетевая модель стека сетевых протоколов OSI/ISO, взаимодействие сетевых устройств, передача двоичных данных от одного устройства к другому.  
+Layers:
+1) Physical
+2) Data link (канальный): взаимодействие сетей на физическом уровне
+3) Network: определение пути передачи данных
+4) Transport: надёжная передача данных (протоколы ATP, CUDP, DCCP, FCP, IL, NBF, NCP, SCTP, SPX, SST, TCP, UDP)
+5) Session: поддержание сеанса, позволяя приложениям взаимодействовать длительное время (протоколы H.245, ISO-SP, iSNS, L2F, L2TP, NetBIOS, PAP, PPTP, RPC, RTCP, SMPP, SCP, ZIP, SDP)
+6) Presentation: преобразование протоколов и кодирование/декодирование данных (протоколы AFP, ICA, LPP, NCP, NDR, XDR, X.25 PAD)
+7) Application: взаимодействие пользовательских приложений с сетью (протолоклы RDP, HTTP, SMTP, SNMP, POP3, FTP, XMPP, OSCAR, Modbus, SIP, TELNET)
 
 ## Variable-length subnet masking (VLSM)
 **Маска подсети** определяет по IP-адресу адрес подсети и адрес узла. Не является частью IP-пакета (в отличие от IP-адреса). Например:  
