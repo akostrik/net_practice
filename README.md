@@ -309,6 +309,7 @@ Network R2 H4:
 Free IP, that can be used for R2 C3:    
 `10001100.10111110.01010011.11000000`=**`140.190.083.192`**  
 `10001100.10111110.01010011.11111011`=**`140.190.083.251`**    
+any mask that will let us take 2 IP addresses from that range to put in R22 and R31   
   
 Network R1 R2:  
 `11111111.11111111.11111111.111111_00`=`255.255.255.252`=`/30` mask  
@@ -316,7 +317,5 @@ Network R1 R2:
 `10001100.10111110.01010011.111111_10`=**`140.190.083.254`** max = R13  
 
  
-
-any mask that will let us take 2 IP addresses from that range to put in R22 and R31  
-Every IP is covered by the I-destination.  
-The IP ranges of the networks do not overlap.  
+Every IP is covered by the I-destination - OK  
+The IP ranges of the networks do not overlap - OK    
