@@ -104,8 +104,10 @@ If an interface is connected directly / indirectly to the internet, it cannot ha
 * a traffic control point (security, filtering, redirecting)  
 * stores routes in its routing table
 * when a router receives a packet:
-    + if the routing table tells that the destination is on an attached network, then the packet goes directly to the host
-    + if the routing table tells that the destination isn't on an attached network, then the packet goes to another router
+    + if the routing table tells that the destination is on an attached network: the packet goes directly to the host
+    + if the routing table tells that the destination isn't on an attached network: the packet goes to another router
+    + if the routing table tells nothing about the destination and there is a default route: the packet goes to the default route
+    + if the routing table tells nothing about the destination and there isn’t a default route: the packet is dropped (and the source IP is onformed)
   
 ## Routing Table 
 * every node maintains routing table 
