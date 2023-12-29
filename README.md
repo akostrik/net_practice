@@ -290,7 +290,7 @@ Network R1 R2:
 
 # Level 9 solution
 
-<img src="https://github.com/akostrik/net_practice/assets/22834202/ffa495de-52d7-4d2c-b362-a0cb2973a4a4" width="700" height="600">  
+<img src="https://github.com/akostrik/net_practice/assets/22834202/39c58a92-c443-4bc6-bd86-7302206dd377" width="700" height="600">  
 
 # Level 10 solution
 Router R1:  
