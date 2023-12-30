@@ -324,7 +324,15 @@ Goal 6 : host cation needs to communicate with host Internet
 <img src="https://github.com/akostrik/net_practice/assets/22834202/39c58a92-c443-4bc6-bd86-7302206dd377" width="700" height="600">  
 
 # Level 10
-Router R1:  
+Router R1: 
+Goal 1 : host Host one needs to communicate with host Host two  
+Goal 2 : host Host three needs to communicate with host Host four  
+Goal 3 : host Host one needs to communicate with host Internet  
+Goal 4 : host Host one needs to communicate with host Host four  
+Goal 5 : host Host two needs to communicate with host Host three  
+Goal 6 : host Host three needs to communicate with host Internet  
+Goal 7 : host Host four needs to communicate with host Internet  
+  
 `10001100.10111110.01010011.0_0000001`=`140.190.083.001` R11  
 `10001100.10111110.01010011.111111_10`=`140.190.083.254` R13  
 `10001100.10111110.01010011._00000000`=`140.190.083.000/24` I-dest covers the range of networks R11 R13 => I sends packets to all the hosts  
