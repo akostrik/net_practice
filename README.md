@@ -30,7 +30,7 @@ Reserved local IP:
     + `127.000.000.001` ... `127.255.255.254`
     
 Variable-length subnet masking (VLSM). **Маска подсети** defines the network prefix and the host identifier.  
-Is addresse is a part of an IP-packet, a mask is not.  
+An IP- address is a part of an IP-packet, while  mask is not.  
 Example:  
 `11000000.10101000.0000000+1.00000010`=`192.168.001.002`  
 `11111111.11111111.1111111+0.00000000`=`255.255.254.000` mask  
@@ -43,7 +43,7 @@ IPv4 CIDR (Classless Inter-Domain Routing) blocks:
 | netmask                 | nb address    | nb hosts  
 |:------------------------|--------------:|-------:
 | `/32`=`255.255.255.255` | 1             | accessible by explicit routing rules (single-host network) 
-| `/31`=`255.255.255.254` | 2             | no available host addresses (unusable)
+| `/31`=`255.255.255.254` | 2             | no available host addresses
 | `/30`=`255.255.255.252` | 4             | 2     
 | `/29`=`255.255.255.248` | 8             | 6     
 | `/28`=`255.255.255.240` | 16            | 14    
@@ -81,7 +81,7 @@ IPv4 CIDR (Classless Inter-Domain Routing) blocks:
 * multiple ports
 * cannot talk directly to a network outside of its own
 * Хранит таблицу коммутации, в которой указывается соответствие узла порту.
-     + Режим обучения: при включении коммутатора таблица пуста, поступающие на какой-либо порт данные передаются на все остальные порты. Коммутатор заносит MAC-адрес отправителей в таблицу.
+     + Режим обучения: при включении коммутатора таблица пуста, поступающие на к-л порт данные передаются на все остальные порты. Коммутатор заносит MAC-адрес отправителя в таблицу.
      + Если поступит кадр, предназначенный для хоста уже ассоциированного с MAC-адресом получателя в таблице, то кадр будет передан только туда
      + Если MAC-адрес получателя не ассоциирован, то кадр будет передан на все порты
 
