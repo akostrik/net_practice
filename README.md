@@ -21,13 +21,13 @@ Every IP should be covered by the Internet destination.
 **Private IP** cannot be used to access the Internet, remains in the local network, never leaves the LAN.  
 If an interface is connected directly / indirectly to the internet, it cannot have an private IP.
 Reserved priivate IP:  
-    * `100.000.000.000` ... `010.255.255.255` (Class A, for large networks,   08 network + 24 host)
-    * `172.016.000.000` ... `172.031.255.255` (Class B, for medium networks,  16 network + 16 host)
-    * `192.168.000.000` ... `192.168.255.255` (Class C, for smaller networks, 24 network + 08 host)
+* `100.000.000.000` ... `010.255.255.255` (Class A, for large networks,   08 network + 24 host)
+* `172.016.000.000` ... `172.031.255.255` (Class B, for medium networks,  16 network + 16 host)
+* `192.168.000.000` ... `192.168.255.255` (Class C, for smaller networks, 24 network + 08 host)
   
 **Local IP**  
 Reserved local IP:  
-    * `127.000.000.001` ... `127.255.255.254`
+* `127.000.000.001` ... `127.255.255.254`
     
 Variable-length subnet masking (VLSM). **Маска подсети** defines the network prefix and the host identifier.  
 An IP- address is a part of an IP-packet, while  mask is not.  
