@@ -124,7 +124,10 @@ IPv4 CIDR (Classless Inter-Domain Routing) blocks:
 * **Next hop address** the next router / inetrnet inerface on the packet's way
 * **Gateway** a host’s way out of its local network  
 
-# Level 1 solution
+# Level 1
+Goal 1 : host my PC needs to communicate with host my little brother's computer  
+Goal 2 : host my Mac needs to communicate with host my little sister's computer  
+  
 A1:
 `01101000.01100011.00010111.00000001`=`104.099.023.000` network address, cannot be used by a host  
 `01101000.01100011.00010111.00000001`=`104.099.023.001` min host address   
@@ -138,7 +141,10 @@ D1, D2:
 
 <img src="https://github.com/akostrik/net_practice/assets/22834202/429cb593-9681-44fd-bed8-f5629d8e2100" width="700" height="400">  
 
-# Level 2 solution
+# Level 2
+Goal 1 : host Computer B needs to communicate with host Computer A  
+Goal 1 : host Computer D needs to communicate with host Computer C  
+  
 B1:  
 `11111111.11111111.11111111.111_00000`=`255.255.255.224`=`/27` mask (B and A are on the same network)   
 `11000000.10101000.00111011.110_00001`=`192.168.059.193` A1 min   
@@ -151,14 +157,22 @@ C1, D1:
 
 <img src="https://github.com/akostrik/net_practice/assets/22834202/5a34deda-b8a4-4701-925d-74a5bbe1add3" width="700" height="400">  
 
-# Level 3 solution
+# Level 3
+Goal 1 : host Host A needs to communicate with host Host B  
+Goal 2 : host Host A needs to communicate with host Host C  
+Goal 3 : host Host B needs to communicate with host Host C  
+  
 `11111111.11111111.11111111.1_0000000`=`255.255.255.128`=`/27` mask
 `01101000.11000110.01000010.1_0000001`=`104.198.132.128` min (?) 
 `01101000.11000110.01000010.1_1111110`=`104.198.132.255` max  
 
 <img src="https://github.com/akostrik/net_practice/assets/22834202/c7741926-8cf2-4387-abff-9ab43eb73477" width="700" height="550">  
 
-# Level 4 solution
+# Level 4
+Goal 1 : host A nice host needs to communicate with host Another host  
+Goal 2 : host A nice host needs to communicate with host My_Gate
+Goal 3 : host Another host needs to communicate with host My_Gate  
+  
 `11111111.11111111.11111111.11_000000`=`255.255.255.192`=`/26` we are free to choose a mask  
 `01000101.00100000.01110110.10_000001`=`069.032.118.128` B1 min, R min (B1, R1, A1 are in the same network)  
 `01000101.00100000.01110110.10_000100`=`069.032.118.132` A1  
@@ -168,8 +182,11 @@ R2, R3: we did not interact with them
 
 <img src="https://github.com/akostrik/net_practice/assets/22834202/e0e2e50c-1bfe-4f2c-ad24-6d9559294bb0" width="700" height="550">  
 
-# Level 5 solution
-
+# Level 5
+Goal 1 : host Machine A needs to communicate with host The Mighty Router  
+Goal 2 : host Machine B needs to communicate with host The Mighty Router  
+Goal 3 : host Machine A needs to communicate with host Machine B  
+  
 |A->R `17.33.126.126`:    |B->R `17.33.126.126`: $\textsf{\color{red}(?)}$    |A->B `170.242.21.253`:                            |
 |:------------------------|:--------------------------------------------------|:-------------------------------------------------|
 |                         |B: dest. does not match any interface, rout. table |A: dest. does not match any interface, rout. table|
@@ -195,7 +212,9 @@ A: only has 1 route through which it can send its packets, the destination defau
 
 <img src="https://github.com/akostrik/net_practice/assets/22834202/8abba568-5c19-4f2d-bb51-c5619502fe9b" width="700" height="550">  
 
-# Level 6 solution
+# Level 6
+Goal 1 : host webserv.non-real.com needs to communicate with interface Somewhere on the Net  
+  
 Network A1 R1 S:  
 `11111111.11111111.11111111.1_0000000`=`255.255.255.128`=`/27` mask  
 `01011001.01011100.11110001.1_0000000`=`089.092.241.128` the network address of A, internet sends to `89.92.241.228/25`  
@@ -231,7 +250,9 @@ Network I:
   
 <img src="https://github.com/akostrik/net_practice/assets/22834202/429c209c-84af-45b1-8211-724326f91bb5" width="720" height="600">  
 
-# Level 7 solution
+# Level 7
+Goal 1 : host dev.non-real.net needs to communicate with host accounting.non-real.net  
+  
 We need addresses for 3 networks and the ranges of networks must not overlap =>  
 We split the last byte into 64 ranges by `/30`.  
 We use the following 3 ranges:   
@@ -258,7 +279,7 @@ NB: `/30` gives 64 ranges
   
 <img src="https://github.com/akostrik/net_practice/assets/22834202/3a01b40d-9b0a-41a3-8f63-2dcc8b4c499c" width="700" height="450">  
 
-# Level 8 solution
+# Level 8
 
 Goal 1 : host office.non-real.com needs to communicate with host home.non-real.com  
 Goal 2 : host office.non-real.com needs to communicate with interface Somewhere on the Net  
@@ -275,7 +296,7 @@ All the receiving networks must be in this range and without overlapping.
 `11111111.11111111.11111111.1111_0000`=`255.255.255.240`=`/28` mask R23 R22, splits `/26` into 4 ranges:  
 
 Not used:  
-`10001101.11101111.11100101.0001_0001`=`141.239.229.001` 
+`10001101.11101111.11100101.0001_0001`=`141.239.229.001`  
 `10001101.11101111.11100101.0001_1110`=`141.239.229.014` 
 
 Network R2 C:  
@@ -292,11 +313,11 @@ Network R1 R2:
 
 <img src="https://github.com/akostrik/net_practice/assets/22834202/f959e183-552a-4e93-a129-90208de25709" width="700" height="550">  
 
-# Level 9 solution
+# Level 9
 
 <img src="https://github.com/akostrik/net_practice/assets/22834202/39c58a92-c443-4bc6-bd86-7302206dd377" width="700" height="600">  
 
-# Level 10 solution
+# Level 10
 Router R1:  
 `10001100.10111110.01010011.0_0000001`=`140.190.083.001` R11  
 `10001100.10111110.01010011.111111_10`=`140.190.083.254` R13  
