@@ -350,7 +350,7 @@ Network R2 H4:
 `10001100.10111110.01010011.10_000011`=`140.190.083.131` H41  
 `10001100.10111110.01010011.10_111110`=**`140.190.083.190`** max  
 
-Network R2 C3 (these were free IP, we have taken them for that network):    
+Network R2 H3 (these were free IP, we have taken them for that network):    
 `11111111.11111111.11111111.111111_00`=`255.255.255.252`=`/30` any mask that lets us take 2 IP    
 `10001100.10111110.01010011.110000_01`=**`140.190.083.193`** min = R22  
 `10001100.10111110.01010011.110000_10`=**`140.190.083.194`** max = H31  
