@@ -260,6 +260,10 @@ NB: `/30` gives 64 ranges
 
 # Level 8 solution
 
+Goal 1 : host office.non-real.com needs to communicate with host home.non-real.com  
+Goal 2 : host office.non-real.com needs to communicate with interface Somewhere on the Net  
+Goal 3 : host home.non-real.com needs to communicate with interface Somewhere on the Net  
+
 I:  
 `11111111.11111111.11111111.11_000000`=`255.255.255.192`=`/26` mask  
 `10001101.11101111.11100101.00_000000`=`141.239.229.000/26` I routes these address  
