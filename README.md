@@ -25,7 +25,7 @@ Reserved priivate IP:
     * `172.016.000.000` ... `172.031.255.255` (Class B, for medium networks,  16 network + 16 host)
     * `192.168.000.000` ... `192.168.255.255` (Class C, for smaller networks, 24 network + 08 host)
   
-**Local IP**
+**Local IP**  
 Reserved local IP:  
     * `127.000.000.001` ... `127.255.255.254`
     
