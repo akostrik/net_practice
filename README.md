@@ -14,20 +14,32 @@
 6) Presentation: преобразование протоколов и кодирование/декодирование данных (протоколы AFP, ICA, LPP, NCP, NDR, XDR, X.25 PAD)
 7) Application: взаимодействие пользовательских приложений с сетью (протолоклы RDP, HTTP, SMTP, SNMP, POP3, FTP, XMPP, OSCAR, Modbus, SIP, TELNET)
 
-## Variable-length subnet masking (VLSM)
-**Маска подсети** defines the network prefix and the host identifier.  
-Не является частью IP-пакета (в отличие от IP-адреса).  
+##  TCP/IP address
+The IP ranges of the networks do not overlap.
+Every IP should be covered by the Internet destination. 
+  
+**Private IP** cannot be used to access the Internet, remains in the local network, never leaves the LAN.  
+If an interface is connected directly / indirectly to the internet, it cannot have an private IP.
+Reserved priivate IP:  
+    + `100.000.000.000` ... `010.255.255.255` (Class A, for large networks,   08 network + 24 host)
+    + `172.016.000.000` ... `172.031.255.255` (Class B, for medium networks,  16 network + 16 host)
+    + `192.168.000.000` ... `192.168.255.255` (Class C, for smaller networks, 24 network + 08 host)
+  
+**Local IP**
+Reserved local IP:  
+    + `127.000.000.001` ... `127.255.255.254`
+    
+Variable-length subnet masking (VLSM). **Маска подсети** defines the network prefix and the host identifier.  
+Is addresse is a part of an IP-packet, a mask is not.  
 Example:  
 `11000000.10101000.0000000+1.00000010`=`192.168.001.002`  
 `11111111.11111111.1111111+0.00000000`=`255.255.254.000` mask  
 `11000000.10101000.0000000+0.00000000`=`192.168.000.000` **network address**  
 
-## IPv4 vs IPv6  
 IPv4: network prefix  8 / 16 / 24 bits    
 IPv6: interface identifier 64 bits  
 
-## Classless Inter-Domain Routing (CIDR)
-IPv4 CIDR blocks:  
+IPv4 CIDR (Classless Inter-Domain Routing) blocks:  
 | netmask                 | nb address    | nb hosts  
 |:------------------------|--------------:|-------:
 | `/32`=`255.255.255.255` | 1             | accessible by explicit routing rules (single-host network) 
@@ -49,19 +61,6 @@ IPv4 CIDR blocks:
 | `/16`=`255.255.000.000` | 65 536        | 65 534 
 | `/08`=`255.000.000.000` | 16 777 216    | 16 777 214
 | `/00`=`000.000.000.000` | 4 294 967 296 | entire IPv4 Internet
-
-## Client IP addresses
-The IP ranges of the networks do not overlap.
-Every IP should be covered by the Internet destination. 
-* **Private IP** cannot be used to access the Internet, remains in the local network, never leaves the LAN.  
-If an interface is connected directly / indirectly to the internet, it cannot have an private IP.
-Reserved:  
-    + `100.000.000.000` ... `010.255.255.255` (Class A, for large networks,   08 network + 24 host)
-    + `172.016.000.000` ... `172.031.255.255` (Class B, for medium networks,  16 network + 16 host)
-    + `192.168.000.000` ... `192.168.255.255` (Class C, for smaller networks, 24 network + 08 host)
-* **Local IP**
-Reserved:  
-    + `127.000.000.001` ... `127.255.255.254`
 
 ## Repeater = повторитель = коаксиальный повторитель
 * 1 OSI level
