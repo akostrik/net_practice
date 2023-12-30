@@ -314,7 +314,13 @@ Network R1 R2:
 <img src="https://github.com/akostrik/net_practice/assets/22834202/f959e183-552a-4e93-a129-90208de25709" width="700" height="550">  
 
 # Level 9
-
+Goal 1 : host meson needs to communicate with host ion  
+Goal 2 : host cation needs to communicate with host gluon  
+Goal 3 : host meson needs to communicate with host Internet  
+Goal 4 : host meson needs to communicate with host gluon  
+Goal 5 : host ion needs to communicate with host cation  
+Goal 6 : host cation needs to communicate with host Internet  
+  
 <img src="https://github.com/akostrik/net_practice/assets/22834202/39c58a92-c443-4bc6-bd86-7302206dd377" width="700" height="600">  
 
 # Level 10
